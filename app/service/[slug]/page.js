@@ -1,20 +1,44 @@
-export function generateStaticParams() {
-  const brands = ["hafele","bosch","siemens","glen","faber","elica","kaff","robam"];
-  const areas = ["jaypee-greens","lotus-boulevard","lotus-espacia","supernova-spira","ats-knightsbridge","mahagun-mezzaria","jaypee-wish-town","lotus-panache","eldeco-aamantran","ace-golfshire","mahagun-moderne","ats-village","sector-44","sector-36","sector-150","sector-128","sector-93b","golf-course-road","sector-50","greater-noida-west"];
+export async function generateStaticParams() {
+  const areas = [
+    "sector-150-sports-city",
+    "jaypee-greens",
+    "sector-44-jaypee-wishtown",
+    "sector-93b-supernova",
+    "sector-94-cleo-county",
+    "wish-town-sector-128",
+    "sector-100",
+    "sector-137",
+    "sector-134",
+    "sector-129",
+    "sector-50",
+    "sector-18",
+    "sector-62",
+    "sector-76",
+    "sector-78",
+    "noida-extension",
+    "sector-120",
+    "sector-74",
+    "sector-143",
+    "greater-noida-west"
+  ];
+  const brands = ["bosch","elica","faber","glen","hafele","hindware","kaff","siemens"];
   const params = [];
-  brands.forEach(b => areas.forEach(a => params.push({ slug: `${b}-chimney-service-in-${a}` })));
+  for (const area of areas) {
+    for (const brand of brands) {
+      params.push({ area, brand });
+    }
+  }
   return params;
 }
-export default async function ServicePage({params}) {
-  const { slug } = await params;
-  const title = slug.replaceAll("-"," ").toUpperCase();
-  const brand = title.split(" ")[0];
-  const area = title.replace(brand+" CHIMNEY SERVICE IN ","");
+
+export default async function Page({ params }) {
+  const { area, brand } = await params;
+  const prettyArea = area.replaceAll("-"," ");
+  const prettyBrand = brand.charAt(0).toUpperCase() + brand.slice(1);
   return (
-    <main className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-4xl font-black mt-10">{brand} CHIMNEY SERVICE IN {area}</h1>
-      <p className="mt-4 text-gray-600">24x7 {brand} Service in {area}. 30 Mins Response. Call 9971088007</p>
-      <a href="tel:+919971088007" className="mt-8 block bg-yellow-400 text-black text-center py-5 rounded-full font-black text-xl">CALL 9971088007</a>
-    </main>
+    <div style={{padding:"20px"}}>
+      <h1>{prettyBrand} Chimney Service in {prettyArea}</h1>
+      <p>Expert {prettyBrand} chimney service in {prettyArea}, Noida. Call now for fast service.</p>
+    </div>
   )
 }
