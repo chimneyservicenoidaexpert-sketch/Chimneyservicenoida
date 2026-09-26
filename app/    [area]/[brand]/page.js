@@ -1,36 +1,39 @@
 export const dynamic = 'force-dynamic';
 
-function TitleCase(str){
-  if(!str) return "";
-  return str.split("-").map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(" ");
+function Title(s){
+  if(!s) return "";
+  return s.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 }
 
-export default function Page({ params }){
-  const area = params?.area || "noida";
-  const brand = params?.brand || "siemens";
-  const areaName = TitleCase(area);
-  const brandName = TitleCase(brand);
+export default async function BrandPage({ params }) {
+  const p = await params;
+  const area = Title(p.area);
+  const brand = Title(p.brand);
+
+  const titleList = [
+    `${brand} Chimney Service in ${area} | Same Day Service`,
+    `Best ${brand} Chimney Service Center in ${area} Noida`,
+    `${brand} Chimney Cleaning & Repair in ${area} - 90 Days Warranty`,
+    `Expert ${brand} Chimney Service in ${area} | Call 8744009933`
+  ];
+
+  const uniqueTitle = titleList[(area.length + brand.length) % titleList.length];
 
   return (
-    <main style={{fontFamily:'system-ui', background:'#fff', minHeight:'100vh'}}>
-      <header style={{background:'black', color:'white', padding:'14px 20px', display:'flex', justifyContent:'space-between'}}>
-        <b>CHIMNEY EXPERT</b>
-        <a href="tel:8744009933" style={{background:'white', color:'black', padding:'8px 14px', borderRadius:'20px', textDecoration:'none', fontWeight:'bold'}}>CALL NOW</a>
-      </header>
-      <section style={{padding:'40px 20px', background:'#f7f7f7', textAlign:'center'}}>
-        <h1 style={{fontSize:'30px', fontWeight:'900'}}>{brandName} Chimney Repair in {areaName}</h1>
-        <p>Same Day Service in {areaName} - 90 Days Warranty</p>
-      </section>
-      <section style={{padding:'20px', maxWidth:'700px', margin:'auto'}}>
-        <table style={{width:'100%', borderCollapse:'collapse'}} border="1" cellPadding="12">
-          <tr style={{background:'black', color:'white'}}><th>Service</th><th>Price</th></tr>
-          <tr><td>{brandName} Repair</td><td>Rs 299</td></tr>
-          <tr><td>Deep Cleaning</td><td>Rs 799</td></tr>
-        </table>
-        <div style={{textAlign:'center', marginTop:'20px'}}>
-          <a href="tel:8744009933" style={{background:'black', color:'white', padding:'14px 28px', borderRadius:'30px', textDecoration:'none'}}>CALL 8744009933</a>
-        </div>
-      </section>
+    <main style={{ fontFamily: 'system-ui', padding: '20px', lineHeight: '1.6' }}>
+      <h1 style={{ fontSize: '26px', fontWeight: '900' }}>{uniqueTitle}</h1>
+      <p>We provide specialized <b>{brand} Chimney Service in {area}</b>. Same day expert visit.</p>
+      <ul>
+        <li>{brand} Chimney Deep Cleaning in {area}</li>
+        <li>{brand} Chimney Motor Repair in {area}</li>
+        <li>{brand} Chimney Filter & Installation in {area}</li>
+      </ul>
+      <div style={{ background: '#000', color: '#fff', padding: '14px', borderRadius: '10px', textAlign: 'center', marginTop: '25px', fontWeight: '700' }}>
+        {brand} Service in {area} - Call: 8744009933<br/>90 Days Warranty
+      </div>
+      <div style={{ marginTop: '20px' }}>
+        <a href={`/${p.area}`}>← Back to {area}</a> | <a href="/">Home</a>
+      </div>
     </main>
-  )
+  );
 }
