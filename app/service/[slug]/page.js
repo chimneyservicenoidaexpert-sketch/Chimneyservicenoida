@@ -5,8 +5,9 @@ export function generateStaticParams() {
   brands.forEach(b => areas.forEach(a => params.push({ slug: `${b}-chimney-service-in-${a}` })));
   return params;
 }
-export default function ServicePage({params}) {
-  const title = params.slug.replaceAll("-"," ").toUpperCase();
+export default async function ServicePage({params}) {
+  const { slug } = await params;
+  const title = slug.replaceAll("-"," ").toUpperCase();
   const brand = title.split(" ")[0];
   const area = title.replace(brand+" CHIMNEY SERVICE IN ","");
   return (
