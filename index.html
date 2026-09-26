@@ -3,109 +3,123 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title id="seoTitle">Chimney Service Noida - Noida Care</title>
-<meta name="description" id="seoDesc" content="Chimney Service Noida">
+<title id="seoTitle">Chimney Service Noida - 30 Min Arrival - Noida Care</title>
+<meta name="description" id="seoDesc" content="Chimney Service Noida - All Brands - 20 Societies - 30 Min Arrival">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
 body{margin:0;font-family:Inter,sans-serif;background:#f6f7f9;padding-bottom:90px}
 .hero{background:linear-gradient(135deg,#000 0%,#222 100%);color:#fff;border-radius:0 0 28px 28px;padding:28px 18px 24px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:200px;height:200px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent);top:-40px;right:-40px}
 .card{background:#fff;border-radius:20px;padding:16px;margin:12px;box-shadow:0 8px 24px rgba(0,0,0,.05);border:1px solid #f0f0f0}
 .service{border-radius:18px;padding:14px;text-align:center;border:1px solid #f0f0f0;background:linear-gradient(180deg,#fff,#fbfbfb)}
-.pill{display:inline-block;background:#111;color:#fff;border-radius:100px;padding:7px 12px;font-size:9px;font-weight:800;text-decoration:none;margin:3px;letter-spacing:.3px}
-.btn-black{background:#000;color:#fff;border-radius:14px;padding:13px;width:100%;font-weight:800;border:0}
-#callPopup{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:9999}
-#sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-top:1px solid #eee;padding:10px 12px;display:flex;gap:10px;z-index:999}
+.pill{display:inline-block;border-radius:100px;padding:7px 12px;font-size:8px;font-weight:800;text-decoration:none;margin:3px}
+.btn-black{background:#000;color:#fff;border-radius:14px;padding:13px;width:100%;font-weight:800;border:0;cursor:pointer}
+#callPopup{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:99999}
+#sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);border-top:1px solid #eee;padding:10px 12px;display:flex;gap:10px;z-index:9999}
 </style>
 </head>
 <body>
 
-<!-- HERO PREMIUM -->
+<!-- HERO -->
 <div class="hero">
 <div style="display:flex;justify-content:space-between;align-items:center">
-<div style="font-size:11px;letter-spacing:1px;opacity:.7">SINCE 2015 • 4.9/5 RATED</div>
+<div style="font-size:11px;opacity:.7;letter-spacing:.5px">SINCE 2015 • 4.9/5 RATED</div>
 <div style="background:#fff;color:#000;border-radius:100px;padding:5px 10px;font-size:9px;font-weight:900" class="careDynamic">Noida Care</div>
 </div>
-<h1 id="mainH1" style="font-size:30px;font-weight:900;line-height:30px;margin:14px 0 10px">Chimney Service<br>Noida</h1>
-<div id="dynamicTrust" style="display:inline-flex;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:7px 12px;font-size:10px">⭐ 2847+ Homes • 30 Min Arrival • 90 Day Warranty</div>
-<div id="dynamicContent200" style="margin-top:14px;font-size:11px;line-height:16px;opacity:.75"></div>
-<button onclick="openCall()" style="margin-top:16px;background:#fff;color:#000;border-radius:14px;padding:13px 18px;font-weight:900;border:0;width:100%">📞 Call Technician - 30 Min Arrival</button>
+<h1 id="mainH1" style="font-size:30px;font-weight:900;line-height:32px;margin:14px 0 10px">Chimney Service Noida</h1>
+<div id="dynamicTrust" style="display:inline-flex;background:rgba(255,255,255,.12);border-radius:100px;padding:7px 12px;font-size:10px">⭐ Serving 2847+ Homes in Noida • 4.9/5 • Noida Care</div>
+<div id="dynamicContent200" style="margin-top:14px;font-size:11px;line-height:17px;opacity:.8"></div>
+<button onclick="openCall()" class="btn-black" style="margin-top:16px;background:#fff;color:#000">📞 Call Technician - 30 Min Arrival</button>
 </div>
 
-<!-- SERVICES PREMIUM -->
+<!-- SERVICE CARDS - NO PRICE -->
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px">
-<div class="service"><div style="font-size:22px">✨</div><b style="font-size:12px">Deep Cleaning</b><div style="font-size:10px;color:#666;margin-top:2px">₹499 Only</div><button onclick="openCall()" class="btn-black" style="margin-top:8px;padding:8px;font-size:10px">Call Now</button></div>
-<div class="service"><div style="font-size:22px">⚙️</div><b style="font-size:12px">Motor Repair</b><div style="font-size:10px;color:#666;margin-top:2px">90 Day Warranty</div><button onclick="openCall()" class="btn-black" style="margin-top:8px;padding:8px;font-size:10px">Call Now</button></div>
-<div class="service"><div style="font-size:22px">🔌</div><b style="font-size:12px">PCB / Touch</b><div style="font-size:10px;color:#666;margin-top:2px">Original Parts</div><button onclick="openCall()" class="btn-black" style="margin-top:8px;padding:8px;font-size:10px">Call Now</button></div>
-<div class="service"><div style="font-size:22px">💨</div><b style="font-size:12px">Duct & Filter</b><div style="font-size:10px;color:#666;margin-top:2px">Full Suction Back</div><button onclick="openCall()" class="btn-black" style="margin-top:8px;padding:8px;font-size:10px">Call Now</button></div>
+<div class="service"><div style="font-size:22px">✨</div><b style="font-size:12px">Deep Cleaning</b><div style="font-size:10px;color:#666">Full Oil Removal</div><button onclick="openCall()" class="btn-black" style="margin-top:8px;padding:8px;font-size:10px">Call Now</button></div>
+<div class="service"><div style="font-size:22px">⚙️</div><b style="font-size:12px">Motor Repair</b><div style="font-size:10px;color:#666">90 Day Warranty</div><button onclick="openCall()" class="btn-black" style="margin-top:8px;padding:8px;font-size:10px">Call Now</button></div>
+<div class="service"><div style="font-size:22px">🔌</div><b style="font-size:12px">PCB / Touch</b><div style="font-size:10px;color:#666">Original Parts</div><button onclick="openCall()" class="btn-black" style="margin-top:8px;padding:8px;font-size:10px">Call Now</button></div>
+<div class="service"><div style="font-size:22px">💨</div><b style="font-size:12px">Duct & Filter</b><div style="font-size:10px;color:#666">Full Suction Back</div><button onclick="openCall()" class="btn-black" style="margin-top:8px;padding:8px;font-size:10px">Call Now</button></div>
 </div>
 
-<!-- BOOK FORM PREMIUM -->
-<div class="card">
-<div style="font-weight:900;font-size:14px">Book Service in 30 Sec - <span class="careDynamic">Noida Care</span></div>
-<input placeholder="Your Name" style="width:100%;margin-top:12px;padding:13px;border-radius:14px;border:1px solid #e5e7eb;background:#f9fafb">
-<input placeholder="Phone Number" style="width:100%;margin-top:8px;padding:13px;border-radius:14px;border:1px solid #e5e7eb;background:#f9fafb">
-<button onclick="openCall()" class="btn-black" style="margin-top:12px">Book Now - Technician 30 Min Me</button>
-<div style="font-size:9px;color:#999;text-align:center;margin-top:8px">No Visiting Charge if Service Done • 90 Day Warranty</div>
+<!-- BOOK FORM - 4 OPTIONS - NO PRICE -->
+<div class="card" style="border:2px solid #000">
+<div style="display:flex;justify-content:space-between"><div style="font-weight:900;font-size:15px">📅 Book Service</div><div style="background:#000;color:#fff;border-radius:100px;padding:4px 10px;font-size:9px;font-weight:900">30 MIN</div></div>
+<input placeholder="👤 Your Full Name" style="width:100%;margin-top:14px;padding:14px;border-radius:14px;border:1px solid #e5e7eb;background:#f9fafb;box-sizing:border-box">
+<input placeholder="📞 Phone Number" style="width:100%;margin-top:10px;padding:14px;border-radius:14px;border:1px solid #e5e7eb;background:#f9fafb;box-sizing:border-box">
+<div style="font-weight:800;font-size:11px;margin-top:14px">SELECT SERVICE (4 OPTIONS):</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+<label style="border:2px solid #000;border-radius:14px;padding:10px;display:flex;gap:8px;background:#000;color:#fff"><input type="radio" name="service" checked><div style="font-size:11px;font-weight:800">✨ Deep Cleaning</div></label>
+<label style="border:1px solid #e5e7eb;border-radius:14px;padding:10px;display:flex;gap:8px"><input type="radio" name="service"><div style="font-size:11px;font-weight:800">⚙️ Motor Repair</div></label>
+<label style="border:1px solid #e5e7eb;border-radius:14px;padding:10px;display:flex;gap:8px"><input type="radio" name="service"><div style="font-size:11px;font-weight:800">🔌 PCB / Touch</div></label>
+<label style="border:1px solid #e5e7eb;border-radius:14px;padding:10px;display:flex;gap:8px"><input type="radio" name="service"><div style="font-size:11px;font-weight:800">💨 Filter & Duct</div></label>
+</div>
+<div style="display:flex;gap:8px;margin-top:10px"><input type="date" style="flex:1;padding:12px;border-radius:14px;border:1px solid #e5e7eb"><select style="flex:1;padding:12px;border-radius:14px;border:1px solid #e5e7eb"><option>Today</option><option>Tomorrow</option><option>Urgent</option></select></div>
+<button onclick="openCall()" class="btn-black" style="margin-top:14px">Book Now - 30 Min Arrival</button>
 </div>
 
 <!-- MAP -->
-<div class="card" style="padding:0;overflow:hidden;border-radius:20px">
-<iframe id="gmap" width="100%" height="210" style="border:0" src=""></iframe>
-</div>
+<div class="card" style="padding:0;overflow:hidden;border-radius:20px"><iframe id="gmap" width="100%" height="210" style="border:0" src=""></iframe></div>
 
-<!-- 2000 WORD SEO -->
-<div class="card">
-<div style="font-weight:900">Why <span class="careDynamic">Noida Care</span> No.1?</div>
-<div id="longContent" style="font-size:11px;line-height:17px;color:#555;margin-top:8px;max-height:130px;overflow:auto"></div>
-</div>
+<!-- SEO CONTENT -->
+<div class="card"><div style="font-weight:900">Why <span class="careDynamic">Noida Care</span> No.1?</div><div id="longContent" style="font-size:11px;line-height:17px;color:#555;margin-top:8px;max-height:130px;overflow:auto"></div></div>
 
 <!-- DISCLAIMER -->
-<div class="card" style="background:#fef9c3;border:1px dashed #facc15">
-<div style="font-size:10px;font-weight:900">⚠️ We Are Independent - Not Authorized</div>
-<div style="font-size:9px;line-height:13px;margin-top:4px;color:#713f12">We are <span class="careDynamic">Noida Care</span> - Independent Service Provider. We are NOT authorized service center of Elica, Faber, Hindware, Siemens, Kaff, Hafele, Bosch. All brand names for identification only. We provide third-party expert service with 90 days warranty.</div>
-</div>
+<div class="card" style="background:#fef9c3;border:1px dashed #facc15"><div style="font-size:10px;font-weight:900">⚠️ We Are Independent</div><div style="font-size:9px;line-height:13px;margin-top:4px;color:#713f12">We are <span class="careDynamic">Noida Care</span> - Independent Service Provider. We are NOT authorized service center of Siemens, Hafele, Kaff, Glen, Elica, Bosch, Faber. All brands for identification only.</div></div>
 
-<!-- AREA NICHE PREMIUM -->
+<!-- BRAND + AREA -->
 <div class="card" style="background:#000;color:#fff">
-<div style="font-size:10px;font-weight:800;letter-spacing:1px">📍 SERVING 20+ SOCIETIES - TOP 1</div>
+<div style="font-size:10px;font-weight:800">📍 ALL BRANDS + 20 AREAS - 140 PAGES</div>
 <div id="areaPills" style="margin-top:12px"></div>
-<div style="font-size:8px;opacity:.6;margin-top:10px;text-align:center">Brand Hide • Only Area Line • Clean Look • <span class="careDynamic">Noida Care</span></div>
+<div id="brandAreaPills" style="margin-top:10px;border-top:1px solid #222;padding-top:10px"></div>
 </div>
 
-<!-- POPUP PREMIUM -->
-<div id="callPopup" onclick="closeCall()"><div onclick="event.stopPropagation()" style="background:#fff;border-radius:28px;padding:22px;width:88%;max-width:340px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)">
+<!-- POPUP - NUMBER HIDE BUT CALL 8796284796 -->
+<div id="callPopup" onclick="closeCall()"><div onclick="event.stopPropagation()" style="background:#fff;border-radius:28px;padding:22px;width:88%;max-width:340px;text-align:center">
 <div style="width:56px;height:56px;background:#000;color:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:24px">📞</div>
 <div style="font-weight:900;font-size:18px;margin-top:12px">Call <span class="careDynamic">Noida Care</span></div>
-<div style="font-size:11px;color:#666;margin-top:4px">30 Min Arrival in Noida • 90 Day Warranty</div>
-<a href="tel:+919999999999" style="display:block;background:#000;color:#fff;padding:15px;border-radius:16px;margin-top:16px;text-decoration:none;font-weight:900;font-size:14px">Call Now - 99999 99999</a>
+<div style="font-size:11px;color:#666;margin-top:4px">30 Min Arrival • 90 Day Warranty</div>
+<a href="tel:+918796284796" style="display:block;background:#000;color:#fff;padding:15px;border-radius:16px;margin-top:16px;text-decoration:none;font-weight:900">📞 Call Now - Technician</a>
+<a href="https://wa.me/918796284796" style="display:block;background:#25D366;color:#fff;padding:12px;border-radius:16px;margin-top:8px;text-decoration:none;font-weight:800">💬 WhatsApp Now</a>
 <button onclick="closeCall()" style="margin-top:12px;background:#f3f4f6;border:0;border-radius:100px;padding:8px 16px;font-size:11px">Close</button>
 </div></div>
 
-<div id="sticky">
-<a href="tel:+919999999999" style="flex:1;background:#f3f4f6;border-radius:14px;padding:13px;text-align:center;text-decoration:none;color:#000;font-weight:800">Call</a>
-<button onclick="openCall()" style="flex:2" class="btn-black">Book - 30 Min Arrival</button>
-</div>
+<div id="sticky"><a href="tel:+918796284796" style="flex:1;background:#f3f4f6;border-radius:14px;padding:13px;text-align:center;text-decoration:none;color:#000;font-weight:800">📞 Call</a><button onclick="openCall()" style="flex:2" class="btn-black">Book - 30 Min Arrival</button></div>
 
 <script>
-const AREAS=["Jaypee Greens","Lotus Blvd Sec 100","Supernova Sec 94","Wish Town","Klassic Sec 134","Panache Sec 110","Kosmos Sec 134","Daffodil Sec 137","Lotus Zing Sec 168","Knightsbridge Sec 124","Paras Tierea","Aman Sec 151","Aamantran Sec 119","Pavilion Sec 128","Espacia Sec 100","Kensington Park","Imperial Court","Kalypso Court","Krescent Homes","Jaypee Greens"];
-function openCall(){document.getElementById('callPopup').style.display='flex'}
-function closeCall(){document.getElementById('callPopup').style.display='none'}
-function getP(){let p=new URLSearchParams(location.search);return{brand:p.get('brand'),area:p.get('area')?.replaceAll('-',' ')||'Noida',isHome:!p.get('brand')&&!p.get('area')}}
+const BRANDS=["Siemens","Hafele","Kaff","Glen","Elica","Bosch","Faber"];
+const AREAS=["Jaypee Greens","Lotus Blvd Sec 100","Supernova Sec 94","Wish Town","Klassic Sec 134","Panache Sec 110","Kosmos Sec 134","Daffodil Sec 137","Lotus Zing Sec 168","Knightsbridge Sec 124","Paras Tierea","Aman Sec 151","Aamantran Sec 119","Pavilion Sec 128","Espacia Sec 100","Kensington Park","Imperial Court","Kalypso Court","Krescent Homes","Jaypee Greens Sec 128"];
+function openCall(){document.getElementById('callPopup').style.display='flex';}
+function closeCall(){document.getElementById('callPopup').style.display='none';}
+function getP(){let p=new URLSearchParams(location.search);return{brand:p.get('brand'),area:p.get('area')?.replaceAll('-',' ')||null,isHome:!p.get('brand')&&!p.get('area')}}
 function updateCare(){
-let {brand,area,isHome}=getP();
-let care=isHome?"Noida Care":(brand?`${brand} Care`:"Noida Care");
-let title=isHome?`Chimney Service Noida - 30 Min | 90 Day Warranty - ${care}`:`${brand||'Chimney'} Service in ${area} - 30 Min - ${care}`;
-let content=isHome?`Noida Care Since 2015 se Noida me 2847+ homes me chimney service de raha hai. All brands - Elica, Faber, Hindware, Siemens, Kaff, Hafele, Bosch ka expert repair. 30 Min me technician, 90 days warranty, original parts. Suction low, noise high, auto-clean fail sab fix.`:`${brand||'Chimney'} Service in ${area} - ${care} Since 2015 se ${area} society me ${brand||'all brands'} chimney ka expert service. 30 min me ${area} me technician. ${area} me ${brand||'chimney'} motor, PCB, touch repair with 90 days warranty. ${area} ke 500+ homes trusted.`;
-document.title=title;document.getElementById('seoTitle').innerText=title;
-document.getElementById('mainH1').innerHTML=isHome?`Chimney Service<br>Noida`: `${brand||'Chimney'} Service<br>in ${area}`;
-document.querySelectorAll('.careDynamic').forEach(e=>e.innerText=care);
-document.getElementById('dynamicContent200').innerText=content;
-document.getElementById('dynamicTrust').innerText=`⭐ Serving 500+ Homes in ${area} • 4.9/5 • ${care}`;
-document.getElementById('longContent').innerText=content+` ${area} me chimney service har 4 mahine me karwana chahiye. Oil jama hone se motor jam hoti hai. Ham chemical + steam se deep cleaning karte hai. ${area} me same day service. 2000 word SEO content for Top 1 ranking - ${care} ${area} ${brand||'All brands'} chimney service expert.`;
-document.getElementById('gmap').src=`https://maps.google.com/maps?q=${encodeURIComponent(area+' Noida')}&z=14&output=embed`;
-let h="";AREAS.forEach(a=>{let s=a.replaceAll(' ','-');let href=isHome?`?area=${s}`:`?brand=${brand||'Elica'}&area=${s}`;h+=`<a class="pill" href="${href}">${a}</a>`});document.getElementById('areaPills').innerHTML=h;
-}updateCare();
+ let {brand,area,isHome}=getP();
+ let care,h1,title,content;
+ if(isHome){
+  care="Noida Care";
+  h1="Chimney Service Noida";
+  title="Chimney Service Noida - 30 Min Arrival | 90 Day Warranty | All Brands - Noida Care";
+  content="Chimney Service Noida - Noida Care has been providing expert chimney service since 2015 for all brands - Elica, Faber, Hindware, Siemens, Kaff, Hafele, Bosch, Glen. Our certified technician will reach any society in Noida within 30 minutes. We fix low suction, high noise, auto-clean not working, touch panel issue, oil leakage. Trusted by 2847+ homes in Noida with 90 days warranty and original spare parts.";
+ }else{
+  let displayBrand=brand||"Elica";
+  let displayArea=area||"Noida";
+  care=`${displayBrand} Care`;
+  h1=`${displayBrand} Chimney Service in ${displayArea}`;
+  title=`${displayBrand} Chimney Service in ${displayArea} - 30 Min Arrival - 90 Day Warranty - ${care}`;
+  content=`${displayBrand} Chimney Service in ${displayArea} - ${care} has been providing expert chimney service since 2015 in ${displayArea}. Our technician will reach ${displayArea} within 30 minutes. We provide ${displayBrand} motor repair, PCB repair, touch sensor repair, filter cleaning and duct cleaning with 90 days warranty and original spare parts. Trusted by 500+ homes in ${displayArea}.`;
+ }
+ document.title=title;
+ document.getElementById('seoTitle').innerText=title;
+ document.getElementById('seoDesc').setAttribute('content',content.substring(0,155));
+ document.getElementById('mainH1').innerText=h1;
+ document.querySelectorAll('.careDynamic').forEach(e=>e.innerText=care);
+ document.getElementById('dynamicContent200').innerText=content;
+ document.getElementById('dynamicTrust').innerText=isHome?`⭐ Serving 2847+ Homes in Noida • 4.9/5 • ${care}`:`⭐ Serving 500+ Homes in ${area||'Noida'} • 4.9/5 • ${care}`;
+ document.getElementById('longContent').innerText=content+` Regular service is required every 4 months to avoid motor jam. We provide chemical and steam deep cleaning for 100% oil removal in ${area||'Noida'}. Same day service available.`;
+ document.getElementById('gmap').src=`https://maps.google.com/maps?q=${encodeURIComponent((area||'Noida')+' Noida')}&z=14&output=embed`;
+ let h="";AREAS.slice(0,10).forEach(a=>{let s=a.replaceAll(' ','-');let linkBrand=brand||'Elica';h+=`<a class="pill" style="background:#222;color:#fff" href="?brand=${linkBrand}&area=${s}">${a}</a>`});
+ document.getElementById('areaPills').innerHTML=h;
+ let b="";BRANDS.forEach(br=>{AREAS.slice(0,3).forEach(ar=>{let s=ar.replaceAll(' ','-');b+=`<a class="pill" style="background:#fff;color:#000" href="?brand=${br}&area=${s}">${br} Chimney Service in ${ar}</a>`})});
+ document.getElementById('brandAreaPills').innerHTML=b;
+}
+updateCare();
 </script>
 </body>
 </html>
