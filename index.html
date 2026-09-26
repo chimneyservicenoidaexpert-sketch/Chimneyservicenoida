@@ -2,112 +2,164 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Noida Chimney Service Professional | Repair Cleaning Installation | 90-Day Warranty</title>
-<meta name="description" content="Noida's Most Trusted Chimney Experts Since 2015 - Same Day Repair Cleaning Installation. Suction Low Noise Issue AMC. 30 Min Arrival 20 Posh Societies.">
+<title>Noida Chimney Service Professional | Same Day Repair Installation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
-body{background:#f5f7fb;color:#111}
-.card{background:#fff;border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,.06);border:1px solid #eef2f7;cursor:pointer;transition:.2s;padding:16px}
-.card:active{transform:scale(.97)}
-.input{width:100%;padding:13px;border-radius:12px;border:1px solid #ddd;margin-bottom:10px;font-size:14px;outline:none}
-.input:focus{border-color:#0b5fff}
-.sheet{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:flex-end;justify-content:center}
+body{background:#f5f7fb}
+.card{background:#fff;border-radius:22px;box-shadow:0 10px 35px rgba(0,0,0,.07);border:1px solid #eef2f7;cursor:pointer;padding:18px;transition:.2s}
+.card:active{transform:scale(.96)}
+.input{width:100%;padding:14px;border-radius:12px;border:1px solid #ddd;margin-bottom:12px;font-size:14px}
+.sheet{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;align-items:flex-end;justify-content:center}
 .sheet.active{display:flex}
-.sheet-box{background:#fff;border-radius:24px 24px 0 0;width:100%;max-width:600px;max-height:85vh;overflow:auto;animation:slideUp .35s cubic-bezier(.2,.8,.2,1)}
-@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:600px){.grid2{grid-template-columns:1fr 1fr}}
+.sheet-box{background:#fff;border-radius:26px 26px 0 0;width:100%;max-width:650px;max-height:88vh;overflow:auto;animation:up.35s ease}
+@keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lang{padding:6px 12px;border-radius:100px;font-size:11px;font-weight:900;cursor:pointer;border:1px solid #ddd}
+.lang.active{background:#111;color:#fff;border-color:#111}
 </style>
 </head>
 <body>
 
-<div style="background:#0b5fff;color:#fff;padding:14px 16px;text-align:center;font-size:13px;font-weight:900">
-NOIDA CHIMNEY SERVICE PROFESSIONAL • EST. 2015 • 30 MIN ARRIVAL
-</div>
-
-<div style="max-width:1100px;margin:0 auto;padding:14px">
-
-<div style="background:#fff;border-radius:22px;padding:22px;border:1px solid #eef2f7;text-align:center">
-<h1 style="font-size:30px;font-weight:900;line-height:1">Noida Chimney<br><span style="color:#0b5fff">Service Pro</span></h1>
-<p style="font-size:12px;font-weight:600;color:#111;margin-top:10px;line-height:1.5">Noida's Most Trusted Experts Since 2015 - Certified Technicians<br><span style="color:#0b5fff">Same-Day Service with 90-Day Warranty & Genuine Parts</span></p>
-<div style="margin-top:10px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
-<span style="background:#111;color:#fff;padding:5px 10px;border-radius:100px;font-size:9px;font-weight:900">⭐ 4.9/5 (2,847)</span><span style="background:#0b5fff;color:#fff;padding:5px 10px;border-radius:100px;font-size:9px;font-weight:900">90-DAY WARRANTY</span><span style="background:#25d366;color:#fff;padding:5px 10px;border-radius:100px;font-size:9px;font-weight:900">GENUINE PARTS</span>
+<div style="background:#0b5fff;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center">
+<div style="font-size:12px;font-weight:900">NOIDA CHIMNEY SERVICE PROFESSIONAL • EST. 2015</div>
+<div style="display:flex;gap:6px;background:#fff;padding:4px;border-radius:100px">
+<span id="btn-en" class="lang active" onclick="setLang('en')">ENGLISH</span>
+<span id="btn-hi" class="lang" onclick="setLang('hi')">हिन्दी</span>
 </div>
 </div>
 
-<!-- 7 PROFESSIONAL SERVICE CARDS -->
-<div class="grid2" style="margin-top:14px">
+<div style="max-width:1200px;margin:0 auto;padding:16px">
 
-<div class="card" onclick="openSheet('service')" style="border-top:4px solid #0b5fff">
-<div style="font-size:28px">🏭</div><div style="font-weight:900;font-size:13px;margin-top:6px">Chimney Service</div><div style="font-size:10px;color:#666;margin-top:2px">Complete Checkup & Service</div><div style="margin-top:8px;background:#0b5fff;color:#fff;padding:5px;border-radius:100px;font-size:9px;text-align:center;font-weight:900">VIEW DETAILS →</div>
+<!-- HEADER WITH BIG CHIMNEY ICON -->
+<div style="background:#fff;border-radius:28px;padding:32px 24px;border:1px solid #eef2f7;display:flex;align-items:center;gap:20px">
+<div style="width:88px;height:88px;background:linear-gradient(135deg,#0b5fff,#00c2ff);border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:48px;box-shadow:0 12px 30px rgba(11,95,255,.3)">🏭</div>
+<div style="flex:1">
+<h1 style="font-size:38px;font-weight:900;line-height:.9">Noida Chimney<br><span style="color:#0b5fff">Service Pro</span></h1>
+<p id="t-hero" style="font-size:13px;font-weight:700;color:#111;margin-top:10px;line-height:1.5">Noida's Most Trusted Chimney Experts Since 2015 - Certified Technicians<br><span style="color:#0b5fff">Same-Day Service with 90-Day Warranty & Genuine Spare Parts</span></p>
+<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+<span style="background:#111;color:#fff;padding:7px 14px;border-radius:100px;font-size:11px;font-weight:900">⭐ 4.9/5 (2,847)</span>
+<span style="background:#0b5fff;color:#fff;padding:7px 14px;border-radius:100px;font-size:11px;font-weight:900">90-DAY WARRANTY</span>
+<span style="background:#25d366;color:#fff;padding:7px 14px;border-radius:100px;font-size:11px;font-weight:900">GENUINE PARTS</span>
+</div>
+</div>
 </div>
 
-<div class="card" onclick="openSheet('repair')" style="border-top:4px solid #ff385c">
-<div style="font-size:28px">🔧</div><div style="font-weight:900;font-size:13px;margin-top:6px">Chimney Repair</div><div style="font-size:10px;color:#666;margin-top:2px">Motor PCB Touch Repair</div><div style="margin-top:8px;background:#111;color:#fff;padding:5px;border-radius:100px;font-size:9px;text-align:center;font-weight:900">VIEW DETAILS →</div>
+<!-- 7 CARDS -->
+<div class="grid2" style="margin-top:18px">
+
+<div class="card" onclick="openSheet('service')" style="border-top:5px solid #0b5fff">
+<div style="font-size:36px">🏭</div><div id="c-service-t" style="font-weight:900;font-size:16px;margin-top:8px">Chimney Service</div><div id="c-service-d" style="font-size:11px;color:#666;margin-top:3px">Complete Checkup & Service</div><div id="c-service-b" style="margin-top:12px;background:#0b5fff;color:#fff;padding:8px;border-radius:100px;font-size:11px;text-align:center;font-weight:900">VIEW DETAILS →</div>
 </div>
 
-<div class="card" onclick="openSheet('installation')" style="border-top:4px solid #25d366">
-<div style="font-size:28px">⚙️</div><div style="font-weight:900;font-size:13px;margin-top:6px">Chimney Installation</div><div style="font-size:10px;color:#666;margin-top:2px">New Install + Ducting</div><div style="margin-top:8px;background:#25d366;color:#fff;padding:5px;border-radius:100px;font-size:9px;text-align:center;font-weight:900">VIEW DETAILS →</div>
+<div class="card" onclick="openSheet('repair')" style="border-top:5px solid #ff385c">
+<div style="font-size:36px">🔧</div><div id="c-repair-t" style="font-weight:900;font-size:16px;margin-top:8px">Chimney Repair</div><div id="c-repair-d" style="font-size:11px;color:#666;margin-top:3px">Motor PCB Touch Repair</div><div id="c-repair-b" style="margin-top:12px;background:#111;color:#fff;padding:8px;border-radius:100px;font-size:11px;text-align:center;font-weight:900">VIEW DETAILS →</div>
 </div>
 
-<div class="card" onclick="openSheet('noise')" style="border-top:4px solid #ff8c00">
-<div style="font-size:28px">🔊</div><div style="font-weight:900;font-size:13px;margin-top:6px">Chimney Noise</div><div style="font-size:10px;color:#666;margin-top:2px">Awaz / Vibration Fix</div><div style="margin-top:8px;background:#ff8c00;color:#fff;padding:5px;border-radius:100px;font-size:9px;text-align:center;font-weight:900">VIEW DETAILS →</div>
+<div class="card" onclick="openSheet('installation')" style="border-top:5px solid #25d366">
+<div style="font-size:36px">⚙️</div><div id="c-install-t" style="font-weight:900;font-size:16px;margin-top:8px">Chimney Installation</div><div id="c-install-d" style="font-size:11px;color:#666;margin-top:3px">New Install + Ducting</div><div id="c-install-b" style="margin-top:12px;background:#25d366;color:#fff;padding:8px;border-radius:100px;font-size:11px;text-align:center;font-weight:900">VIEW DETAILS →</div>
 </div>
 
-<div class="card" onclick="openSheet('suction')" style="border-top:4px solid #7c3aed">
-<div style="font-size:28px">💨</div><div style="font-weight:900;font-size:13px;margin-top:6px">Suction Low</div><div style="font-size:10px;color:#666;margin-top:2px">Suction Kam / No Suction</div><div style="margin-top:8px;background:#7c3aed;color:#fff;padding:5px;border-radius:100px;font-size:9px;text-align:center;font-weight:900">VIEW DETAILS →</div>
+<div class="card" onclick="openSheet('noise')" style="border-top:5px solid #ff8c00">
+<div style="font-size:36px">🔊</div><div id="c-noise-t" style="font-weight:900;font-size:16px;margin-top:8px">Chimney Noise Fix</div><div id="c-noise-d" style="font-size:11px;color:#666;margin-top:3px">Sound / Vibration Fix</div><div id="c-noise-b" style="margin-top:12px;background:#ff8c00;color:#fff;padding:8px;border-radius:100px;font-size:11px;text-align:center;font-weight:900">VIEW DETAILS →</div>
 </div>
 
-<div class="card" onclick="openSheet('amc')" style="border-top:4px solid #0b5fff">
-<div style="font-size:28px">📋</div><div style="font-weight:900;font-size:13px;margin-top:6px">Chimney AMC</div><div style="font-size:10px;color:#666;margin-top:2px">Yearly AMC Plan</div><div style="margin-top:8px;background:#0b5fff;color:#fff;padding:5px;border-radius:100px;font-size:9px;text-align:center;font-weight:900">VIEW DETAILS →</div>
+<div class="card" onclick="openSheet('suction')" style="border-top:5px solid #7c3aed">
+<div style="font-size:36px">💨</div><div id="c-suction-t" style="font-weight:900;font-size:16px;margin-top:8px">Suction Low Fix</div><div id="c-suction-d" style="font-size:11px;color:#666;margin-top:3px">Low Suction / No Suction</div><div id="c-suction-b" style="margin-top:12px;background:#7c3aed;color:#fff;padding:8px;border-radius:100px;font-size:11px;text-align:center;font-weight:900">VIEW DETAILS →</div>
 </div>
 
-<div class="card" onclick="openSheet('4month')" style="border-top:4px solid #111;grid-column: span 2">
-<div style="display:flex;align-items:center;gap:12px"><div style="font-size:32px">⏰</div><div><div style="font-weight:900;font-size:14px">4 Mahine Me Service Karvani Hai</div><div style="font-size:10px;color:#666">Quarterly Deep Service - Best for Posh Homes</div></div><div style="margin-left:auto;background:#111;color:#fff;padding:6px 10px;border-radius:100px;font-size:10px;font-weight:900">MOST POPULAR</div></div>
+<div class="card" onclick="openSheet('amc')" style="border-top:5px solid #0b5fff">
+<div style="font-size:36px">📋</div><div id="c-amc-t" style="font-weight:900;font-size:16px;margin-top:8px">Chimney AMC</div><div id="c-amc-d" style="font-size:11px;color:#666;margin-top:3px">Yearly AMC Plan</div><div id="c-amc-b" style="margin-top:12px;background:#0b5fff;color:#fff;padding:8px;border-radius:100px;font-size:11px;text-align:center;font-weight:900">VIEW DETAILS →</div>
+</div>
+
+<div class="card" onclick="openSheet('4month')" style="border-top:5px solid #111;grid-column:span 2;display:flex;align-items:center;gap:14px">
+<div style="font-size:40px">⏰</div><div style="flex:1"><div id="c-4m-t" style="font-weight:900;font-size:16px">Quarterly Service - Every 4 Months</div><div id="c-4m-d" style="font-size:11px;color:#666;margin-top:2px">Deep Service for Luxury Homes - Best Performance</div></div><div id="c-4m-b" style="background:#111;color:#fff;padding:8px 14px;border-radius:100px;font-size:10px;font-weight:900">MOST POPULAR</div>
 </div>
 
 </div>
 
-<!-- GOOGLE MAP -->
-<div style="margin-top:16px;background:#fff;border-radius:18px;overflow:hidden;border:1px solid #eef2f7">
-<div style="padding:14px"><h3 style="font-size:13px;font-weight:900">📍 WE SERVE 20 POSH AREAS - NOIDA</h3><p style="font-size:10px;color:#666;margin-top:4px">Jaypee Greens • Lotus Blvd 100 • Supernova 94 • Mahagun Moderne 78 • Wish Town 128 • Sec 150 • The 3C • Sec 50 • Kosmos 44 • Mezzaria 79</p></div>
-<iframe src="https://maps.google.com/maps?q=Noida%20Sector%20100&t=&z=11&ie=UTF8&iwloc=&output=embed" width="100%" height="220" style="border:0"></iframe>
+<div style="margin-top:20px;background:#fff;border-radius:22px;overflow:hidden;border:1px solid #eef2f7">
+<div style="padding:18px"><h3 id="t-map" style="font-size:14px;font-weight:900">📍 WE SERVE 20 LUXURY TOWNSHIPS IN NOIDA</h3><p style="font-size:11px;color:#666;margin-top:6px">Jaypee Greens • Lotus Boulevard Sec 100 • Supernova Sec 94 • Mahagun Moderne Sec 78 • Wish Town Sec 128 • Sector 150 & More</p></div>
+<iframe src="https://maps.google.com/maps?q=Noida%20Sector%20100%20Lotus%20Boulevard&t=&z=11&ie=UTF8&iwloc=&output=embed" width="100%" height="260" style="border:0"></iframe>
 </div>
 
-<!-- INDEPENDENT SERVICE DISCLAIMER -->
-<div style="margin-top:14px;background:#fff8e6;border:1px solid #ffe6a8;border-radius:16px;padding:14px">
-<h3 style="font-size:11px;font-weight:900;letter-spacing:1px">⚠️ WE ARE INDEPENDENT SERVICE PROVIDER</h3>
-<p style="font-size:10px;color:#666;margin-top:6px;line-height:1.5">We are an independent chimney service provider in Noida. We are not authorized service center of Hafele, Siemens, Bosch, Faber, Kaff, Elica, Glen. All brands, logos are property of respective owners. We provide expert repair, cleaning, installation with genuine parts and 90-day warranty for customers in 20 luxury townships since 2015.</p>
+<div style="margin-top:16px;background:#fff8e6;border:1px solid #ffe6a8;border-radius:18px;padding:16px">
+<h3 id="t-disc-t" style="font-size:11px;font-weight:900">⚠️ WE ARE INDEPENDENT SERVICE PROVIDER</h3>
+<p id="t-disc-d" style="font-size:11px;color:#555;margin-top:6px;line-height:1.6">We are an independent chimney service provider in Noida. We are NOT an authorized service center. All brand names are property of their respective owners. We provide expert repair with genuine parts and 90-day warranty. Serving since 2015.</p>
 </div>
 
-<div style="height:90px"></div>
+<div style="height:95px"></div>
 </div>
 
-<!-- SLIDE UP SHEETS -->
-<div id="sheet-service" class="sheet" onclick="closeSheet('service')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:20px"><div style="width:40px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 14px"></div><h2 style="font-weight:900;font-size:18px">🏭 Chimney Service - Complete Checkup</h2><p style="font-size:12px;color:#444;margin-top:10px;line-height:1.7">Aapki chimney ka full checkup kiya jayega. Motor speed, PCB working, touch panel, filter condition, oil level, suction test sab check. Agar 4 mahine se service nahi hui to suction kam ho jata hai, awaz aati hai. Hamari professional service se chimney new jaisi ho jayegi.</p><ul style="font-size:12px;margin-top:12px;line-height:2;padding-left:18px"><li>Full 21 Point Checkup</li><li>Suction Power Test</li><li>Oil & Grease Analysis</li><li>Same Day Service</li></ul><a onclick="openBookForm()" style="display:block;background:#0b5fff;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:900;margin-top:16px;cursor:pointer">BOOK CHIMNEY SERVICE NOW</a><div style="text-align:center;margin-top:10px"><span onclick="closeSheet('service')" style="font-size:12px;color:#888;cursor:pointer">Close</span></div></div></div></div>
+<!-- SHEETS -->
+<div id="sheet-service" class="sheet" onclick="closeSheet('service')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:24px"><div style="width:44px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 16px"></div><h2 id="s-service-t" style="font-weight:900;font-size:22px">🏭 Chimney Service</h2><p id="s-service-d" style="font-size:13px;color:#333;margin-top:12px;line-height:1.8">Professional 21-point inspection. We check motor, PCB, touch, filter, oil, suction test.</p><a id="s-service-b" onclick="openBookForm()" style="display:block;background:#0b5fff;color:#fff;text-align:center;padding:16px;border-radius:14px;font-weight:900;margin-top:18px;cursor:pointer">BOOK SERVICE NOW</a><div style="text-align:center;margin-top:12px"><span onclick="closeSheet('service')" style="font-size:13px;color:#888;cursor:pointer">Close</span></div></div></div></div>
 
-<div id="sheet-repair" class="sheet" onclick="closeSheet('repair')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:20px"><div style="width:40px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 14px"></div><h2 style="font-weight:900">🔧 Chimney Repair</h2><p style="font-size:12px;color:#444;margin-top:10px;line-height:1.7">Motor jal gaya? PCB kharab? Touch kaam nahi kar raha? Suction low hai? Hamare expert technician original parts ke saath repair karenge. Hafele Siemens Bosch Faber Kaff Elica Glen sab brands ka repair 90 days warranty ke saath.</p><ul style="font-size:12px;margin-top:12px;line-height:2;padding-left:18px"><li>Motor Repair / Replace</li><li>PCB & Touch Panel Repair</li><li>Suction Motor Repair</li><li>Auto Clean Not Working Fix</li></ul><a onclick="openBookForm()" style="display:block;background:#111;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:900;margin-top:16px;cursor:pointer">BOOK REPAIR NOW</a><div style="text-align:center;margin-top:10px"><span onclick="closeSheet('repair')" style="font-size:12px;color:#888">Close</span></div></div></div></div>
+<div id="sheet-repair" class="sheet" onclick="closeSheet('repair')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:24px"><div style="width:44px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 16px"></div><h2 id="s-repair-t" style="font-weight:900;font-size:22px">🔧 Chimney Repair</h2><p id="s-repair-d" style="font-size:13px;color:#333;margin-top:12px;line-height:1.8">Motor burned? PCB faulty? Touch not working? Suction low? We repair with genuine parts. 90-day warranty.</p><a id="s-repair-b" onclick="openBookForm()" style="display:block;background:#111;color:#fff;text-align:center;padding:16px;border-radius:14px;font-weight:900;margin-top:18px;cursor:pointer">BOOK REPAIR NOW</a><div style="text-align:center;margin-top:12px"><span onclick="closeSheet('repair')" style="font-size:13px;color:#888">Close</span></div></div></div></div>
 
-<div id="sheet-installation" class="sheet" onclick="closeSheet('installation')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:20px"><div style="width:40px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 14px"></div><h2 style="font-weight:900">⚙️ Chimney Installation</h2><p style="font-size:12px;color:#444;margin-top:10px;line-height:1.7">Nayi chimney lagwani hai? Ya purani shift karni hai? Perfect alignment, ducting, core cutting sab expert fitting. Modular kitchen ke hisab se height setting aur airflow test ke saath.</p><a onclick="openBookForm()" style="display:block;background:#25d366;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:900;margin-top:16px;cursor:pointer">BOOK INSTALLATION NOW</a><div style="text-align:center;margin-top:10px"><span onclick="closeSheet('installation')" style="font-size:12px;color:#888">Close</span></div></div></div></div>
+<div id="sheet-installation" class="sheet" onclick="closeSheet('installation')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:24px"><h2 id="s-install-t" style="font-weight:900;font-size:22px">⚙️ Installation</h2><p id="s-install-d" style="font-size:13px;color:#333;margin-top:12px">New installation, ducting, core cutting, shifting - same day expert fitting.</p><a id="s-install-b" onclick="openBookForm()" style="display:block;background:#25d366;color:#fff;text-align:center;padding:16px;border-radius:14px;font-weight:900;margin-top:18px;cursor:pointer">BOOK INSTALLATION NOW</a><div style="text-align:center;margin-top:12px"><span onclick="closeSheet('installation')" style="font-size:13px;color:#888">Close</span></div></div></div></div>
 
-<div id="sheet-noise" class="sheet" onclick="closeSheet('noise')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:20px"><div style="width:40px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 14px"></div><h2 style="font-weight:900">🔊 Chimney Noise Issue</h2><p style="font-size:12px;color:#444;margin-top:10px;line-height:1.7">Chimney me se awaz / khar-khar / vibration aa rahi hai? Ye motor me oil jam hone ya fan unbalanced hone se hota hai. Ham 30 min me awaz band kar denge, bina extra charge ke check karke.</p><a onclick="openBookForm()" style="display:block;background:#ff8c00;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:900;margin-top:16px;cursor:pointer">BOOK NOISE FIX NOW</a><div style="text-align:center;margin-top:10px"><span onclick="closeSheet('noise')" style="font-size:12px;color:#888">Close</span></div></div></div></div>
+<div id="sheet-noise" class="sheet" onclick="closeSheet('noise')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:24px"><h2 id="s-noise-t" style="font-weight:900;font-size:22px">🔊 Noise Fix</h2><p id="s-noise-d" style="font-size:13px;color:#333;margin-top:12px">Loud noise or vibration? Oil jam or unbalanced fan. Fixed in 30 min.</p><a id="s-noise-b" onclick="openBookForm()" style="display:block;background:#ff8c00;color:#fff;text-align:center;padding:16px;border-radius:14px;font-weight:900;margin-top:18px;cursor:pointer">BOOK NOISE FIX NOW</a><div style="text-align:center;margin-top:12px"><span onclick="closeSheet('noise')" style="font-size:13px;color:#888">Close</span></div></div></div></div>
 
-<div id="sheet-suction" class="sheet" onclick="closeSheet('suction')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:20px"><div style="width:40px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 14px"></div><h2 style="font-weight:900">💨 Suction Low Problem</h2><p style="font-size:12px;color:#444;margin-top:10px;line-height:1.7">Dhuaa upar nahi ja raha? Suction kam lag raha hai? Filter me oil jam hai, motor slow hai, duct block hai. Deep cleaning + motor speed check se 100% suction wapas. 2847+ homes ka trusted solution.</p><a onclick="openBookForm()" style="display:block;background:#7c3aed;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:900;margin-top:16px;cursor:pointer">BOOK SUCTION FIX NOW</a><div style="text-align:center;margin-top:10px"><span onclick="closeSheet('suction')" style="font-size:12px;color:#888">Close</span></div></div></div></div>
+<div id="sheet-suction" class="sheet" onclick="closeSheet('suction')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:24px"><h2 id="s-suction-t" style="font-weight:900;font-size:22px">💨 Suction Low Fix</h2><p id="s-suction-d" style="font-size:13px;color:#333;margin-top:12px">Smoke not going up? Filter jammed, motor slow, duct blocked. 100% suction restored.</p><a id="s-suction-b" onclick="openBookForm()" style="display:block;background:#7c3aed;color:#fff;text-align:center;padding:16px;border-radius:14px;font-weight:900;margin-top:18px;cursor:pointer">BOOK SUCTION FIX NOW</a><div style="text-align:center;margin-top:12px"><span onclick="closeSheet('suction')" style="font-size:13px;color:#888">Close</span></div></div></div></div>
 
-<div id="sheet-amc" class="sheet" onclick="closeSheet('amc')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:20px"><div style="width:40px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 14px"></div><h2 style="font-weight:900">📋 Chimney AMC Plan</h2><p style="font-size:12px;color:#444;margin-top:10px;line-height:1.7">Saal bhar tension free raho! Hamare AMC plan me 3 service + 1 free repair + priority support. Posh societies ke liye best plan. 1 saal tak koi charge nahi, sab cover.</p><ul style="font-size:12px;margin-top:10px;line-height:2;padding-left:18px"><li>3 Deep Services / Year</li><li>1 Free Repair Covered</li><li>30 Min Priority Arrival</li><li>20% Off on Parts</li></ul><a onclick="openBookForm()" style="display:block;background:#0b5fff;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:900;margin-top:16px;cursor:pointer">BOOK AMC NOW</a><div style="text-align:center;margin-top:10px"><span onclick="closeSheet('amc')" style="font-size:12px;color:#888">Close</span></div></div></div></div>
+<div id="sheet-amc" class="sheet" onclick="closeSheet('amc')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:24px"><h2 id="s-amc-t" style="font-weight:900;font-size:22px">📋 AMC Plan</h2><p id="s-amc-d" style="font-size:13px;color:#333;margin-top:12px">3 Services + 1 Free Repair + Priority Support + 20% off on parts - Full year tension free.</p><a id="s-amc-b" onclick="openBookForm()" style="display:block;background:#0b5fff;color:#fff;text-align:center;padding:16px;border-radius:14px;font-weight:900;margin-top:18px;cursor:pointer">BOOK AMC NOW</a><div style="text-align:center;margin-top:12px"><span onclick="closeSheet('amc')" style="font-size:13px;color:#888">Close</span></div></div></div></div>
 
-<div id="sheet-4month" class="sheet" onclick="closeSheet('4month')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:20px"><div style="width:40px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 14px"></div><h2 style="font-weight:900">⏰ 4 Mahine Me Service Karvani Hai</h2><p style="font-size:12px;color:#444;margin-top:10px;line-height:1.7">Expert Recommendation: Har 4 mahine me chimney service karvana zaroori hai. Isse motor life 3x badhti hai, suction hamesha high rehta hai, bijli kam khata hai aur kitchen me oil nahi chipakta. Luxury homes me yehi routine hai. Ham reminder bhi bhejenge!</p><a onclick="openBookForm()" style="display:block;background:#111;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:900;margin-top:16px;cursor:pointer">BOOK 4 MONTH SERVICE NOW - MOST POPULAR</a><div style="text-align:center;margin-top:10px"><span onclick="closeSheet('4month')" style="font-size:12px;color:#888">Close</span></div></div></div></div>
+<div id="sheet-4month" class="sheet" onclick="closeSheet('4month')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:24px"><h2 id="s-4m-t" style="font-weight:900;font-size:22px">⏰ Quarterly Service</h2><p id="s-4m-d" style="font-size:13px;color:#333;margin-top:12px">Every 4 months service is must. Motor life 3x, suction high, power saving, no oil in kitchen.</p><a id="s-4m-b" onclick="openBookForm()" style="display:block;background:#111;color:#fff;text-align:center;padding:16px;border-radius:14px;font-weight:900;margin-top:18px;cursor:pointer">BOOK QUARTERLY SERVICE</a><div style="text-align:center;margin-top:12px"><span onclick="closeSheet('4month')" style="font-size:13px;color:#888">Close</span></div></div></div></div>
 
-<!-- PROFESSIONAL BOOK FORM -->
-<div id="sheet-book" class="sheet" onclick="closeSheet('book')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:22px"><div style="width:40px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 14px"></div><h2 style="font-weight:900;font-size:20px">📋 Book Professional Service</h2><p style="font-size:11px;color:#666;margin:6px 0 14px">Noida's Most Trusted Since 2015 • 30 Min Arrival • 90 Days Warranty</p><input id="bname" class="input" placeholder="Your Full Name *"><input id="bphone" class="input" placeholder="Mobile Number * - 10 Digit" type="tel"><select id="barea" class="input"><option>Select Your Posh Area *</option><option>Jaypee Greens</option><option>Lotus Boulevard Sec 100</option><option>Supernova Sec 94</option><option>Mahagun Moderne Sec 78</option><option>Wish Town Sec 128</option><option>Sector 150</option><option>The 3C Sec 93B</option><option>Sector 50</option><option>Kosmos Sec 44</option><option>Mezzaria Sec 79</option><option>Wisteria Sec 61</option><option>Tierea Sec 137</option><option>Pavilion Heights Sec 168</option><option>Other Noida Area</option></select><select id="bservice" class="input"><option>Select Issue / Service *</option><option>Chimney Service - Full Checkup</option><option>Chimney Repair</option><option>Chimney Installation</option><option>Chimney Noise Issue</option><option>Chimney Suction Low</option><option>Chimney AMC Plan</option><option>4 Mahine Me Service</option></select><textarea id="bissue" class="input" placeholder="Apki Chimney Me Kya Issue Hai? (Optional)" style="height:70px"></textarea><a onclick="bookNow()" style="display:block;background:#0b5fff;color:#fff;text-align:center;padding:15px;border-radius:12px;font-weight:900;cursor:pointer">CONFIRM BOOKING - GET CALL IN 5 MIN</a><p style="font-size:10px;color:#888;text-align:center;margin-top:10px">✅ No Price in Ad - Honest Quote at Home After Check<br>✅ Our Expert will Call Within 5 Minutes</p></div></div></div>
+<!-- BOOK FORM -->
+<div id="sheet-book" class="sheet" onclick="closeSheet('book')"><div class="sheet-box" onclick="event.stopPropagation()"><div style="padding:26px"><div style="width:44px;height:5px;background:#ddd;border-radius:100px;margin:0 auto 16px"></div><h2 id="b-form-t" style="font-weight:900;font-size:22px">📋 Book Professional Service</h2><p id="b-form-d" style="font-size:12px;color:#666;margin:8px 0 16px">Trusted Since 2015 • 30 Min Arrival • 90 Days Warranty</p><input id="bname" class="input" placeholder="Full Name *"><input id="bphone" class="input" placeholder="Mobile Number * - 10 Digit" type="tel"><select id="barea" class="input"><option>Select Area *</option><option>Jaypee Greens</option><option>Lotus Blvd Sec 100</option><option>Supernova Sec 94</option><option>Mahagun Moderne Sec 78</option><option>Wish Town Sec 128</option><option>Sector 150</option><option>The 3C</option><option>Sector 50</option><option>Other</option></select><select id="bservice" class="input"><option>Select Service *</option><option>Chimney Service</option><option>Chimney Repair</option><option>Chimney Installation</option><option>Noise Fix</option><option>Suction Low</option><option>AMC Plan</option><option>Quarterly Service</option></select><a id="b-form-b" onclick="bookNow()" style="display:block;background:#0b5fff;color:#fff;text-align:center;padding:16px;border-radius:14px;font-weight:900;cursor:pointer">CONFIRM BOOKING - CALL IN 5 MIN</a></div></div></div>
 
-<!-- BOTTOM BUTTONS - NO NUMBER -->
-<div style="position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #eee;padding:12px;display:flex;gap:10px;max-width:600px;margin:0 auto;z-index:1000">
-<a href="tel:8796284796" style="flex:1;background:#0b5fff;color:#fff;text-align:center;padding:14px;border-radius:100px;font-weight:900;text-decoration:none;font-size:14px">📞 CALL NOW</a>
-<a onclick="openBookForm()" style="flex:1;background:#111;color:#fff;text-align:center;padding:14px;border-radius:100px;font-weight:900;cursor:pointer;font-size:14px">BOOK NOW</a>
+<div style="position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #eee;padding:14px;display:flex;gap:12px;max-width:650px;margin:0 auto;z-index:1000">
+<a id="btn-call" href="tel:8796284796" style="flex:1;background:#0b5fff;color:#fff;text-align:center;padding:15px;border-radius:100px;font-weight:900;text-decoration:none;font-size:15px">📞 CALL NOW</a>
+<a id="btn-book" onclick="openBookForm()" style="flex:1;background:#111;color:#fff;text-align:center;padding:15px;border-radius:100px;font-weight:900;cursor:pointer;font-size:15px">BOOK NOW</a>
 </div>
 
 <script>
+const L={
+en:{
+hero:`Noida's Most Trusted Chimney Experts Since 2015 - Certified Technicians<br><span style="color:#0b5fff">Same-Day Service with 90-Day Warranty & Genuine Spare Parts</span>`,
+cards:{service:["Chimney Service","Complete Checkup & Service","VIEW DETAILS →"],repair:["Chimney Repair","Motor PCB Touch Repair","VIEW DETAILS →"],install:["Chimney Installation","New Install + Ducting","VIEW DETAILS →"],noise:["Chimney Noise Fix","Sound / Vibration Fix","VIEW DETAILS →"],suction:["Suction Low Fix","Low Suction / No Suction","VIEW DETAILS →"],amc:["Chimney AMC","Yearly AMC Plan","VIEW DETAILS →"],fourM:["Quarterly Service - Every 4 Months","Deep Service for Luxury Homes - Best Performance","MOST POPULAR"]},
+sheets:{service:["🏭 Chimney Service","Professional 21-point inspection. We check motor, PCB, touch, filter, oil, suction test. Restores to like-new.","BOOK SERVICE NOW"],repair:["🔧 Chimney Repair","Motor burned? PCB faulty? Touch not working? Suction low? We repair with genuine parts. 90-day warranty.","BOOK REPAIR NOW"],install:["⚙️ Chimney Installation","New installation, ducting, core cutting, shifting - same day expert fitting with airflow test.","BOOK INSTALLATION NOW"],noise:["🔊 Chimney Noise Fix","Loud noise or vibration? Oil jam or unbalanced fan. Fixed in 30 minutes.","BOOK NOISE FIX NOW"],suction:["💨 Suction Low Fix","Smoke not going up? Filter jammed, motor slow, duct blocked. 100% suction restored.","BOOK SUCTION FIX NOW"],amc:["📋 Chimney AMC Plan","3 Services + 1 Free Repair + Priority Support + 20% off on parts - Full year tension free.","BOOK AMC NOW"],fourM:["⏰ Quarterly Service - Every 4 Months","Every 4 months service is must. Motor life 3x, suction high, power saving, no oil in kitchen. We send reminder!","BOOK QUARTERLY SERVICE"]},
+map:"📍 WE SERVE 20 LUXURY TOWNSHIPS IN NOIDA",
+discT:"⚠️ WE ARE INDEPENDENT SERVICE PROVIDER",
+discD:"We are an independent chimney service provider in Noida. We are NOT an authorized service center. All brand names are property of their respective owners. We provide expert repair with genuine parts and 90-day warranty. Serving since 2015.",
+bookT:"📋 Book Professional Service",bookD:"Trusted Since 2015 • 30 Min Arrival • 90 Days Warranty",bookB:"CONFIRM BOOKING - CALL IN 5 MIN",call:"📞 CALL NOW",book:"BOOK NOW"
+},
+hi:{
+hero:`नोएडा के सबसे भरोसेमंद चिमनी एक्सपर्ट 2015 से - सर्टिफाइड टेक्नीशियन<br><span style="color:#0b5fff">सेम-डे सर्विस 90-दिन वारंटी और असली पार्ट्स के साथ</span>`,
+cards:{service:["चिमनी सर्विस","पूरा चेकअप और सर्विस","डिटेल देखें →"],repair:["चिमनी रिपेयर","मोटर PCB टच रिपेयर","डिटेल देखें →"],install:["चिमनी इंस्टालेशन","नया इंस्टाल + डक्टिंग","डिटेल देखें →"],noise:["चिमनी आवाज ठीक","आवाज / वाइब्रेशन ठीक","डिटेल देखें →"],suction:["सक्शन कम ठीक","सक्शन कम / सक्शन नहीं","डिटेल देखें →"],amc:["चिमनी AMC","सालाना AMC प्लान","डिटेल देखें →"],fourM:["हर 4 महीने में सर्विस","लग्जरी घरों के लिए डीप सर्विस - सबसे बेस्ट","सबसे ज्यादा पॉपुलर"]},
+sheets:{service:["🏭 चिमनी सर्विस","प्रोफेशनल 21-पॉइंट चेकअप। मोटर, PCB, टच, फिल्टर, ऑयल, सक्शन टेस्ट। नई जैसी हो जाएगी।","सर्विस बुक करें"],repair:["🔧 चिमनी रिपेयर","मोटर जल गया? PCB खराब? टच काम नहीं कर रहा? सक्शन कम? असली पार्ट्स से रिपेयर, 90 दिन वारंटी।","रिपेयर बुक करें"],install:["⚙️ चिमनी इंस्टालेशन","नई चिमनी लगवानी है या शिफ्ट करनी है? परफेक्ट अलाइनमेंट, डक्टिंग, कोर कटिंग - सेम डे फिटिंग।","इंस्टालेशन बुक करें"],noise:["🔊 चिमनी आवाज ठीक","तेज आवाज या वाइब्रेशन? ऑयल जाम या फैन अनबैलेंस। 30 मिनट में ठीक।","आवाज ठीक करवाएं"],suction:["💨 सक्शन कम ठीक","धुआं ऊपर नहीं जा रहा? फिल्टर जाम, मोटर स्लो, डक्ट ब्लॉक। 100% सक्शन वापस।","सक्शन ठीक करवाएं"],amc:["📋 चिमनी AMC प्लान","3 सर्विस + 1 फ्री रिपेयर + प्रायोरिटी सपोर्ट + 20% छूट - पूरा साल टेंशन फ्री।","AMC बुक करें"],fourM:["⏰ हर 4 महीने में सर्विस","हर 4 महीने में सर्विस जरूरी है। मोटर लाइफ 3x, सक्शन हाई, बिजली बचत, किचन में ऑयल नहीं। हम रिमाइंडर भेजेंगे!","तिमाही सर्विस बुक करें"]},
+map:"📍 हम नोएडा की 20 पॉश सोसाइटी में सर्विस देते हैं",
+discT:"⚠️ हम इंडिपेंडेंट सर्विस प्रोवाइडर हैं",
+discD:"हम नोएडा में इंडिपेंडेंट चिमनी सर्विस प्रोवाइडर हैं। हम अधिकृत सर्विस सेंटर नहीं हैं। सभी ब्रांड नाम उनके मालिकों की संपत्ति हैं। हम असली पार्ट्स और 90-दिन वारंटी के साथ एक्सपर्ट रिपेयर देते हैं। 2015 से सेवा में।",
+bookT:"📋 प्रोफेशनल सर्विस बुक करें",bookD:"2015 से भरोसेमंद • 30 मिनट में आगमन • 90 दिन वारंटी",bookB:"बुकिंग कन्फर्म करें - 5 मिनट में कॉल",call:"📞 अभी कॉल करें",book:"बुक करें"
+}
+};
+let cur='en';
+function setLang(l){
+cur=l;
+document.getElementById('btn-en').classList.toggle('active',l==='en');
+document.getElementById('btn-hi').classList.toggle('active',l==='hi');
+const d=L[l];
+document.getElementById('t-hero').innerHTML=d.hero;
+document.getElementById('c-service-t').innerText=d.cards.service[0];document.getElementById('c-service-d').innerText=d.cards.service[1];document.getElementById('c-service-b').innerText=d.cards.service[2];
+document.getElementById('c-repair-t').innerText=d.cards.repair[0];document.getElementById('c-repair-d').innerText=d.cards.repair[1];document.getElementById('c-repair-b').innerText=d.cards.repair[2];
+document.getElementById('c-install-t').innerText=d.cards.install[0];document.getElementById('c-install-d').innerText=d.cards.install[1];document.getElementById('c-install-b').innerText=d.cards.install[2];
+document.getElementById('c-noise-t').innerText=d.cards.noise[0];document.getElementById('c-noise-d').innerText=d.cards.noise[1];document.getElementById('c-noise-b').innerText=d.cards.noise[2];
+document.getElementById('c-suction-t').innerText=d.cards.suction[0];document.getElementById('c-suction-d').innerText=d.cards.suction[1];document.getElementById('c-suction-b').innerText=d.cards.suction[2];
+document.getElementById('c-amc-t').innerText=d.cards.amc[0];document.getElementById('c-amc-d').innerText=d.cards.amc[1];document.getElementById('c-amc-b').innerText=d.cards.amc[2];
+document.getElementById('c-4m-t').innerText=d.cards.fourM[0];document.getElementById('c-4m-d').innerText=d.cards.fourM[1];document.getElementById('c-4m-b').innerText=d.cards.fourM[2];
+document.getElementById('s-service-t').innerText=d.sheets.service[0];document.getElementById('s-service-d').innerText=d.sheets.service[1];document.getElementById('s-service-b').innerText=d.sheets.service[2];
+document.getElementById('s-repair-t').innerText=d.sheets.repair[0];document.getElementById('s-repair-d').innerText=d.sheets.repair[1];document.getElementById('s-repair-b').innerText=d.sheets.repair[2];
+document.getElementById('s-install-t').innerText=d.sheets.install[0];document.getElementById('s-install-d').innerText=d.sheets.install[1];document.getElementById('s-install-b').innerText=d.sheets.install[2];
+document.getElementById('s-noise-t').innerText=d.sheets.noise[0];document.getElementById('s-noise-d').innerText=d.sheets.noise[1];document.getElementById('s-noise-b').innerText=d.sheets.noise[2];
+document.getElementById('s-suction-t').innerText=d.sheets.suction[0];document.getElementById('s-suction-d').innerText=d.sheets.suction[1];document.getElementById('s-suction-b').innerText=d.sheets.suction[2];
+document.getElementById('s-amc-t').innerText=d.sheets.amc[0];document.getElementById('s-amc-d').innerText=d.sheets.amc[1];document.getElementById('s-amc-b').innerText=d.sheets.amc[2];
+document.getElementById('s-4m-t').innerText=d.sheets.fourM[0];document.getElementById('s-4m-d').innerText=d.sheets.fourM[1];document.getElementById('s-4m-b').innerText=d.sheets.fourM[2];
+document.getElementById('t-map').innerText=d.map;
+document.getElementById('t-disc-t').innerText=d.discT;document.getElementById('t-disc-d').innerText=d.discD;
+document.getElementById('b-form-t').innerText=d.bookT;document.getElementById('b-form-d').innerText=d.bookD;document.getElementById('b-form-b').innerText=d.bookB;
+document.getElementById('btn-call').innerText=d.call;document.getElementById('btn-book').innerText=d.book;
+}
 function openSheet(id){document.getElementById('sheet-'+id).classList.add('active')}
 function closeSheet(id){document.getElementById('sheet-'+id).classList.remove('active')}
 function openBookForm(){document.querySelectorAll('.sheet').forEach(s=>s.classList.remove('active'));document.getElementById('sheet-book').classList.add('active')}
@@ -116,17 +168,15 @@ let n=document.getElementById('bname').value||'Customer';
 let p=document.getElementById('bphone').value||'';
 let a=document.getElementById('barea').value;
 let s=document.getElementById('bservice').value;
-let iss=document.getElementById('bissue').value||'';
-if(p.length<10){alert('Please enter 10 digit mobile number');return;}
-let msg=`NEW BOOKING - Noida Chimney Service Pro:\nService: ${s}\nName: ${n}\nPhone: ${p}\nArea: ${a}\nIssue: ${iss}\nPlease call in 5 min.`;
+if(p.length<10){alert(cur==='hi'?'10 अंक का मोबाइल नंबर डालें':'Please enter 10 digit mobile number');return;}
+let msg=`NEW BOOKING (${cur}): ${s}, Name: ${n}, Phone: ${p}, Area: ${a}`;
 window.open(`https://wa.me/918796284796?text=${encodeURIComponent(msg)}`,'_blank');
 closeSheet('book');
 }
 </script>
 
-<!-- SEO KEYWORDS HIDDEN - GOOGLE NO.1 -->
 <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
-chimney service noida chimney repair noida chimney installation noida chimney noise issue noida chimney suction low noida chimney amc noida chimney service every 4 months noida Hafele chimney service Noida Siemens chimney service Noida Bosch chimney service Noida Faber chimney service Noida Kaff chimney service Noida Elica chimney service Noida Glen chimney service Noida chimney service Jaypee Greens chimney service Lotus Boulevard Sector 100 chimney service Supernova Sector 94 chimney service Mahagun Moderne Sector 78 chimney service Wish Town Sector 128 chimney service Sector 150 chimney service The 3C Sector 93B chimney service Sector 50 chimney service Kosmos Sector 44 chimney service Mezzaria Sector 79 chimney service Wisteria Sector 61 chimney service Tierea Sector 137 chimney service Pavilion Heights Sector 168 chimney service Urban Sector 75 chimney service Cape Town Sector 74 chimney service Silicon City Sector 76 chimney repair Noida chimney cleaning Noida chimney installation Noida chimney AMC Noida 8796284796 independent chimney service Noida
+Hafele Siemens Bosch Faber Kaff Elica Glen chimney service Noida independent chimney service
 </div>
 </body>
 </html>
