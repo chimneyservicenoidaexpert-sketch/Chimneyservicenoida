@@ -109,23 +109,34 @@ areas.forEach(a=>{let b=document.createElement('a');b.href="#";b.textContent=`Ch
 <script>
 const BRANDS=["Siemens","Hafele","Kaff","Glen","Elica","Bosch","Faber"];
 const AREAS=["Jaypee Greens","Lotus Blvd Sec 100","Supernova Sec 94","Wish Town","Klassic Sec 134","Panache Sec 110","Kosmos Sec 134","Daffodil Sec 137","Lotus Zing Sec 168","Knightsbridge Sec 124","Paras Tierea","Aman Sec 151","Aamantran Sec 119","Pavilion Sec 128","Espacia Sec 100","Kensington Park","Imperial Court","Kalypso Court","Krescent Homes","Jaypee Greens Sec 128"];
+
 function openCall(){document.getElementById('callPopup').style.display='flex';}
 function closeCall(){document.getElementById('callPopup').style.display='none';}
-function getP(){let p=new URLSearchParams(location.search);return{brand:p.get('brand'),area:p.get('area')?.replaceAll('-',' ')||null,isHome:!p.get('brand')&&!p.get('area')}}
+function getP(){try{let p=new URLSearchParams(location.search);return{brand:p.get('brand'),area:(p.get('area')||'').replace(/-/g,' ')||null,isHome:!p.get('brand')&&!p.get('area')}}catch(e){return{brand:null,area:null,isHome:true}}}
+
 function updateCare(){
- let {brand,area,isHome}=getP();
- let care,h1,title,content;
- if(isHome){care="Noida Care";h1="Chimney Service Noida";title="Chimney Service Noida - 30 Min Arrival | 90 Day Warranty | All Brands - Noida Care";content="Chimney Service Noida - Noida Care has been providing expert chimney service since 2015 for all brands - Elica, Faber, Hindware, Siemens, Kaff, Hafele, Bosch, Glen. Our certified technician will reach any society in Noida within 30 minutes. We fix low suction, high noise, auto-clean not working, touch panel issue, oil leakage. Trusted by 2847+ homes in Noida with 90 days warranty.";}
- else{let db=brand||"Elica";let da=area||"Noida";care=`${db} Care`;h1=`${db} Chimney Service in ${da}`;title=`${db} Chimney Service in ${da} - 30 Min Arrival - 90 Day Warranty - ${care}`;content=`${db} Chimney Service in ${da} - ${care} has been providing expert chimney service since 2015 in ${da}. Our technician will reach ${da} within 30 minutes. We provide ${db} motor repair, PCB repair, touch sensor repair, filter cleaning and duct cleaning with 90 days warranty.`;}
- document.title=title;document.getElementById('seoTitle').innerText=title;document.getElementById('mainH1').innerText=h1;document.querySelectorAll('.careDynamic').forEach(e=>e.innerText=care);
- document.getElementById('dynamicContent200').innerText=content;document.getElementById('dynamicTrust').innerText=isHome?`⭐ Serving 2847+ Homes in Noida • 4.9/5 • ${care}`:`⭐ Serving 500+ Homes in ${area||'Noida'} • 4.9/5 • ${care}`;
- document.getElementById('longContent').innerText=content+` Regular service every 4 months required.`;
- document.getElementById('gmap').src=`https://maps.google.com/maps?q=${encodeURIComponent((area||'Noida')+' Noida')}&z=14&output=embed`;
- let h="";AREAS.slice(0,10).forEach(a=>{let s=a.replaceAll(' ','-');let lb=brand||'Elica';h+=`<a class="pill" style="background:#222;color:#fff" href="?brand=${lb}&area=${s}">${a}</a>`});
- document.getElementById('areaPills').innerHTML=h;let b="";BRANDS.forEach(br=>{AREAS.slice(0,3).forEach(ar=>{let s=ar.replaceAll(' ','-');b+=`<a class="pill" style="background:#fff;color:#000" href="?brand=${br}&area=${s}">${br} Chimney Service in ${ar}</a>`})});
- document.getElementById('brandAreaPills').innerHTML=b;
+ try{
+  let {brand,area,isHome}=getP();
+  let care="Noida Care",h1="Chimney Service Noida",title="Chimney Service Noida - 30 Min Arrival | 90 Day Warranty | All Brands - Noida Care";
+  let content="Chimney Service Noida - Noida Care has been providing expert chimney service since 2015 for all brands. Our certified technician will reach any society in Noida within 30 minutes. We fix low suction, high noise, auto-clean not working, touch panel issue, oil leakage. Trusted by 2847+ homes in Noida with 90 days warranty.";
+  if(!isHome){let db=brand||"Elica";let da=area||"Noida";care=db+" Care";h1=db+" Chimney Service in "+da;title=db+" Chimney Service in "+da+" - 30 Min Arrival - 90 Day Warranty - "+care;content=db+" Chimney Service in "+da+" - "+care+" has been providing expert chimney service since 2015 in "+da+".";}
+  document.title=title;
+  let mainH=document.getElementById('mainH'); if(mainH){mainH.innerHTML=h1+' - <span id="typed" style="background:#fff;color:#000;padding:5px 12px;border-radius:8px;display:inline-block">90 Days Warranty</span>';}
+  document.querySelectorAll('.careDynamic').forEach(e=>e.innerText=care);
+  let d1=document.getElementById('dynamicContent200');if(d1)d1.innerText=content;
+  let d2=document.getElementById('dynamicTrust');if(d2)d2.innerText=isHome?'⭐ Serving 2847+ Homes in Noida • 4.9/5 • '+care:'⭐ Serving 500+ Homes in '+(area||'Noida')+' • 4.9/5 • '+care;
+  let d3=document.getElementById('longContent');if(d3)d3.innerText=content+" Regular service every 4 months required. Complete checkup, filter cleaning, motor oiling, suction test included.";
+  let gm=document.getElementById('gmap');if(gm)gm.src="https://maps.google.com/maps?q="+encodeURIComponent((area||'Noida')+" Noida")+"&z=14&output=embed";
+  let h="";AREAS.forEach(a=>{let s=a.replace(/ /g,'-');let lb=brand||'Elica';h+='<a class="pill" style="background:#222;color:#fff" href="?brand='+lb+'&area='+s+'">'+a+'</a>';});
+  let ap=document.getElementById('areaPills');if(ap)ap.innerHTML=h;
+  let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{let s=ar.replace(/ /g,'-');b+='<a class="pill" style="background:#fff;color:#000;border:1px solid #333" href="?brand='+br+'&area='+s+'">'+br+' in '+ar+'</a>';})});
+  let bap=document.getElementById('brandAreaPills');if(bap)bap.innerHTML=b;
+ }catch(err){}
 }
-updateCare();
+setTimeout(updateCare,100);
+let wi=0,ci=0,del=false;const words=["30 Min Arrival","Noida Care","90 Days Warranty","Expert Repair"];
+function typeNow(){let t=document.getElementById('typed');if(!t)return;let w=words[wi];if(del){ci--}else{ci++}t.textContent=w.substring(0,ci);let s=del?50:100;if(!del&&ci==w.length){s=1200;del=true}else if(del&&ci==0){del=false;wi=(wi+1)%words.length;s=300}setTimeout(typeNow,s)}
+setTimeout(typeNow,500);
 function bookWhatsApp(){
  let name=document.getElementById('custName').value||'Customer';let phone=document.getElementById('custPhone').value||'Not given';
  let date=document.getElementById('bookDate').value||'Today';let time=document.getElementById('bookTime').value;
