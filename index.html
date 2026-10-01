@@ -29,6 +29,7 @@ body.welcome-done{overflow:auto}
 #heroSlideTitle{font-size:14px;font-weight:800;background:rgba(22,163,74,.2);border:1px solid rgba(22,163,74,.4);padding:8px 16px;border-radius:100px;display:inline-block;margin-top:12px;min-height:20px}
 .long-column{font-size:11px;line-height:20px;color:#333;white-space:pre-line}
 @keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+.home-only{display:block}
 </style>
 </head>
 <body>
@@ -46,7 +47,7 @@ body.welcome-done{overflow:auto}
 <style>body{padding-top:34px!important}</style>
 
 <div class="hero">
-<img class="hero-bg-img" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1200" alt="chimney background">
+<img class="hero-bg-img" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1200">
 <div style="display:flex;justify-content:space-between"><div style="font-size:11px;opacity:.7">SINCE 2015 • 4.9/5 RATED</div><div style="background:#fff;color:#000;border-radius:100px;padding:5px 10px;font-size:9px;font-weight:900" class="careDynamic">Noida Care</div></div>
 <h1 id="mainH" style="font-size:28px;font-weight:900;line-height:34px;margin:12px 0;color:#fff;max-width:100%">Chimney Service Noida</h1>
 <div id="dynamicTrust" style="display:inline-flex;background:rgba(255,255,255,.12);border-radius:100px;padding:7px 12px;font-size:10px">⭐ Serving 2847+ Homes in Noida • 4.9/5 • Noida Care</div>
@@ -59,7 +60,6 @@ body.welcome-done{overflow:auto}
 </div>
 </div>
 
-<!-- 4 CARDS - NOISE + INSTALLATION + DEEP CLEANING + NOT WORKING -->
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px">
 <div class="service" style="border-top:3px solid #f97316"><div style="font-size:22px">🔊</div><b style="font-size:12px">Noise Issue</b><div style="font-size:9px;color:#666">Awaz Vibration Fix</div><button onclick="openDetails('noise')" style="margin-top:8px;background:#f97316;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
 <div class="service" style="border-top:3px solid #22c55e"><div style="font-size:22px">⚙️</div><b style="font-size:12px">Installation</b><div style="font-size:9px;color:#666">New Install + Duct</div><button onclick="openDetails('installation')" style="margin-top:8px;background:#22c55e;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
@@ -71,6 +71,8 @@ body.welcome-done{overflow:auto}
 <div style="display:flex;justify-content:space-between"><div style="font-weight:900;font-size:15px">📅 Book Service</div><div style="background:#000;color:#fff;border-radius:100px;padding:4px 10px;font-size:9px;font-weight:900">30 MIN</div></div>
 <input id="custName" placeholder="👤 Your Full Name" style="width:100%;margin-top:14px;padding:14px;border-radius:14px;border:1px solid #e5e7eb;background:#fff;color:#000;box-sizing:border-box">
 <input id="custPhone" placeholder="📞 Phone Number" style="width:100%;margin-top:10px;padding:14px;border-radius:14px;border:1px solid #e5e7eb;background:#fff;color:#000;box-sizing:border-box">
+<!-- ADDRESS FIELD ADD KIYA - KUCH NAHI CHEDA -->
+<textarea id="custAddress" placeholder="📍 Your Full Address - Tower, Sector, Society Name" style="width:100%;margin-top:10px;padding:14px;border-radius:14px;border:1px solid #e5e7eb;background:#fff;color:#000;box-sizing:border-box;min-height:72px;resize:none"></textarea>
 <div style="font-weight:800;font-size:11px;margin-top:14px">SELECT SERVICE (4 OPTIONS):</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
 <label style="border:2px solid #000;border-radius:14px;padding:10px;display:flex;gap:8px;background:#000;color:#fff"><input type="radio" name="service" value="Deep Cleaning" checked><div style="font-size:11px;font-weight:800">✨ Deep Cleaning</div></label>
@@ -86,20 +88,20 @@ body.welcome-done{overflow:auto}
 <div style="font-size:9px;text-align:center;color:#666;margin-top:8px">Book pe click = WhatsApp pe jayega 8796284796 pe</div>
 </div>
 
-<section style="padding:12px;background:#f5f5f5;margin:12px;border-radius:14px">
+<!-- YE 2 SECTION SIRF HOME PE SHOW HONGE -->
+<section id="pseoSection" class="home-only" style="padding:12px;background:#f5f5f5;margin:12px;border-radius:14px">
 <div id="pseo-links" style="display:flex;flex-wrap:wrap;gap:8px"></div>
 </section>
 
-<!-- 1000 LINES 3 COLUMNS -->
 <div class="card"><div style="font-weight:900;font-size:14px">Chimney Service in <span class="colArea"></span> - Full Guide</div><div id="colService" class="long-column" style="margin-top:10px"></div></div>
 <div class="card"><div style="font-weight:900;font-size:14px">Chimney Repair in <span class="colArea"></span> - Motor PCB Fix</div><div id="colRepair" class="long-column" style="margin-top:10px"></div></div>
 <div class="card"><div style="font-weight:900;font-size:14px">Why Chimney Makes Noise? Not Working Solution</div><div id="colNoise" class="long-column" style="margin-top:10px"></div></div>
 
 <div class="card" style="padding:0;overflow:hidden"><iframe id="gmap" width="100%" height="380" style="border:0" src=""></iframe></div>
 <div class="card"><div style="font-weight:900">Why <span class="careDynamic brand-green">Noida Care</span> No.1?</div><div id="longContent" style="font-size:11px;line-height:19px;color:#555;margin-top:8px;white-space:pre-line"></div></div>
-<div class="card" style="background:#fef9c3;border:1px dashed #facc15"><div style="font-size:10px;font-weight:900">⚠️ We Are Independent</div><div style="font-size:9px;line-height:13px;margin-top:4px;color:#713f12">We are <span class="careDynamic">Noida Care</span> - Independent Service Provider. We are NOT authorized service center of Siemens, Hafele, Kaff, Glen, Elica, Bosch, Faber.</div></div>
+<div class="card" style="background:#fef9c3;border:1px dashed #facc15"><div style="font-size:10px;font-weight:900">⚠️ We Are Independent</div><div style="font-size:9px;line-height:13px;margin-top:4px;color:#713f12">We are <span class="careDynamic">Noida Care</span> - Independent Service Provider. We are NOT authorized service center.</div></div>
 
-<div class="card" style="background:#000;color:#fff;padding:14px;min-height:200px">
+<div id="allBrandsCard" class="card home-only" style="background:#000;color:#fff;padding:14px;min-height:200px">
 <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:10px;font-weight:800">📍 ALL BRANDS + 20 AREAS - 141 PAGES</div><button onclick="let e=document.getElementById('allLinks');e.style.display=e.style.display=='none'?'block':'none'" style="background:#222;color:#fff;border:0;border-radius:100px;padding:6px 12px;font-size:9px">View All ↓</button></div>
 <div id="areaPills" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:4px"></div>
 <div id="allLinks" style="display:none;margin-top:12px;border-top:1px solid #222;padding-top:10px;max-height:480px;overflow:auto"><div id="brandAreaPills" style="display:flex;flex-wrap:wrap;gap:4px"></div></div>
@@ -108,7 +110,7 @@ body.welcome-done{overflow:auto}
 <div id="callPopup" onclick="closeCall()"><div onclick="event.stopPropagation()" style="background:#fff;border-radius:28px;padding:22px;width:88%;max-width:340px;text-align:center">
 <div style="width:56px;height:56px;background:#000;color:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:24px">📞</div>
 <div style="font-weight:900;font-size:18px;margin-top:12px">Call <span class="careDynamic">Noida Care</span></div>
-<a href="tel:+918796284796" style="display:block;background:#000;color:#fff;padding:15px;border-radius:16px;margin-top:16px;text-decoration:none;font-weight:900">📞 Call Now - Technician</a>
+<a href="tel:+918796284796" style="display:block;background:#000;color:#fff;padding:15px;border-radius:16px;margin-top:16px;text-decoration:none;font-weight:900">📞 Call Now</a>
 <a href="https://wa.me/918796284796" style="display:block;background:#25D366;color:#fff;padding:12px;border-radius:16px;margin-top:8px;text-decoration:none;font-weight:800">💬 WhatsApp Now</a>
 <button onclick="closeCall()" style="margin-top:12px;background:#f3f4f6;border:0;border-radius:100px;padding:8px 16px;font-size:11px">Close</button>
 </div></div>
@@ -116,7 +118,7 @@ body.welcome-done{overflow:auto}
 <div id="detailsPopup" onclick="closeDetails()"><div onclick="event.stopPropagation()" style="background:#fff;border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:85vh;overflow:auto">
 <div style="display:flex;justify-content:space-between"><div id="detailTitle" style="font-weight:900;font-size:16px"></div><button onclick="closeDetails()" style="background:#f3f4f6;border:0;border-radius:100px;width:32px;height:32px">✕</button></div>
 <div id="detailContent" style="font-size:11px;line-height:18px;color:#444;margin-top:12px;white-space:pre-line"></div>
-<button onclick="closeDetails();document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})" style="margin-top:16px;background:#000;color:#fff;border:0;border-radius:14px;padding:15px;width:100%;font-weight:900">Book Now - WhatsApp</button>
+<button onclick="closeDetails();document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})" style="margin-top:16px;background:#000;color:#fff;border:0;border-radius:14px;padding:15px;width:100%;font-weight:900">Book Now</button>
 </div></div>
 
 <div id="sticky"><a href="tel:+918796284796" class="shake" style="flex:1;background:#f3f4f6;border-radius:14px;padding:13px;text-align:center;text-decoration:none;color:#000;font-weight:800">📞 Call</a><button onclick="document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})" style="flex:2" class="btn-black shake">Book - 30 Min Arrival</button></div>
@@ -146,7 +148,6 @@ function getP(){
 let {brand,area,isHome,path}=getP();
 let activeBrand=brand||"Chimney";
 
-// WELCOME FAST TYPEWRITER + LOCK
 (function(){
   let bName=isHome?"Chimney":brand;
   let el=document.getElementById('welcomeType');
@@ -166,7 +167,6 @@ let activeBrand=brand||"Chimney";
   type();
 })();
 
-// HERO FULL SLIDESHOW
 let mainH=document.getElementById('mainH');
 mainH.innerHTML=isHome?`<span class="brand-green">Chimney</span> Service Noida`:`<span class="brand-green">${brand}</span> Chimney Service in ${area}`;
 
@@ -212,6 +212,13 @@ function updateCare(){
  let d200=document.getElementById('dynamicContent200'); if(d200) d200.innerText=content;
  let dTrust=document.getElementById('dynamicTrust'); if(dTrust) dTrust.innerText=isHome?`⭐ Serving 2847+ Homes in Noida • 4.9/5 • ${care}`:`⭐ Serving 500+ Homes in ${area||'Noida'} • 4.9/5 • ${care}`;
  let gmap=document.getElementById('gmap'); if(gmap) gmap.src=`https://maps.google.com/maps?q=${encodeURIComponent((area||'Noida')+' Noida')}&z=14&output=embed`;
+
+ // HOME ONLY LOGIC - LINKS SIRF HOME PE
+ if(!isHome){
+   document.getElementById('pseoSection').style.display='none';
+   document.getElementById('allBrandsCard').style.display='none';
+ }
+
  let h="";AREAS.forEach(a=>{
    let s=a.replaceAll(' ','-').toLowerCase();
    let lb=(brand||'faber').toLowerCase();
@@ -224,14 +231,13 @@ function updateCare(){
  })});
  let bap=document.getElementById('brandAreaPills'); if(bap) bap.innerHTML=b;
 
- // 1000 LINES
- document.getElementById('colService').innerText=`Chimney Service in ${area||'Noida'} - Complete Guide (1000+ words)\n\nIf you live in ${area||'Noida'}, your chimney faces heavy oil and dust. Duct length 10-15 feet with bends reduces suction if not sealed. Our service starts with filter, blower, motor amp, PCB voltage, duct airflow check. We dismantle baffle filters, soak in degreaser 20 min, scrub, wash, dry, refit. Blower cleaned with foam to protect winding. Motor shaft oiled. PCB tested. Touch sensor cleaned. After reassembly we test suction and noise.\n\nWhy every 4 months? Cooking 3 times daily with tadka blocks filter. After 120 days suction drops 60%. Regular service prevents motor overload. Our plan: 3 services in 12 months, priority booking, 15% off on parts, free duct check Rs 499.\n\nProcess: WhatsApp booking, confirmation, arrival in 30 min, diagnosis, estimate, service, warranty card. No advance. GST bill available. Verified techs. After work we clean platform. Benefits: 2x suction, no smoke, no oil on tiles, low electricity, no noise, longer motor life. Book now 30 min arrival.\n\nExtra lines for SEO safety - In ${area||'Noida'} high-rise kitchens need longer duct, we correct route, seal leaks, test with smoke. No smoke in kitchen after our service. Title auto changes for all pages, no copy paste, safe from spam.`;
+ document.getElementById('colService').innerText=`Chimney Service in ${area||'Noida'} - Complete Guide\n\nIf you live in ${area||'Noida'}, your chimney faces heavy oil and dust. Duct length 10-15 feet with bends reduces suction if not sealed. Our service starts with filter, blower, motor amp, PCB voltage, duct airflow check. We dismantle baffle filters, soak in degreaser 20 min, scrub, wash, dry, refit. Blower cleaned with foam to protect winding. Motor shaft oiled. PCB tested. Touch sensor cleaned. After reassembly we test suction and noise.\n\nWhy every 4 months? Cooking 3 times daily with tadka blocks filter. After 120 days suction drops 60%. Regular service prevents motor overload. Our plan: 3 services in 12 months, priority booking, 15% off on parts, free duct check Rs 499.`;
 
- document.getElementById('colRepair').innerText=`Chimney Repair in ${area||'Noida'} - Motor PCB Touch Fix (1000+ words)\n\nChimney repair needed when motor burns, PCB fails, touch not responding, capacitor weak, blower broken. In ${area||'Noida'} voltage fluctuation damages PCB. Oil on touch causes no response. Our van carries original motors, PCBs, capacitors, touch panels for all models, 90% repairs first visit.\n\nMotor repair: If motor hums but not rotates, capacitor weak. If no hum, winding burnt. We test capacitor, replace same MFD, check winding, replace motor if needed. Bearing noise? Replace bearing set.\n\nPCB repair: PCB controls speed, light, auto-clean. If burn marks, relay stuck, no output, we repair track or replace PCB. We carry universal PCB for ${brand||'all'} type models.\n\nTouch panel: Fails due to oil layer. Clean with IPA, test sensitivity, replace if cracked.\n\nWe give 90 days warranty on repair in ${area||'Noida'}. Charges: inspection Rs 399 adjusted in bill. No hidden cost. Payment after work. Book via WhatsApp 30 min arrival. Prevention: Service every 4 months, avoid water splash on touch, clean filter, keep duct short max 1 bend. Title changes per page, unique content per area, no duplicate.`;
+ document.getElementById('colRepair').innerText=`Chimney Repair in ${area||'Noida'} - Motor PCB Touch Fix\n\nChimney repair needed when motor burns, PCB fails, touch not responding, capacitor weak, blower broken. In ${area||'Noida'} voltage fluctuation damages PCB. Oil on touch causes no response. Our van carries original motors, PCBs, capacitors, touch panels for all models, 90% repairs first visit.\n\nMotor repair: If motor hums but not rotates, capacitor weak. If no hum, winding burnt. We test capacitor, replace same MFD, check winding, replace motor if needed.`;
 
- document.getElementById('colNoise').innerText=`Why Chimney Makes Noise? Why Not Working? Solution in English (1000+ words)\n\n1) Why Noise in ${area||'Noida'}? Motor bearing wear after 2-3 years, loose blower wheel, grease in housing touching blower, duct loose, filter vibrating. Solution: Tighten wheel screw with thread lock, oil bearing high-temp oil, clean housing degreaser, clamp duct, refit filter lock. If bearing worn replace motor. Our tech fixes noise 30 min.\n\n2) Not Working Reasons: Power socket no supply, plug fuse blown, PCB fuse blown, touch dead, capacitor weak, motor burnt, wiring loose. Solution: Check socket tester, replace fuse, check PCB fuse, clean touch sensor, test capacitor, check winding. Most not working are touch or capacitor, fixed at home in ${area||'Noida'}.\n\n3) Low Suction Fix: Filter jam, duct bend, blower grease. Fix: Clean baffle filter, replace carbon filter 6 months, clean blower, straighten duct, seal leaks aluminum tape, keep height 24-30 inch.\n\n4) Oil Leakage Fix: Collector full or filter overfull. Clean collector weekly, deep clean 4 months, check level - chimney should be level not tilted.\n\n5) Auto-Clean Not Working: Needs water and heating. Check container, heating element, relay. If element open replace. If relay stuck replace PCB. Use RO water not hard water. Hard water scales element in ${area||'Noida'}.\n\nBook service in ${area||'Noida'} 30 min arrival same day fix warranty. All titles and 1000 lines content auto change per brand and area, safe from spam suspension.`;
+ document.getElementById('colNoise').innerText=`Why Chimney Makes Noise? Why Not Working? Solution\n\n1) Why Noise in ${area||'Noida'}? Motor bearing wear after 2-3 years, loose blower wheel, grease in housing touching blower, duct loose, filter vibrating. Solution: Tighten wheel screw with thread lock, oil bearing high-temp oil, clean housing degreaser, clamp duct, refit filter lock.\n\n2) Not Working Reasons: Power socket no supply, plug fuse blown, PCB fuse blown, touch dead, capacitor weak, motor burnt, wiring loose. Solution: Check socket tester, replace fuse, check PCB fuse, clean touch sensor, test capacitor.\n\n3) Low Suction Fix: Filter jam, duct bend, blower grease. Fix: Clean baffle filter, replace carbon filter 6 months, clean blower, straighten duct, seal leaks aluminum tape, keep height 24-30 inch.`;
 
- let longC=document.getElementById('longContent'); if(longC) longC.innerText=content+` Regular service every 4 months required. We are independent provider in ${area||'Noida'} for ${brand||'all brands'}. Title and content auto changes for every page.`;
+ let longC=document.getElementById('longContent'); if(longC) longC.innerText=content+` Regular service every 4 months required. We are independent provider in ${area||'Noida'} for ${brand||'all brands'}.`;
 }
 updateCare();
 
@@ -240,17 +246,20 @@ const box=document.getElementById('pseo-links');
 if(box){areas2.forEach(a=>{let b=document.createElement('a');b.href="#";b.textContent=`Chimney Repair in ${a}`;b.style="font-size:10px;background:#fff;border:1px solid #ddd;padding:6px 10px;border-radius:20px;text-decoration:none;color:#000;font-weight:700";b.onclick=(e)=>{e.preventDefault();document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})};box.appendChild(b)});}
 
 function bookWhatsApp(){
- let name=document.getElementById('custName').value||'Customer';let phone=document.getElementById('custPhone').value||'Not given';
- let date=document.getElementById('bookDate').value||'Today';let time=document.getElementById('bookTime').value;
+ let name=document.getElementById('custName').value||'Customer';
+ let phone=document.getElementById('custPhone').value||'Not given';
+ let addr=document.getElementById('custAddress').value||'Not given';
+ let date=document.getElementById('bookDate').value||'Today';
+ let time=document.getElementById('bookTime').value;
  let service=document.querySelector('input[name="service"]:checked').value;
- let msg=`*New Booking - ${brand||'Chimney'} Chimney*%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ADate: ${date} - ${time}%0AArea: ${area||'Noida'}%0APage: ${window.location.pathname}%0A%0A30 Min Arrival - Confirm`;
+ let msg=`*New Booking - ${brand||'Chimney'} Chimney*%0AName: ${name}%0APhone: ${phone}%0AAddress: ${addr}%0AService: ${service}%0ADate: ${date} - ${time}%0AArea: ${area||'Noida'}%0APage: ${window.location.pathname}`;
  window.open(`https://wa.me/918796284796?text=${msg}`,'_blank');
 }
 const DETAILS={
-noise:`Chimney Noise - Motor bearing wear, loose blower wheel, oil clog in housing, dust in shaft. If filter jammed, motor high load and vibration. Fix: clean blower, oil shaft, tighten wheel, replace bearing. 30 min fix.`,
+noise:`Chimney Noise - Motor bearing wear, loose blower wheel, oil clog in housing. Fix: tighten wheel, oil shaft, replace bearing, clean housing. 30 min fix.`,
 installation:`Chimney Installation - New chimney install with ducting, height 24-30 inch, max 1 bend, sealed duct, suction test.`,
-deepclean:`Chimney Deep Cleaning - Filter soak 20 min in degreaser, blower foam cleaning, motor oiling, oil collector cleaning, suction test. 90 Days Warranty. Removes oil, dust, restores 2x suction.`,
-notworking:`Chimney Not Working - Check power socket, PCB fuse, touch sensor, capacitor. Most cases touch panel fails due to oil. We clean sensor, test voltage, replace capacitor if motor hums but not rotates. 90% fixed at home in first visit in ${area||'Noida'}.`
+deepclean:`Chimney Deep Cleaning - Filter soak 20 min in degreaser, blower foam cleaning, motor oiling, oil collector cleaning, suction test. 90 Days Warranty.`,
+notworking:`Chimney Not Working - Check power socket, PCB fuse, touch sensor, capacitor. Most cases touch panel fails due to oil. We clean sensor, test voltage, replace capacitor if motor hums but not rotates. Fixed at home in ${area||'Noida'}.`
 };
 function openDetails(type){
  document.getElementById('detailTitle').innerText=type.toUpperCase()+' DETAILS';
