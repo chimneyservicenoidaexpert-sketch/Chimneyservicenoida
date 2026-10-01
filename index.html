@@ -10,7 +10,9 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
 body{margin:0;font-family:Inter,sans-serif;background:#f6f7f9;padding-bottom:90px;min-height:200vh}
-.hero{background:linear-gradient(135deg,#000 0%,#222 100%);color:#fff;border-radius:0 0 28px 28px;padding:38px 18px 34px;min-height:300px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#000 0%,#222 100%);color:#fff;border-radius:0 0 28px 28px;padding:38px 18px 34px;min-height:320px}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(8px) brightness(0.4);transform:scale(1.15);z-index:0}
+.hero > *:not(.hero-bg-img){position:relative;z-index:1}
 .card{background:#fff;border-radius:20px;padding:18px;margin:14px 12px;box-shadow:0 8px 24px rgba(0,0,0,.05);border:1px solid #f0f0f0;min-height:80px}
 .service{border-radius:18px;padding:14px;text-align:center;border:1px solid #f0f0f0;background:linear-gradient(180deg,#fff,#fbfbfb);min-height:105px}
 .pill{display:inline-block;border-radius:100px;padding:5px 9px;font-size:8px;font-weight:800;text-decoration:none;margin:2px}
@@ -18,20 +20,53 @@ body{margin:0;font-family:Inter,sans-serif;background:#f6f7f9;padding-bottom:90p
 #callPopup{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:99999}
 #detailsPopup{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:flex-end;justify-content:center;z-index:100000}
 #sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);border-top:1px solid #eee;padding:10px 12px;display:flex;gap:10px;z-index:9999}
+.brand-green{color:#16a34a!important}
+#welcomeScreen{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+#welcomeIcon{font-size:52px;margin-bottom:12px;filter:drop-shadow(0 0 10px rgba(34,197,94,.6))}
+#welcomeType{font-size:22px;font-weight:900;letter-spacing:.5px;border-right:3px solid #16a34a;padding-right:6px;white-space:nowrap;overflow:hidden}
+.slideshow-wrap{margin:14px 12px;border-radius:20px;overflow:hidden;position:relative;height:220px;background:#000}
+.slides-track{display:flex;width:500%;height:100%;animation:slideAnim 16s infinite}
+.slides-track div{width:20%;height:100%;position:relative}
+.slides-track img{width:100%;height:100%;object-fit:cover;filter:brightness(0.8)}
+.slide-label{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.7);color:#fff;padding:6px 12px;border-radius:100px;font-size:10px;font-weight:800}
+@keyframes slideAnim{0%,18%{transform:translateX(0)}22%,40%{transform:translateX(-20%)}44%,62%{transform:translateX(-40%)}66%,84%{transform:translateX(-60%)}88%,100%{transform:translateX(-80%)}}
+@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 </style>
 </head>
 <body>
+
+<!-- WELCOME TYPEWRITER 3 SEC -->
+<div id="welcomeScreen">
+  <div id="welcomeIcon">🏭</div>
+  <div style="font-size:11px;letter-spacing:2px;opacity:.7;margin-bottom:8px">CHIMNEY EXPERT</div>
+  <div id="welcomeType"></div>
+  <div style="margin-top:10px;font-size:10px;opacity:.6">All Brands Service • 30 Min Arrival</div>
+</div>
+
 <div onclick="window.location.href='tel:+918796284796'" style="position:fixed;top:0;left:0;right:0;background:#000;color:#fff;z-index:999999;padding:8px 0;overflow:hidden;white-space:nowrap;font-size:11px;font-weight:900;cursor:pointer">
 <div style="display:inline-block;animation:scroll 14s linear infinite">📞 8796284796 - 30 MIN ARRIVAL - CALL NOW - 📞 8796284796 - 90 DAYS WARRANTY - 📞 8796284796 -</div>
 </div>
-<style>@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}} body{padding-top:34px!important}</style>
+<style>body{padding-top:34px!important}</style>
+
 <div class="hero">
+<img class="hero-bg-img" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1200" alt="chimney background">
 <div style="display:flex;justify-content:space-between"><div style="font-size:11px;opacity:.7">SINCE 2015 • 4.9/5 RATED</div><div style="background:#fff;color:#000;border-radius:100px;padding:5px 10px;font-size:9px;font-weight:900" class="careDynamic">Noida Care</div></div>
 <h1 id="mainH" style="font-size:28px;font-weight:900;line-height:34px;margin:12px 0;color:#fff;max-width:100%">Chimney Service Noida</h1>
 <div id="dynamicTrust" style="display:inline-flex;background:rgba(255,255,255,.12);border-radius:100px;padding:7px 12px;font-size:10px">⭐ Serving 2847+ Homes in Noida • 4.9/5 • Noida Care</div>
 <div id="dynamicContent200" style="margin-top:14px;font-size:11px;line-height:17px;opacity:.8"></div>
 <div style="margin-top:12px"><span id="typed" style="background:#fff;color:#000;padding:5px 12px;border-radius:8px;display:inline-block;font-weight:900">90 Days Warranty</span></div>
 <button onclick="openCall()" class="btn-black" style="margin-top:16px;background:#fff;color:#000">📞 Call Technician - 30 Min Arrival</button>
+</div>
+
+<!-- 4-5 SLIDESHOW CHIMNEY -->
+<div class="slideshow-wrap">
+  <div class="slides-track">
+    <div><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800" alt="chimney not working"><span class="slide-label">⚠️ Chimney Not Working</span></div>
+    <div><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="chimney service"><span class="slide-label">🔧 Chimney Service Noida</span></div>
+    <div><img src="https://images.unsplash.com/photo-1603126856298-8c2e9d43ad1e?q=80&w=800" alt="chimney cleaning"><span class="slide-label">✨ Deep Cleaning Service</span></div>
+    <div><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800" alt="chimney repair"><span class="slide-label">⚙️ Motor & PCB Repair</span></div>
+    <div><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800" alt="chimney suction"><span class="slide-label">💨 Suction Issue Fix</span></div>
+  </div>
 </div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px">
@@ -67,7 +102,7 @@ body{margin:0;font-family:Inter,sans-serif;background:#f6f7f9;padding-bottom:90p
 </section>
 
 <div class="card" style="padding:0;overflow:hidden"><iframe id="gmap" width="100%" height="380" style="border:0" src=""></iframe></div>
-<div class="card"><div style="font-weight:900">Why <span class="careDynamic">Noida Care</span> No.1?</div><div id="longContent" style="font-size:11px;line-height:17px;color:#555;margin-top:8px"></div></div>
+<div class="card"><div style="font-weight:900">Why <span class="careDynamic brand-green">Noida Care</span> No.1?</div><div id="longContent" style="font-size:11px;line-height:17px;color:#555;margin-top:8px"></div></div>
 <div class="card" style="background:#fef9c3;border:1px dashed #facc15"><div style="font-size:10px;font-weight:900">⚠️ We Are Independent</div><div style="font-size:9px;line-height:13px;margin-top:4px;color:#713f12">We are <span class="careDynamic">Noida Care</span> - Independent Service Provider. We are NOT authorized service center of Siemens, Hafele, Kaff, Glen, Elica, Bosch, Faber.</div></div>
 
 <div class="card" style="background:#000;color:#fff;padding:14px;min-height:200px">
@@ -96,6 +131,26 @@ body{margin:0;font-family:Inter,sans-serif;background:#f6f7f9;padding-bottom:90p
 const BRANDS=["Siemens","Hafele","Kaff","Glen","Elica","Bosch","Faber","Hindware","Sunflame"];
 const AREAS=["Jaypee Greens","Lotus Blvd Sec 100","Supernova Sec 94","Wish Town","Klassic Sec 134","Panache Sec 110","Kosmos Sec 134","Daffodil Sec 137","Lotus Zing Sec 168","Knightsbridge Sec 124","Paras Tierea","Aman Sec 151","Aamantran Sec 119","Pavilion Sec 128","Espacia Sec 100","Kensington Park","Imperial Court","Kalypso Court","Krescent Homes","Jaypee Greens Sec 128"];
 
+// WELCOME TYPEWRITER LOGIC - 3 SEC
+(function(){
+  const welcomeText = "Welcome to Chimney Solution";
+  let idx=0;
+  let el=document.getElementById('welcomeType');
+  function typeWelcome(){
+    if(idx < welcomeText.length){
+      el.textContent += welcomeText.charAt(idx);
+      idx++;
+      setTimeout(typeWelcome, 85);
+    }
+  }
+  typeWelcome();
+  setTimeout(()=>{
+    let ws=document.getElementById('welcomeScreen');
+    ws.style.transition='opacity 0.6s'; ws.style.opacity='0';
+    setTimeout(()=> ws.style.display='none',600);
+  },3000);
+})();
+
 let wi=0,ci=0,del=false;
 const words=["30 Min Arrival","Noida Care","90 Days Warranty","Expert Repair"];
 function typeNow(){let w=words[wi];let t=document.getElementById('typed');if(!t)return;if(del){ci--}else{ci++}t.textContent=w.substring(0,ci);let s=del?50:100;if(!del&&ci==w.length){s=1200;del=true}else if(del&&ci==0){del=false;wi=(wi+1)%words.length;s=300}setTimeout(typeNow,s)}typeNow();
@@ -108,39 +163,20 @@ function getP(){
   let brandParam = params.get('brand');
   let areaParam = params.get('area');
   if(areaParam) areaParam = areaParam.replaceAll('-',' ');
-
   let path = window.location.pathname.toLowerCase().replace(/^\//,'').replace(/\.html$/,'');
   let brandFromPath = null;
   let areaFromPath = "Noida";
-
-  BRANDS.forEach(b=>{
-    if(path.includes(b.toLowerCase())) brandFromPath = b;
-  });
-
+  BRANDS.forEach(b=>{ if(path.includes(b.toLowerCase())) brandFromPath = b; });
   if(path.includes("ghaziabad")) areaFromPath = "Ghaziabad";
   else if(path.includes("delhi")) areaFromPath = "South Delhi";
-  else if(path.includes("noida") &&!path.includes("chimney-service-noida-")) {
-    // /faber-chimney-service-noida type
-  }
-
   AREAS.forEach(a=>{
     let slug = a.toLowerCase().replaceAll(' ','-');
-    if(path.includes(slug)) {
-      areaFromPath = a;
-    }
+    if(path.includes(slug)) { areaFromPath = a; }
   });
-
   let finalBrand = brandParam || brandFromPath || null;
   let finalArea = areaParam || (path? areaFromPath : null);
-
-  // Detect if path is like /faber-chimney-service-noida
   let isHome =!finalBrand && (!path || path==='' || path==='index');
-
-  // Special: if path is /faber-chimney-service-noida -> area should be Noida
-  if(path === `${(finalBrand||'').toLowerCase()}-chimney-service-noida`){
-    finalArea = "Noida";
-  }
-
+  if(path === `${(finalBrand||'').toLowerCase()}-chimney-service-noida`){ finalArea = "Noida"; }
   return {brand: finalBrand, area: finalArea, isHome: isHome, path: path};
 }
 
@@ -164,25 +200,27 @@ function updateCare(){
    content=`${db} Chimney Service in ${da} - ${care} has been providing expert ${db} chimney service since 2015 in ${da}. Our technician will reach ${da} within 30 minutes. We provide ${db} motor repair, PCB repair, touch sensor repair, filter cleaning and duct cleaning with 90 days warranty. If you live in ${da} and your ${db} chimney has low suction, high noise, or auto-clean problem, call now.`;
    canonical = `https://chimneyservicenoida.vercel.app/${path}`;
  }
-
  document.title=title;
  let seoT=document.getElementById('seoTitle');if(seoT)seoT.innerText=title;
  let seoD=document.getElementById('seoDesc');if(seoD)seoD.content=desc;
  let seoC=document.getElementById('seoCanonical');if(seoC)seoC.href=canonical;
  let mainH=document.getElementById('mainH'); if(mainH) mainH.innerText=h1;
- document.querySelectorAll('.careDynamic').forEach(e=>e.innerText=care);
+ document.querySelectorAll('.careDynamic').forEach(e=>{
+   e.innerText=care;
+   if(care.toLowerCase().includes('faber') || care.toLowerCase().includes('elica') || care.toLowerCase().includes('hindware') || care.toLowerCase().includes('noida care')){
+     e.classList.add('brand-green');
+   }
+ });
  let d200=document.getElementById('dynamicContent200'); if(d200) d200.innerText=content;
  let dTrust=document.getElementById('dynamicTrust'); if(dTrust) dTrust.innerText=isHome?`⭐ Serving 2847+ Homes in Noida • 4.9/5 • ${care}`:`⭐ Serving 500+ Homes in ${area||'Noida'} • 4.9/5 • ${care}`;
  let longC=document.getElementById('longContent'); if(longC) longC.innerText=content+` Regular service every 4 months required. We are independent provider in ${area||'Noida'} for ${brand||'all brands'}.`;
  let gmap=document.getElementById('gmap'); if(gmap) gmap.src=`https://maps.google.com/maps?q=${encodeURIComponent((area||'Noida')+' Noida')}&z=14&output=embed`;
-
  let h="";AREAS.forEach(a=>{
    let s=a.replaceAll(' ','-').toLowerCase();
    let lb=(brand||'faber').toLowerCase();
    h+=`<a class="pill" style="background:#222;color:#fff" href="/${lb}-chimney-service-${s}">${a}</a>`
  });
  let ap=document.getElementById('areaPills'); if(ap) ap.innerHTML=h;
-
  let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{
    let s=ar.replaceAll(' ','-').toLowerCase();
    b+=`<a class="pill" style="background:#fff;color:#000;border:1px solid #333" href="/${br.toLowerCase()}-chimney-service-${s}">${br} in ${ar}</a>`
