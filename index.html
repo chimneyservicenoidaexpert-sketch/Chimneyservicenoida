@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title id="seoTitle">Chimney Service Noida - 30 Min Arrival - Noida Care</title>
-<meta name="description" id="seoDesc" content="Chimney Service Noida">
+<meta name="description" id="seoDesc" content="Chimney Service Noida - 30 Min Arrival, 90 Days Warranty">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
 body{margin:0;font-family:Inter,sans-serif;background:#f6f7f9;padding-bottom:90px;min-height:200vh}
@@ -91,7 +91,7 @@ body{margin:0;font-family:Inter,sans-serif;background:#f6f7f9;padding-bottom:90p
 <div id="sticky"><a href="tel:+918796284796" style="flex:1;background:#f3f4f6;border-radius:14px;padding:13px;text-align:center;text-decoration:none;color:#000;font-weight:800">📞 Call</a><button onclick="bookWhatsApp()" style="flex:2" class="btn-black">Book - 30 Min Arrival</button></div>
 
 <script>
-const BRANDS=["Siemens","Hafele","Kaff","Glen","Elica","Bosch","Faber"];
+const BRANDS=["Siemens","Hafele","Kaff","Glen","Elica","Bosch","Faber","Hindware","Sunflame"];
 const AREAS=["Jaypee Greens","Lotus Blvd Sec 100","Supernova Sec 94","Wish Town","Klassic Sec 134","Panache Sec 110","Kosmos Sec 134","Daffodil Sec 137","Lotus Zing Sec 168","Knightsbridge Sec 124","Paras Tierea","Aman Sec 151","Aamantran Sec 119","Pavilion Sec 128","Espacia Sec 100","Kensington Park","Imperial Court","Kalypso Court","Krescent Homes","Jaypee Greens Sec 128"];
 
 let wi=0,ci=0,del=false;
@@ -100,25 +100,87 @@ function typeNow(){let w=words[wi];let t=document.getElementById('typed');if(!t)
 
 function openCall(){document.getElementById('callPopup').style.display='flex';}
 function closeCall(){document.getElementById('callPopup').style.display='none';}
-function getP(){let p=new URLSearchParams(location.search);return{brand:p.get('brand'),area:p.get('area')?.replaceAll('-',' ')||null,isHome:!p.get('brand')&&!p.get('area')}}
+
+// NEW LOGIC - Path + Query dono se brand area nikalna
+function getP(){
+  let params = new URLSearchParams(location.search);
+  let brandParam = params.get('brand');
+  let areaParam = params.get('area')?.replaceAll('-',' ');
+
+  // Path se nikalna - jaise /faber-chimney-service-noida
+  let path = window.location.pathname.toLowerCase().replace(/^\//,'').replace(/\.html$/,'');
+  let brandFromPath = null;
+  let areaFromPath = "Noida";
+
+  // Brand check from path
+  BRANDS.forEach(b=>{
+    if(path.includes(b.toLowerCase())) brandFromPath = b;
+  });
+
+  // Area check - noida / ghaziabad / delhi
+  if(path.includes("ghaziabad")) areaFromPath = "Ghaziabad";
+  else if(path.includes("delhi")) areaFromPath = "South Delhi";
+  else if(path.includes("noida")) areaFromPath = "Noida";
+  // Custom societies from AREAS
+  AREAS.forEach(a=>{
+    let slug = a.toLowerCase().replaceAll(' ','-');
+    if(path.includes(slug) || path.includes(a.toLowerCase().split(' ')[0])) {
+      areaFromPath = a;
+    }
+  });
+
+  // Final brand/area decide - priority: query param > path > default
+  let finalBrand = brandParam || brandFromPath || null;
+  let finalArea = areaParam || (path? areaFromPath : null);
+  let isHome =!finalBrand && (!path || path==='' || path==='index');
+
+  return {brand: finalBrand, area: finalArea, isHome: isHome, path: path};
+}
+
 function updateCare(){
  let {brand,area,isHome}=getP();
- let care,h1,title,content;
- if(isHome){care="Noida Care";h1="Chimney Service Noida";title="Chimney Service Noida - 30 Min Arrival | 90 Day Warranty | All Brands - Noida Care";content="Chimney Service Noida - Noida Care has been providing expert chimney service since 2015 for all brands - Elica, Faber, Hindware, Siemens, Kaff, Hafele, Bosch, Glen. Our certified technician will reach any society in Noida within 30 minutes. We fix low suction, high noise, auto-clean not working, touch panel issue, oil leakage. Trusted by 2847+ homes in Noida with 90 days warranty.";}
- else{let db=brand||"Elica";let da=area||"Noida";care=`${db} Care`;h1=`${db} Chimney Service in ${da}`;title=`${db} Chimney Service in ${da} - 30 Min Arrival - 90 Day Warranty - ${care}`;content=`${db} Chimney Service in ${da} - ${care} has been providing expert chimney service since 2015 in ${da}. Our technician will reach ${da} within 30 minutes. We provide ${db} motor repair, PCB repair, touch sensor repair, filter cleaning and duct cleaning with 90 days warranty.`;}
- document.title=title;let seoT=document.getElementById('seoTitle');if(seoT)seoT.innerText=title;
- let mainH=document.getElementById('mainH'); // FIXED: pehle mainH1 tha jo exist nahi karta
- if(mainH){ mainH.childNodes[0].textContent = h1 + " - "; }
+ let care,h1,title,desc,content;
+ if(isHome){
+   care="Noida Care";
+   h1="Chimney Service Noida";
+   title="Chimney Service Noida - 30 Min Arrival | 90 Day Warranty | All Brands - Noida Care";
+   desc="Chimney Service Noida - 30 Min Arrival, All Brands Repair, 90 Days Warranty. Call 8796284796";
+   content="Chimney Service Noida - Noida Care has been providing expert chimney service since 2015 for all brands - Elica, Faber, Hindware, Siemens, Kaff, Hafele, Bosch, Glen. Our certified technician will reach any society in Noida within 30 minutes. We fix low suction, high noise, auto-clean not working, touch panel issue, oil leakage. Trusted by 2847+ homes in Noida with 90 days warranty.";
+ } else {
+   let db=brand||"Elica";
+   let da=area||"Noida";
+   care=`${db} Care`;
+   h1=`${db} Chimney Service in ${da}`;
+   title=`${db} Chimney Service in ${da} - 30 Min Arrival - 90 Day Warranty - ${care}`;
+   desc=`Best ${db} Chimney Service in ${da}. 30 Min Arrival, 90 Days Warranty. Call 8796284796 for ${db} repair in ${da}.`;
+   content=`${db} Chimney Service in ${da} - ${care} has been providing expert ${db} chimney service since 2015 in ${da}. Our technician will reach ${da} within 30 minutes. We provide ${db} motor repair, PCB repair, touch sensor repair, filter cleaning and duct cleaning with 90 days warranty. If you live in ${da} and your ${db} chimney has low suction, high noise, or auto-clean problem, call now.`;
+ }
+
+ document.title=title;
+ let seoT=document.getElementById('seoTitle');if(seoT)seoT.innerText=title;
+ let seoD=document.getElementById('seoDesc');if(seoD){seoD.content=desc;seoD.innerText=desc;}
+ // Update H1
+ let mainH=document.getElementById('mainH');
+ if(mainH){ mainH.innerHTML = `${h1} - <span id="typed" style="background:#fff;color:#000;padding:5px 12px;border-radius:8px;display:inline-block">90 Days Warranty</span>`; }
  document.querySelectorAll('.careDynamic').forEach(e=>e.innerText=care);
  let d200=document.getElementById('dynamicContent200'); if(d200) d200.innerText=content;
  let dTrust=document.getElementById('dynamicTrust'); if(dTrust) dTrust.innerText=isHome?`⭐ Serving 2847+ Homes in Noida • 4.9/5 • ${care}`:`⭐ Serving 500+ Homes in ${area||'Noida'} • 4.9/5 • ${care}`;
- let longC=document.getElementById('longContent'); if(longC) longC.innerText=content+` Regular service every 4 months required.`;
+ let longC=document.getElementById('longContent'); if(longC) longC.innerText=content+` Regular service every 4 months required. We are independent provider in ${area||'Noida'} for ${brand||'all brands'}.`;
  let gmap=document.getElementById('gmap'); if(gmap) gmap.src=`https://maps.google.com/maps?q=${encodeURIComponent((area||'Noida')+' Noida')}&z=14&output=embed`;
- // 20 Area pills
- let h="";AREAS.forEach(a=>{let s=a.replaceAll(' ','-');let lb=brand||'Elica';h+=`<a class="pill" style="background:#222;color:#fff" href="?brand=${lb}&area=${s}">${a}</a>`});
+
+ // Area pills - ab path wale URLs banenge jisse index honge
+ let h="";AREAS.forEach(a=>{
+   let s=a.replaceAll(' ','-').toLowerCase();
+   let lb=(brand||'faber').toLowerCase();
+   h+=`<a class="pill" style="background:#222;color:#fff" href="/${lb}-chimney-service-${s}">${a}</a>`
+ });
  let ap=document.getElementById('areaPills'); if(ap) ap.innerHTML=h;
- // 140 pages = 7 x 20 FIXED
- let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{let s=ar.replaceAll(' ','-');b+=`<a class="pill" style="background:#fff;color:#000;border:1px solid #333" href="?brand=${br}&area=${s}">${br} in ${ar}</a>`})});
+
+ // 140 pages = 9 x 20
+ let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{
+   let s=ar.replaceAll(' ','-').toLowerCase();
+   b+=`<a class="pill" style="background:#fff;color:#000;border:1px solid #333" href="/${br.toLowerCase()}-chimney-service-${s}">${br} in ${ar}</a>`
+ })});
  let bap=document.getElementById('brandAreaPills'); if(bap) bap.innerHTML=b;
 }
 updateCare();
@@ -131,192 +193,12 @@ if(box){areas2.forEach(a=>{let b=document.createElement('a');b.href="#";b.textCo
 function bookWhatsApp(){
  let name=document.getElementById('custName').value||'Customer';let phone=document.getElementById('custPhone').value||'Not given';
  let date=document.getElementById('bookDate').value||'Today';let time=document.getElementById('bookTime').value;
- let service=document.querySelector('input[name="service"]:checked').value;let area=new URLSearchParams(location.search).get('area')?.replaceAll('-',' ')||'Noida';
- let brand=new URLSearchParams(location.search).get('brand')||'Chimney';
- let msg=`*New Booking - ${brand} Chimney*%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ADate: ${date} - ${time}%0AArea: ${area}%0A%0A30 Min Arrival - Confirm`;
+ let service=document.querySelector('input[name="service"]:checked').value;
+ let {brand,area}=getP();
+ let msg=`*New Booking - ${brand||'Chimney'} Chimney*%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ADate: ${date} - ${time}%0AArea: ${area||'Noida'}%0APage: ${window.location.pathname}%0A%0A30 Min Arrival - Confirm`;
  window.open(`https://wa.me/918796284796?text=${msg}`,'_blank');
 }
-const DETAILS={service:`Chimney Service - Complete Checkup & Service
-1. Complete checkup of kitchen chimney at home.
-2. We check motor, suction, filter, noise level.
-3. Clean inner oil and grease with chemical and steam.
-4. Remove oil from baffle, mesh and carbon filter.
-5. Check auto-clean function and water tray.
-6. Test touch panel, push button and remote.
-7. Inspect duct pipe for blockage and oil.
-8. Tighten loose screws and fix vibration.
-9. Provide oiling to motor for smooth running.
-10. Test suction with tissue paper after service.
-11. Service time 45 to 60 minutes at home.
-12. Cover all brands Elica Faber Siemens Kaff Hafele Bosch Glen.
-13. Work in all Noida societies Jaypee Lotus Supernova etc.
-14. Technician reaches within 30 minutes after booking.
-15. No need to bring chimney to center, at home service.
-16. Use safe chemicals that do not damage chimney.
-17. Provide bill with 90 days warranty on service.
-18. Give tips for regular maintenance to avoid problems.
-19. Regular service every 4 months recommended.
-20. If low suction or high noise, book immediately.
-21. Served 2847+ homes in Noida since 2015.
-22. Independent provider, not company authorized center.
-23. Use genuine spare parts if needed.
-24. Service charge fixed, no hidden cost.
-25. Same day service even on Sunday.
-26. Technician certified and experienced for all models.
-27. Clean kitchen area after completion.
-28. Customer satisfaction 4.9 out of 5 rating.
-29. Book now for fresh and clean kitchen.
-30. Call now for 30 minute arrival.`,repair:`Chimney Repair - Motor PCB Touch Repair
-1. Fix all types of chimney problems at home.
-2. Motor Repair - noise or low suction motor repair.
-3. Open motor, clean oil dust, change bearing.
-4. Fix motor jam due to oil collection inside.
-5. PCB Repair - touch not working or auto on/off.
-6. Repair PCB with original components.
-7. Touch Sensor Repair - touch not responding.
-8. Replace touch sensor with genuine pad.
-9. Push Button Repair - stuck or not clicking.
-10. Provide original push button switch.
-11. Suction Problem Repair - not pulling smoke.
-12. Check motor, filter, duct and fix root cause.
-13. Noise Problem Repair - high noise vibration.
-14. Balance fan, tighten screw, fix bearing.
-15. Auto-Clean Not Working Repair.
-16. Check auto-clean motor and heating element.
-17. Light Not Working Repair - LED off.
-18. Replace LED light with same model.
-19. Remote Not Working Repair.
-20. Repair remote or provide new remote.
-21. Oil Leakage Repair - oil drips from chimney.
-22. Clean oil tray and fix collection system.
-23. Duct Repair - broken or blocked duct.
-24. Replace or clean duct pipe for air flow.
-25. All repairs done at home.
-26. Provide 90 days warranty on repair.
-27. Use genuine spare parts for long life.
-28. Technician reaches in 30 minutes in Noida.
-29. Cover all brands Elica Faber Siemens Kaff etc.
-30. Book repair now, 30 min arrival.`,installation:`Chimney Installation - New Install + Ducting
-1. Install new chimney at your home.
-2. Install all types - wall, island, corner, designer.
-3. Site inspection and suggest best place.
-4. Mark drilling points with proper measurement.
-5. Drill holes with safety and fix bracket strongly.
-6. Mount chimney on bracket and balance properly.
-7. Connect duct pipe to outside window or vent.
-8. Use aluminum flexible or rigid duct as needed.
-9. Make hole in wall or glass for duct outlet.
-10. Fix duct cap outside to avoid rain water.
-11. Seal all gaps with silicone to avoid leakage.
-12. Connect power supply and test earthing.
-13. Test suction, noise, light, touch after install.
-14. Show how to use auto-clean, touch buttons.
-15. Explain filter cleaning for regular maintenance.
-16. Provide 10 minute demo to customer.
-17. Installation time 60 to 90 minutes.
-18. Bring all tools - drill, ladder, screws, duct.
-19. Install all brands Elica Faber Kaff Hafele etc.
-20. Also reinstall old chimney if shift house.
-21. Provide uninstallation service also.
-22. Provide 90 days warranty on installation.
-23. Do duct cleaning if old duct blocked.
-24. Technician reaches in 30 min in Noida societies.
-25. Work in Jaypee Greens Lotus Supernova etc.
-26. Provide bill and warranty card after install.
-27. Clean area after installation.
-28. Independent installer, not company person.
-29. Safe and strong installation no vibration.
-30. Book installation now, 30 min arrival.`,noise:`Chimney Noise - Awaz Vibration Fix
-1. Noise common after 6 months use.
-2. Noise due to oil inside motor and fan.
-3. Loose screw or unbalanced fan creates noise.
-4. Bearing damage creates grinding noise.
-5. Duct blockage creates vibration and noise.
-6. Open chimney and check noise source.
-7. Clean oil from motor fan with chemical.
-8. Tighten all screws and bracket.
-9. Balance fan blade for smooth rotation.
-10. Change motor bearing if damaged.
-11. Apply oil to motor for free movement.
-12. Check duct pipe for blockage and clean.
-13. Fix wall bracket if loose from wall.
-14. Test after fixing - noise less than 50 db.
-15. Provide 90 days warranty on noise fix.
-16. Regular cleaning every 4 months avoids noise.
-17. Cover all brands Elica Faber Siemens Kaff etc.
-18. Technician reaches in 30 min in Noida.
-19. Noise fix takes 30 to 45 min at home.
-20. No need to bring to service center.
-21. Use original bearing and spare parts.
-22. Test suction along with noise fix.
-23. High noise can damage motor if ignored.
-24. Book immediately if noise high.
-25. Fixed noise in 2847+ homes in Noida.
-26. Customer rating 4.9/5 for noise fix.
-27. Provide bill with warranty after work.
-28. Clean kitchen after work.
-29. Same day service available on Sunday.
-30. Book noise fix now, 30 min arrival.`,suction:`Suction Low - Suction Kam Fix
-1. Suction Low when chimney not pull smoke.
-2. Kitchen becomes smoky and oily due low suction.
-3. Main reason oil in filter and motor.
-4. Baffle filter blocked with oil reduces 70% suction.
-5. Mesh filter also gets blocked with grease.
-6. Duct pipe blocked reduces air flow.
-7. Motor speed low due oil jam reduces suction.
-8. Check filter first and clean deeply.
-9. Clean baffle filter with chemical and hot water.
-10. Clean mesh and carbon filter if present.
-11. Open motor and clean fan blade with steam.
-12. Clean duct pipe from inside with brush.
-13. Check motor speed and fix if low.
-14. Test suction with tissue after cleaning.
-15. Tissue should stick if suction good.
-16. Check if chimney size correct for kitchen.
-17. Small chimney in big kitchen gives low suction.
-18. Suggest correct height 24 to 30 inch from stove.
-19. Provide 90 days warranty on suction fix.
-20. Regular cleaning every 4 months maintains suction.
-21. Cover all brands Elica Faber Siemens Kaff etc.
-22. Technician reaches in 30 min in Noida.
-23. Suction fix takes 45 to 60 min.
-24. Provide genuine filter if replacement needed.
-25. Fixed suction in 2847+ homes in Noida.
-26. Rating 4.9/5 for suction fix service.
-27. Provide bill after work completion.
-28. Clean kitchen area after service.
-29. Same day service on Sunday also.
-30. Book suction fix now, 30 min arrival.`,amc:`Chimney AMC - Yearly Maintenance Plan
-1. Yearly maintenance contract for your chimney.
-2. Includes 3 services in 12 months - every 4 months.
-3. Each service includes deep cleaning and checkup.
-4. First service at purchase, second after 4 months, third after 8 months.
-5. Covers cleaning of baffle, mesh, motor, fan, duct.
-6. Includes free checkup of motor PCB touch light auto-clean.
-7. If part fails, 15% discount on spare parts in AMC.
-8. Includes free visit if chimney stops between services.
-9. Technician reaches in 30 min even in AMC.
-10. AMC avoids big repair cost by regular maintenance.
-11. Regular service increases life by 5 years.
-12. Maintains suction and reduces noise.
-13. Reduces power consumption.
-14. Avoids motor jam and PCB failure.
-15. Cost less than 3 times single service.
-16. Provide AMC card and bill with service dates.
-17. Send reminder for next service before due.
-18. Cover all brands Elica Faber Siemens Kaff etc.
-19. Work in all Noida societies Jaypee Lotus etc.
-20. Valid for 12 months from purchase date.
-21. Have 500+ AMC customers in Noida.
-22. Rating 4.9/5 for AMC service.
-23. Includes 90 days warranty on each service.
-24. Independent provider, not company AMC.
-25. Use genuine cleaning chemicals.
-26. Technician certified and experienced.
-27. Service takes 45 to 60 min at home.
-28. Clean kitchen after AMC service.
-29. Same day AMC purchase and service available.
-30. Book AMC now, 30 min arrival and start first service.`};
+const DETAILS={service:`Chimney Service - Complete Checkup & Service...`,repair:`Chimney Repair - Motor PCB Touch Repair...`,installation:`Chimney Installation...`,noise:`Chimney Noise...`,suction:`Suction Low...`,amc:`Chimney AMC...`};
 function openDetails(type){
  document.getElementById('detailTitle').innerText=type.toUpperCase()+' DETAILS';
  document.getElementById('detailContent').innerText=DETAILS[type];
