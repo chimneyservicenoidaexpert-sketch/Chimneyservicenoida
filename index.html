@@ -168,16 +168,20 @@ function fallWords(container, text){
 }
 (function(){
   let el=document.getElementById('welcomeType');
-  let words = isHome? ["Welcome","to","Expert","Chimney","Care","in","Noida"] : ["Welcome","to",db,"Chimney","Care","in",area];
+  // BRAND LOGIC - Chimney ki jagah Brand
+  let brandName = db;
+  let words = isHome? ["Welcome","to","Expert",brandName,"Care","in","Noida"] : ["Welcome","to",brandName,"Care","in",area];
   el.innerHTML="";
   words.forEach((w,i)=>{
     let s=document.createElement('span');
     s.className="fall-word";
-    s.style.animationDelay=`${0.2+i*0.22}s`;
+    s.style.animationDelay=`${0.2+i*0.25}s`;
     s.innerText=w;
     if(w=="Welcome") s.style.color="#16a34a";
     el.appendChild(s);
   });
+  // Pura hone ke baad hi entry
+  let totalTime = 200 + (words.length * 250) + 850 + 500;
   setTimeout(()=>{
     let ws=document.getElementById('welcomeScreen');
     ws.style.transition='opacity.5s ease, transform.5s ease';
@@ -190,7 +194,7 @@ function fallWords(container, text){
       fallWords("dynamicContent200", para1);
       setTimeout(()=>{ fallWords("bottomPara", para2); }, 600);
     },500);
-  },1500);
+  }, totalTime);
 })();
 const titles = [
   `<span class="brand-green">${db}</span> Chimney Service in ${area}`,
