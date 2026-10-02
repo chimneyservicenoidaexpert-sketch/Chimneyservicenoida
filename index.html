@@ -10,8 +10,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
 body{margin:0;font-family:Inter,sans-serif;background:#f6f7f9;padding-bottom:90px;min-height:200vh;overflow:hidden}
 body.welcome-done{overflow:auto}
-.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#000 0%,#222 100%);color:#fff;border-radius:0 0 28px 28px;padding:38px 18px 34px;min-height:520px}
-.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(14px) brightness(0.45);transform:scale(1.2);z-index:0}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#000 0%,#222 100%);color:#fff;border-radius:0 0 28px 28px;padding:38px 16px 28px;min-height:400px}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(12px) brightness(0.5);transform:scale(1.05);z-index:0;opacity:.9}
 .hero> *:not(.hero-bg-img){position:relative;z-index:1}
 .chimney-logo-black{width:40px;height:40px;background:#000;border-radius:10px;display:flex;align-items:center;justify-content:center;border:1px solid #333}
 .card{background:#fff;border-radius:20px;padding:18px;margin:14px 12px;box-shadow:0 8px 24px rgba(0,0,0,.05);border:1px solid #f0f0f0;min-height:80px}
@@ -55,21 +55,17 @@ body.welcome-done{overflow:auto}
 <style>body{padding-top:34px!important}</style>
 
 <div class="hero">
-<img class="hero-bg-img" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1200" alt="chimney background">
+<img class="hero-bg-img" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800" alt="chimney background">
 <div style="display:flex;justify-content:space-between;align-items:center">
 <div style="display:flex;align-items:center;gap:8px">
 <div class="chimney-logo-black"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 3H10V8H14V12H18V20H6V8H8V3ZM8 8H6V20H8V18H10V20H12V18H14V20H16V12H12V8H8Z"/></svg></div>
-<div style="font-size:11px;opacity:.8;font-weight:800">SINCE 2015 • 4.9/5</div>
+<div style="font-size:10px;opacity:.8;font-weight:800">SINCE 2015 • 4.9/5</div>
 </div>
-<div style="background:#fff;color:#000;border-radius:100px;padding:6px 12px;font-size:9px;font-weight:900" id="heroBrandBadge">✔ Verified Care</div>
+<a href="tel:+918796284796" class="shake" style="background:#fff;color:#000;border-radius:100px;padding:8px 14px;font-size:11px;font-weight:900;text-decoration:none">📞 Call Now</a>
 </div>
-<h1 id="mainH" style="font-size:29px;font-weight:900;line-height:34px;margin:16px 0;color:#fff">Faber Chimney Service in Krescent Homes</h1>
+<h1 id="mainH" style="font-size:29px;font-weight:900;line-height:34px;margin:18px 0 12px;color:#fff">Faber Chimney Service in Krescent Homes</h1>
 <div id="dynamicTrust" style="display:inline-flex;background:rgba(255,255,255,.12);border-radius:100px;padding:7px 12px;font-size:10px">⭐ Serving 500+ Homes • 4.9/5 • Verified Care</div>
 <div id="dynamicContent200" style="margin-top:14px;font-size:11px;line-height:19px;opacity:.9;min-height:110px"></div>
-<div style="display:flex;gap:10px;margin-top:16px">
-<a href="tel:+918796284796" class="shake" style="flex:1;background:#fff;color:#000;border-radius:14px;padding:13px;text-align:center;text-decoration:none;font-weight:900;font-size:13px">📞 Call Now</a>
-<button onclick="document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})" class="shake" style="flex:1;background:#16a34a;color:#fff;border:0;border-radius:14px;padding:13px;font-weight:900;font-size:13px">Book Now</button>
-</div>
 </div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px">
@@ -198,10 +194,10 @@ function fallWords(container, text){
 })();
 const titles = [
   `<span class="brand-green">${db}</span> Chimney Service in ${area}`,
-  `Chimney Deep Cleaning in 45 Mint`,
-  `Chimney Noise Fix - Boos Bearing Replacement`,
-  `90 Days Warranty on Motor Replacement PCB Touch Panel`,
-  `Professional Technician Visit - Expert 10 Years Experience`
+  `<span class="brand-green">Deep</span> Cleaning in 45 Mint Service`,
+  `<span class="brand-green">Noise</span> Fix - Boos Bearing Replacement`,
+  `<span class="brand-green">90 Days</span> Warranty on Motor PCB Touch`,
+  `<span class="brand-green">Professional</span> Technician - 10 Years Expert`
 ];
 let cur=0;
 let mainH=document.getElementById('mainH');
@@ -213,25 +209,24 @@ setInterval(()=>{
     mainH.innerHTML=titles[cur];
     mainH.classList.remove('slide-out'); mainH.classList.add('slide-in');
   },500);
-},3000);
+},4200);
 function updateCare(){
  let care,title,desc,canonical;
  if(isHome){
    care="Expert Care";
    title="Chimney Service Noida - Deep Cleaning 45 Mint - 90 Days Warranty - Expert Care";
-   desc="Chimney Service Noida - Deep Cleaning 45 Mint, Boos Bearing Noise Fix, 90 Days Warranty on Motor PCB Touch";
+   desc="Chimney Service Noida - Deep Cleaning 45 Mint, Boos Bearing Noise Fix, 90 Days Warranty on Motor PCB Touch - Since 2015";
    canonical = "https://chimneyservicenoida.vercel.app/";
  } else {
    care=`${db} Care`;
    title=`${db} Chimney Service in ${area} - Deep Cleaning 45 Mint - 90 Days Warranty - Expert Care`;
-   desc=`Best ${db} Service in ${area} - 45 Mint Deep Cleaning, Boos Bearing Noise Fix, 90 Days Warranty`;
+   desc=`Best ${db} Service in ${area} - 45 Mint Deep Cleaning, Boos Bearing Noise Fix, 90 Days Warranty - Since 2015 Technician 30 Min Arrival`;
    canonical = `https://chimneyservicenoida.vercel.app/${path}`;
  }
  document.title=title;
  document.getElementById('seoTitle').innerText=title;
  document.getElementById('seoDesc').content=desc;
  document.getElementById('seoCanonical').href=canonical;
- document.getElementById('heroBrandBadge').innerText=`✔ ${care}`;
  document.querySelectorAll('.colArea').forEach(e=>e.innerText=area||'Noida');
  let dTrust=document.getElementById('dynamicTrust'); if(dTrust) dTrust.innerText=`⭐ Serving 500+ Homes in ${area||'Noida'} • 4.9/5 • ${care}`;
  let gmap=document.getElementById('gmap'); if(gmap) gmap.src=`https://maps.google.com/maps?q=${encodeURIComponent((area||'Noida')+' Noida')}&z=14&output=embed`;
