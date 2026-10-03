@@ -32,7 +32,8 @@ body.welcome-done{overflow:auto}
 @keyframes fallDown{0%{transform:translateY(-140px) rotate(-12deg) scale(0.5);opacity:0}100%{transform:translateY(0) rotate(0) scale(1);opacity:1}}
 .fall-word{display:inline-block;opacity:0;animation:fallDown 0.75s forwards;margin:0 3px}
 #mainH{min-height:92px}
-#floatCall{position:fixed;left:14px;bottom:100px;width:54px;height:54px;background:#16a34a;border-radius:50%;display:none;align-items:center;justify-content:center;color:#fff;font-size:24px;z-index:9998;text-decoration:none}
+#floatCall{position:fixed;left:14px;bottom:100px;width:54px;height:54px;background:#16a34a;border-radius:50%;display:none;align-items:center;justify-content:center;color:#fff;font-size:24px;z-index:9998;text-decoration:none;animation:shakeBtn 2s infinite}
+@keyframes floatShake{0%,90%,100%{transform:translateX(0)}92%{transform:translateX(-3px)}94%{transform:translateX(3px)}96%{transform:translateX(-3px)}}
 </style>
 </head>
 <body>
@@ -45,21 +46,18 @@ body.welcome-done{overflow:auto}
 <span id="topBarText">CHIMNEY CARE NOIDA - EXPERT TECHNICIAN</span>
 </div>
 <style>body{padding-top:34px!important}</style>
-
 <div class="hero">
 <img class="hero-bg-img" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800" alt="Chimney Service Noida" width="800" height="600" fetchpriority="high">
-<h1 id="mainH" style="font-size:29px;font-weight:900;line-height:34px;margin:18px 0 12px;color:#fff">Chimney Service in Noida</h1>
+<h1 id="mainH" style="font-size:29px;font-weight:900;line-height:34px;margin:18px 0 12px;color:#fff"></h1>
 <div id="dynamicTrust" style="display:inline-flex;background:rgba(255,255,255,.12);border-radius:100px;padding:7px 12px;font-size:10px">⭐ Serving 500+ Homes • 4.9/5 • Verified CARE</div>
 <div id="dynamicContent200" style="margin-top:14px;font-size:11px;line-height:19px;opacity:.9"></div>
 </div>
-
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px">
 <div class="service" style="border-top:3px solid #f97316"><div style="font-size:22px">🔊</div><b style="font-size:12px">Noise Issue</b><div style="font-size:9px;color:#666">Bush Bearing Fix</div><button onclick="openDetails('noise')" style="margin-top:8px;background:#f97316;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
 <div class="service" style="border-top:3px solid #22c55e"><div style="font-size:22px">⚙️</div><b style="font-size:12px">Installation</b><div style="font-size:9px;color:#666">New Install + Duct</div><button onclick="openDetails('installation')" style="margin-top:8px;background:#22c55e;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
 <div class="service" style="border-top:3px solid #3b82f6"><div style="font-size:22px">✨</div><b style="font-size:12px">Deep Cleaning</b><div style="font-size:9px;color:#666">45 Minutes Clean</div><button onclick="openDetails('deepclean')" style="margin-top:8px;background:#3b82f6;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
 <div class="service" style="border-top:3px solid #ef4444"><div style="font-size:22px">⚠️</div><b style="font-size:12px">Not Working</b><div style="font-size:9px;color:#666">90 Days Warranty</div><button onclick="openDetails('notworking')" style="margin-top:8px;background:#ef4444;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
 </div>
-
 <div id="bookingSection" class="card" style="border:2px solid #000">
 <div style="display:flex;justify-content:space-between"><div style="font-weight:900;font-size:15px">📅 Book Service</div><div style="background:#000;color:#fff;border-radius:100px;padding:4px 10px;font-size:9px;font-weight:900">30 MIN</div></div>
 <input id="custName" placeholder="👤 Your Full Name" style="width:100%;margin-top:14px;padding:14px;border-radius:14px;border:1px solid #e5e7eb;background:#fff;color:#000;box-sizing:border-box">
@@ -77,22 +75,16 @@ body.welcome-done{overflow:auto}
 </div>
 <button onclick="bookWhatsApp()" style="margin-top:14px;background:#000;color:#fff;border:0;border-radius:14px;padding:15px;width:100%;font-weight:900">Book Now - WhatsApp</button>
 </div>
-
-<!-- GOOGLE KA BOLA HUA EXACT 3 TEMPLATE YAHAN LAGEGA -->
 <div class="card" style="background:#f9f9f9;border:1.5px solid #111">
-<div style="font-size:14px;font-weight:900" id="trustedHeading">Trusted Kitchen Chimney Repair & Service in Noida</div>
+<div style="font-size:14px;font-weight:900" id="trustedHeading"></div>
 <p id="trustedPara" style="font-size:11px;line-height:19px;color:#222;margin-top:8px;white-space:pre-line"></p>
 </div>
-
-<div class="card"><div style="font-weight:900;font-size:14px" id="headService">Chimney Service in Noida - Full Guide</div><div id="colService" class="long-column" style="margin-top:10px"></div></div>
-<div class="card"><div style="font-weight:900;font-size:14px" id="headRepair">Chimney Repair in Noida - Motor PCB Fix</div><div id="colRepair" class="long-column" style="margin-top:10px"></div></div>
-<div class="card"><div style="font-weight:900;font-size:14px" id="headNoise">Why Chimney Makes Noise? Solution</div><div id="colNoise" class="long-column" style="margin-top:10px"></div></div>
-
+<div class="card"><div style="font-weight:900;font-size:14px" id="headService"></div><div id="colService" class="long-column" style="margin-top:10px"></div></div>
+<div class="card"><div style="font-weight:900;font-size:14px" id="headRepair"></div><div id="colRepair" class="long-column" style="margin-top:10px"></div></div>
+<div class="card"><div style="font-weight:900;font-size:14px" id="headNoise"></div><div id="colNoise" class="long-column" style="margin-top:10px"></div></div>
 <div class="card" style="padding:0;overflow:hidden"><iframe id="gmap" width="100%" height="380" style="border:0" src="" loading="lazy" title="Map"></iframe></div>
-
-<div class="card"><div style="font-weight:900" id="headWhy">Why Expert CARE No.1?</div><div id="longContent" style="font-size:11px;line-height:19px;color:#555;margin-top:8px;white-space:pre-line"></div></div>
-<div class="card" style="background:#f8f8f8;border:1.5px solid #111"><div style="font-size:11px;font-weight:900" id="headAbout">About Service in Noida</div><div id="bottomPara" style="font-size:11px;line-height:19px;color:#222;margin-top:8px;white-space:pre-line"></div></div>
-
+<div class="card"><div style="font-weight:900" id="headWhy"></div><div id="longContent" style="font-size:11px;line-height:19px;color:#555;margin-top:8px;white-space:pre-line"></div></div>
+<div class="card" style="background:#f8f8f8;border:1.5px solid #111"><div style="font-size:11px;font-weight:900" id="headAbout"></div><div id="bottomPara" style="font-size:11px;line-height:19px;color:#222;margin-top:8px;white-space:pre-line"></div></div>
 <div class="card" style="background:#FFF9C4;border:2px dashed #EAB308;border-radius:20px;padding:20px;margin:14px 12px">
 <div style="display:flex;align-items:center;gap:10px"><div style="width:36px;height:36px;background:#FACC15;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">⚠️</div><div style="font-size:14px;font-weight:900;color:#000">We Are Independent Service Provider</div></div>
 <div style="margin-top:14px;background:#fff;border-radius:12px;padding:14px;border:1px solid #FDE68A">
@@ -105,106 +97,30 @@ We are <b>NOT</b> authorized service center of Faber, Elica, Hindware, Bosch, Ka
 </div>
 </div>
 </div>
-
-<!-- Internal Linking - Google ne bola tha -->
 <div id="allBrandsCard" class="card" style="background:#000;color:#fff;padding:14px;min-height:200px">
-<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:10px;font-weight:800">📍 Our Services Areas - 20 Areas - 190 Pages</div><button onclick="let e=document.getElementById('allLinks');e.style.display=e.style.display=='none'?'block':'none'" style="background:#222;color:#fff;border:0;border-radius:100px;padding:6px 12px;font-size:9px">View All ↓</button></div>
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:10px;font-weight:800">📍 Our Services Areas - 20 Areas + 9 Brands = 190 Pages</div><button onclick="let e=document.getElementById('allLinks');e.style.display=e.style.display=='none'?'block':'none'" style="background:#222;color:#fff;border:0;border-radius:100px;padding:6px 12px;font-size:9px">View All ↓</button></div>
 <div id="areaPills" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:4px"></div>
 <div id="allLinks" style="display:none;margin-top:12px;border-top:1px solid #222;padding-top:10px;max-height:480px;overflow:auto"><div id="brandAreaPills" style="display:flex;flex-wrap:wrap;gap:4px"></div></div>
 </div>
-
 <div style="text-align:center;font-size:9px;color:#888;padding:16px 12px;margin-top:10px;line-height:14px">© 2015-2026 Expert Care - Independent Chimney Service Provider in Noida.<br>All Brands Supported. Not affiliated with brand authorized centers.</div>
-
 <a id="floatCall" href="tel:+918796284796" aria-label="Call">📞</a>
 <div id="detailsPopup" onclick="closeDetails()"><div onclick="event.stopPropagation()" style="background:#fff;border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:85vh;overflow:auto"><div style="display:flex;justify-content:space-between"><div id="detailTitle" style="font-weight:900;font-size:16px"></div><button onclick="closeDetails()" style="background:#f3f4f6;border:0;border-radius:100px;width:32px;height:32px">✕</button></div><div id="detailContent" style="font-size:11px;line-height:18px;color:#444;margin-top:12px;white-space:pre-line"></div><button onclick="closeDetails();document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})" style="margin-top:16px;background:#000;color:#fff;border:0;border-radius:14px;padding:15px;width:100%;font-weight:900">Book Now - WhatsApp</button></div></div>
 <div id="sticky"><button onclick="document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})" style="flex:1" class="btn-black shake">Book - 30 Min Arrival</button></div>
-
 <script>
 const BRANDS=["Siemens","Hafele","Kaff","Glen","Elica","Bosch","Faber","Hindware","Sunflame"];
 const AREAS=["Jaypee Greens","Lotus Blvd Sec 100","Supernova Sec 94","Wish Town","Klassic Sec 134","Panache Sec 110","Kosmos Sec 134","Daffodil Sec 137","Lotus Zing Sec 168","Knightsbridge Sec 124","Paras Tierea","Aman Sec 151","Aamantran Sec 119","Pavilion Sec 128","Espacia Sec 100","Kensington Park","Imperial Court","Kalypso Court","Krescent Homes","Jaypee Greens Sec 128"];
-
-function getP(){
-  let path=window.location.pathname.toLowerCase().replace(/^\//,'').replace(/\.html$/,'');
-  let brandFromPath=null; let areaFromPath="Noida";
-  BRANDS.forEach(b=>{if(path.includes(b.toLowerCase())) brandFromPath=b;});
-  AREAS.forEach(a=>{let slug=a.toLowerCase().replaceAll(' ','-'); if(path.includes(slug)) areaFromPath=a;});
-  let isHome=!brandFromPath && (!path || path==='' || path==='index');
-  return {brand:brandFromPath,area:areaFromPath,isHome:isHome,path:path};
-}
-let {brand,area,isHome}=getP();
-let db=brand||"Expert";
-let displayBrand=brand||"Chimney";
-let displayArea=area||"Noida";
-
-(function(){
-  let el=document.getElementById('welcomeType');
-  let words=isHome? ["Welcome","to","Expert","Chimney","CARE","in","Noida"] : ["Welcome","to",db,"CARE","in",displayArea];
-  el.innerHTML=""; words.forEach((w,i)=>{let s=document.createElement('span'); s.className="fall-word"; s.style.animationDelay=`${0.15+i*0.28}s`; s.innerText=w+" "; if(w==db) s.style.color="#16a34a"; el.appendChild(s);});
-  setTimeout(()=>{let ws=document.getElementById('welcomeScreen'); ws.style.transition='opacity.5s'; ws.style.opacity='0'; setTimeout(()=>{ws.style.display='none'; document.body.classList.add('welcome-done');},500);}, 2500);
-})();
-
+function getP(){let path=window.location.pathname.toLowerCase().replace(/^\//,'').replace(/\.html$/,'');let brandFromPath=null;let areaFromPath="Noida";BRANDS.forEach(b=>{if(path.includes(b.toLowerCase())) brandFromPath=b;});AREAS.forEach(a=>{let slug=a.toLowerCase().replaceAll(' ','-'); if(path.includes(slug)) areaFromPath=a;});let isHome=!brandFromPath && (!path || path==='' || path==='index');return {brand:brandFromPath,area:areaFromPath,isHome:isHome};}
+let {brand,area,isHome}=getP();let db=brand||"Expert";let displayArea=area||"Noida";
+(function(){let el=document.getElementById('welcomeType');let words=isHome? ["Welcome","to","Expert","Chimney","CARE","in","Noida"] : ["Welcome","to",db,"CARE","in",displayArea];el.innerHTML="";words.forEach((w,i)=>{let s=document.createElement('span');s.className="fall-word";s.style.animationDelay=`${0.15+i*0.28}s`;s.innerText=w+" ";if(w==db) s.style.color="#16a34a";el.appendChild(s);});setTimeout(()=>{let ws=document.getElementById('welcomeScreen');ws.style.transition='opacity.5s';ws.style.opacity='0';setTimeout(()=>{ws.style.display='none';document.body.classList.add('welcome-done');},500);},2800);})();
 function updateCare(){
- let care,title,desc,h1,trustedHead,trustedPara,serviceText,repairText,noiseText,longText,bottomText,dynamic200;
-
- if(isHome){
-   care="Expert CARE";
-   title="Chimney Service in Noida | Expert Repair | 30 Min Arrival";
-   desc="Chimney Service Noida - Expert Repair, Deep Cleaning, Noise Fix - 30 Min Arrival, 90 Days Warranty";
-   h1="Professional Kitchen Chimney Repair & Service in Noida";
-   trustedHead="Trusted Kitchen Chimney Repair & Service in Noida";
-   trustedPara=`Kya aapki kitchen chimney sahi se kaam nahi kar rahi hai? Hamare expert technicians har brand ki chimney ke sabhi models (Filterless, Baffle filter, Touch control, Motion Sensor) ki har problem ko doorstep par instant theek karne me expert hain. Noida ki badi high-rise societies me lambe duct pipe hone ki wajah se oil grease jaldi jamta hai. Isliye hum Noida ke sabhi residents ke liye special 45-Minutes Deep Cleaning aur expert breakdown service lekar aaye hain. Hum Noida me aapke call karne ke sirf 30 minutes ke andar doorstep par pahunchte hain. Hamari har expert chimney repair, motor bearing replacement, noise issue fix, aur PCB circuit board repair par aapko milti hai 90 din ki pukki warranty.`;
-   serviceText=`Chimney Service in Noida - Complete Guide\n\nIf you live in Noida, your chimney faces heavy oil and dust. Duct length 10-15 feet with bends reduces suction if not sealed. Our service starts with filter, blower, motor amp, PCB voltage, duct airflow check.`;
-   repairText=`Chimney Repair in Noida - Motor PCB Touch Fix\n\nChimney repair needed when motor burns, PCB fails, touch not responding, capacitor weak, blower broken. In Noida voltage fluctuation damages PCB. Our van carries original motors, PCBs, capacitors, touch panels for all models, 90% repairs first visit.`;
-   noiseText=`Why Chimney Makes Noise? Solution\n\nMotor bearing wear after 2-3 years, loose blower wheel, grease in housing touching blower, duct loose, filter vibrating. Solution: Tighten wheel screw, oil bearing, clean housing, clamp duct.`;
-   longText=`Expert CARE has been providing service since 2015 for all types. Our certified technician will reach any society in Noida within 30 minutes. We fix low suction, high noise, auto-clean not working, touch panel issue, oil leakage. Trusted by 2847+ homes with 90 days warranty on motor replacement, PCB and touch panel.`;
-   bottomText=`Expert service since 2015 in Noida. Technician will reach Noida within 30 minutes near main market. Motor repair, PCB repair, touch sensor repair, filter cleaning and duct cleaning with 90 days warranty.`;
-   dynamic200=`Expert CARE provides service since 2015 in Noida. Technician reaches Noida in 30 min. 90 days warranty on motor PCB touch. All brands Faber, Elica, Hindware, Bosch supported.`;
- } else {
-   // GOOGLE KA EXACT TEMPLATE
-   care=`${db} CARE`;
-   title=`${db} Chimney Service in ${displayArea} Noida | Expert Repair`;
-   desc=`Get professional ${db} kitchen chimney repair and deep cleaning service in ${displayArea}, Noida. 30-min doorstep arrival with 90 days warranty on motor PCB.`;
-   h1=`Professional ${db} Kitchen Chimney Repair & Service in ${displayArea}, Noida`;
-   trustedHead=`Trusted Kitchen ${db} Chimney Repair & Service in ${displayArea}, Noida`;
-   trustedPara=`Kya aap ${displayArea} Noida me apni ${db} kitchen chimney ki deep cleaning, repair ya ducting karwana chahte hain? Hamare expert technicians ${db} chimney ke sabhi models (jaise Filterless, Baffle filter, Touch control aur Motion Sensor) ki har problem ko doorstep par instant theek karne me expert hain.\n\nNoida ki badi high-rise societies me lambe duct pipe hone ki wajah se oil grease jaldi jamta hai. Isliye hum ${displayArea} ke sabhi residents ke liye special 45-Minutes Deep Cleaning aur expert breakdown service lekar aaye hain.\n\nHum ${displayArea}, Noida me aapke call karne ke sirf 30 minutes ke andar doorstep par pahunchte hain. Hamari har expert ${db} chimney repair, motor bearing replacement, noise issue fix, aur PCB circuit board repair par aapko milti hai 90 din ki pukki warranty, taaki aap befikr reh sakein. Apne local technician ko bulane ke liye abhi call ya WhatsApp karein!`;
-   serviceText=`${db} Chimney Service in ${displayArea} - Full Guide\n\nIf you live in ${displayArea}, your ${db} kitchen chimney faces heavy oil and Indian tadka smoke. ${db} chimneys use advanced filterless and baffle filter technology which needs special cleaning. Our ${db} service in ${displayArea} starts with ${db} filter, ${db} blower, ${db} motor amp check, PCB voltage, duct airflow check. We dismantle ${db} filters, soak in degreaser 20 min, scrub, wash, dry, refit. ${db} blower cleaned with foam to protect winding.\n\nWhy ${db} service every 4 months in ${displayArea}? Cooking 3 times daily with oil blocks ${db} filter. After 120 days suction drops 60%. Regular ${db} service prevents motor overload in ${displayArea}.`;
-   repairText=`${db} Chimney Repair in ${displayArea} - Motor PCB Touch Fix\n\n${db} chimney repair needed when ${db} motor burns, ${db} PCB fails, ${db} touch not responding, capacitor weak, blower broken. In ${displayArea} voltage fluctuation damages ${db} PCB. Oil on ${db} touch causes no response. Our van carries original ${db} motors, ${db} PCBs, capacitors, touch panels for all ${db} models, 90% ${db} repairs first visit in ${displayArea}.`;
-   noiseText=`Why ${db} Chimney Makes Noise in ${displayArea}? Not Working Solution\n\n1) Why ${db} Noise in ${displayArea}? ${db} motor bearing wear after 2-3 years, loose blower wheel, grease in housing touching blower, duct loose, filter vibrating. Solution: Tighten wheel screw, oil bearing, clean housing, clamp duct, refit filter lock. If bearing worn replace Bush bearing set for ${db} in ${displayArea}.\n\n2) ${db} Not Working in ${displayArea}: Power socket no supply, plug fuse blown, PCB fuse blown, touch dead, capacitor weak, motor burnt. Solution: Check socket, replace fuse, check PCB fuse, clean touch sensor, test capacitor.\n\n3) ${db} Low Suction Fix in ${displayArea}: Filter jam, duct bend, blower grease. Fix: Clean baffle filter, replace carbon filter 6 months, clean blower, straighten duct, seal leaks, keep height 24-30 inch.`;
-   longText=`${care} has been providing ${db} service since 2015 for ${displayArea}. Our certified ${db} technician will reach ${displayArea} society in 30 minutes. We fix ${db} low suction, high noise, auto-clean not working, touch panel issue, oil leakage in ${displayArea}. Trusted by 2847+ homes in ${displayArea} with 90 days warranty on ${db} motor replacement, PCB and touch panel.`;
-   bottomText=`${db} service since 2015 in ${displayArea}. Technician will reach ${displayArea} within 30 minutes near main market. ${db} Motor repair, ${db} PCB repair, ${db} touch sensor repair, filter cleaning and duct cleaning with 90 days warranty in ${displayArea}. If you live in ${displayArea} and your ${db} chimney has low suction, high noise, oil leakage or auto-clean problem, call now.`;
-   dynamic200=`${db} CARE provides service since 2015 in ${displayArea}. Technician reaches ${displayArea} in 30 min. We offer ${db} motor repair, ${db} PCB repair, ${db} touch repair with 90 days warranty on ${db} motor replacement, PCB and touch panel. Professional ${db} technician with 10 years experience for ${db} homes in ${displayArea}.`;
- }
-
- document.title=title;
- document.getElementById('seoTitle').innerText=title;
- document.getElementById('seoDesc').content=desc;
- document.getElementById('seoCanonical').href=window.location.href;
- document.getElementById('mainH').innerText=h1;
- document.getElementById('trustedHeading').innerText=trustedHead;
- document.getElementById('trustedPara').innerText=trustedPara;
- document.getElementById('colService').innerText=serviceText;
- document.getElementById('colRepair').innerText=repairText;
- document.getElementById('colNoise').innerText=noiseText;
- document.getElementById('longContent').innerText=longText;
- document.getElementById('bottomPara').innerText=bottomText;
- document.getElementById('dynamicContent200').innerText=dynamic200;
- document.getElementById('headService').innerHTML=`${displayBrand} Service in ${displayArea} - Full Guide`;
- document.getElementById('headRepair').innerHTML=`${displayBrand} Repair in ${displayArea} - Motor PCB Fix`;
- document.getElementById('headAbout').innerHTML=`About ${displayBrand} Service in ${displayArea}`;
- document.getElementById('headWhy').innerText=`Why ${care} No.1 in ${displayArea}?`;
- document.getElementById('headNoise').innerText=`Why ${displayBrand} Chimney Makes Noise in ${displayArea}? Solution`;
- document.getElementById('dynamicTrust').innerText=`⭐ Serving 500+ Homes in ${displayArea} • 4.9/5 • ${care}`;
- document.getElementById('gmap').src=`https://maps.google.com/maps?q=${encodeURIComponent(displayArea+' Noida')}&z=14&output=embed`;
- document.getElementById('topBarText').innerText=isHome? "CHIMNEY CARE NOIDA - EXPERT TECHNICIAN" : `${db.toUpperCase()} CARE ${displayArea.toUpperCase()} - 30 MIN ARRIVAL`;
-
- let h="";AREAS.forEach(a=>{ let s=a.replaceAll(' ','-').toLowerCase(); let lb=(brand||'faber').toLowerCase(); h+=`<a class="pill" style="background:#222;color:#fff" href="/${lb}-chimney-service-${s}">${a}</a>` }); document.getElementById('areaPills').innerHTML=h;
- let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{ let s=ar.replaceAll(' ','-').toLowerCase(); b+=`<a class="pill" style="background:#fff;color:#000;border:1px solid #333" href="/${br.toLowerCase()}-chimney-service-${s}">${br} in ${ar}</a>` })}); document.getElementById('brandAreaPills').innerHTML=b;
-}
-updateCare();
-setTimeout(()=>{ let f=document.getElementById('floatCall'); if(f) f.style.display='flex'; },10000);
-function bookWhatsApp(){ let name=document.getElementById('custName').value||'Customer'; let phone=document.getElementById('custPhone').value||'Not given'; let addr=document.getElementById('custAddress').value||'Not given'; let service=document.getElementById('custService').value||'Deep Cleaning'; let date=document.getElementById('bookDate').value||'Today'; let time=document.getElementById('bookTime').value; let msg=`*New Booking - ${brand||'Chimney'} Chimney*%0AName: ${name}%0APhone: ${phone}%0AAddress: ${addr}%0AService: ${service}%0ADate: ${date} - ${time}%0AArea: ${displayArea}%0APage: ${window.location.pathname}`; window.open(`https://wa.me/918796284796?text=${msg}`,'_blank'); }
-const DETAILS={noise:`${db} Chimney Noise - Bush Bearing Replacement in ${displayArea}\n\n${db} Motor bearing wear, loose blower wheel, oil clog in housing. Fix: tighten wheel, oil shaft, replace Bush bearing, clean housing. 30 min fix in ${displayArea}.`,installation:`${db} Chimney Installation in ${displayArea} - New ${db} chimney install with ducting, height 24-30 inch, max 1 bend, sealed duct, suction test.`,deepclean:`${db} Chimney Deep Cleaning in ${displayArea} - 45 Minutes Clean\n\n${db} Filter soak 20 min in degreaser, blower foam cleaning, motor oiling, oil collector cleaning, suction test. 90 Days Warranty. Removes oil, dust, restores 2x suction for ${db} in ${displayArea}.`,notworking:`${db} Chimney Not Working in ${displayArea} - 90 Days Warranty\n\nCheck power socket, PCB fuse, touch sensor, capacitor. Most ${db} cases touch panel fails due to oil. We clean sensor, test voltage, replace capacitor if motor hums but not rotates. Fixed at home in ${displayArea}.`};
-function openDetails(type){ document.getElementById('detailTitle').innerText=type.toUpperCase()+' DETAILS - '+db+' '+displayArea; document.getElementById('detailContent').innerText=DETAILS[type]; document.getElementById('detailsPopup').style.display='flex'; }
+let care,title,desc,h1,trustedHead,trustedPara,serviceText,repairText,noiseText,longText,bottomText,dynamic200;
+if(isHome){care="Expert CARE";title="Chimney Service in Noida | Expert Repair | 30 Min Arrival";desc="Chimney Service Noida - Expert Repair, Deep Cleaning, Noise Fix - 30 Min Arrival, 90 Days Warranty";h1="Professional Kitchen Chimney Repair & Service in Noida";trustedHead="Trusted Kitchen Chimney Repair & Service in Noida";trustedPara=`Kya aapki kitchen chimney sahi se kaam nahi kar rahi hai? Hamare expert technicians har brand ki chimney ke sabhi models (Filterless, Baffle filter, Touch control, Motion Sensor) ki har problem ko doorstep par instant theek karne me expert hain. Noida ki badi high-rise societies me lambe duct pipe hone ki wajah se oil grease jaldi jamta hai. Isliye hum Noida ke sabhi residents ke liye special 45-Minutes Deep Cleaning aur expert breakdown service lekar aaye hain. Hum Noida me aapke call karne ke sirf 30 minutes ke andar doorstep par pahunchte hain. Hamari har expert chimney repair, motor bearing replacement, noise issue fix, aur PCB circuit board repair par aapko milti hai 90 din ki pukki warranty.`;serviceText=`Chimney Service in Noida - Complete Guide\n\nIf you live in Noida, your chimney faces heavy oil and dust. Duct length 10-15 feet with bends reduces suction if not sealed.`;repairText=`Chimney Repair in Noida - Motor PCB Touch Fix\n\nChimney repair needed when motor burns, PCB fails, touch not responding, capacitor weak, blower broken. Our van carries original motors, PCBs, capacitors, touch panels for all models, 90% repairs first visit.`;noiseText=`Why Chimney Makes Noise? Solution\n\nMotor bearing wear after 2-3 years, loose blower wheel, grease in housing touching blower, duct loose, filter vibrating. Solution: Tighten wheel screw, oil bearing, clean housing, clamp duct.`;dynamic200=`Expert CARE provides service since 2015 in Noida. Technician reaches Noida in 30 min. 90 days warranty on motor PCB touch. All brands Faber, Elica, Hindware, Bosch supported.`;longText=`Expert CARE has been providing service since 2015 for all types. Our certified technician will reach any society in Noida within 30 minutes. We fix low suction, high noise, auto-clean not working, touch panel issue, oil leakage. Trusted by 2847+ homes with 90 days warranty.`;bottomText=`Expert service since 2015 in Noida. Technician will reach Noida within 30 minutes near main market. Motor repair, PCB repair, touch sensor repair, filter cleaning and duct cleaning with 90 days warranty.`;}
+else{care=`${db} CARE`;title=`${db} Chimney Service in ${displayArea} Noida | Expert Repair`;desc=`Get professional ${db} kitchen chimney repair and deep cleaning service in ${displayArea}, Noida. 30-min doorstep arrival with 90 days warranty on motor PCB.`;h1=`Professional ${db} Kitchen Chimney Repair & Service in ${displayArea}, Noida`;trustedHead=`Trusted Kitchen ${db} Chimney Repair & Service in ${displayArea}, Noida`;trustedPara=`Kya aap ${displayArea} Noida me apni ${db} kitchen chimney ki deep cleaning, repair ya ducting karwana chahte hain? Hamare expert technicians ${db} chimney ke sabhi models (jaise Filterless, Baffle filter, Touch control aur Motion Sensor) ki har problem ko doorstep par instant theek karne me expert hain.\n\nNoida ki badi high-rise societies me lambe duct pipe hone ki wajah se oil grease jaldi jamta hai. Isliye hum ${displayArea} ke sabhi residents ke liye special 45-Minutes Deep Cleaning aur expert breakdown service lekar aaye hain.\n\nHum ${displayArea}, Noida me aapke call karne ke sirf 30 minutes ke andar doorstep par pahunchte hain. Hamari har expert ${db} chimney repair, motor bearing replacement, noise issue fix, aur PCB circuit board repair par aapko milti hai 90 din ki pukki warranty, taaki aap befikr reh sakein. Apne local technician ko bulane ke liye abhi call ya WhatsApp karein!`;serviceText=`${db} Chimney Service in ${displayArea} - Full Guide\n\nIf you live in ${displayArea}, your ${db} kitchen chimney faces heavy oil and Indian tadka smoke. Our ${db} service in ${displayArea} starts with ${db} filter, ${db} blower, ${db} motor amp check, PCB voltage, duct airflow check. We dismantle ${db} filters, soak in degreaser 20 min, scrub, wash, dry, refit. Regular ${db} service every 4 months prevents motor overload in ${displayArea}.`;repairText=`${db} Chimney Repair in ${displayArea} - Motor PCB Touch Fix\n\n${db} chimney repair needed when ${db} motor burns, ${db} PCB fails, ${db} touch not responding, capacitor weak, blower broken. In ${displayArea} voltage fluctuation damages ${db} PCB. Oil on ${db} touch causes no response. Our van carries original ${db} motors, ${db} PCBs, capacitors, touch panels for all ${db} models, 90% ${db} repairs first visit in ${displayArea}.`;noiseText=`Why ${db} Chimney Makes Noise in ${displayArea}? Not Working Solution\n\n1) Why ${db} Noise in ${displayArea}? ${db} motor bearing wear after 2-3 years, loose blower wheel, grease in housing touching blower, duct loose, filter vibrating. Solution: Tighten wheel screw, oil bearing, clean housing, clamp duct, refit filter lock. If bearing worn replace Bush bearing set for ${db} in ${displayArea}.\n\n2) ${db} Not Working in ${displayArea}: Power socket no supply, plug fuse blown, PCB fuse blown, touch dead, capacitor weak, motor burnt. Solution: Check socket, replace fuse, check PCB fuse, clean touch sensor, test capacitor.\n\n3) ${db} Low Suction Fix in ${displayArea}: Filter jam, duct bend, blower grease. Fix: Clean baffle filter, replace carbon filter 6 months, clean blower, straighten duct, seal leaks, keep height 24-30 inch.`;dynamic200=`${db} CARE provides service since 2015 in ${displayArea}. Technician reaches ${displayArea} in 30 min. We offer ${db} motor repair, ${db} PCB repair, ${db} touch repair with 90 days warranty on ${db} motor replacement, PCB and touch panel. Professional ${db} technician with 10 years experience for ${db} homes in ${displayArea}.`;longText=`${care} has been providing ${db} service since 2015 for ${displayArea}. Our certified ${db} technician will reach ${displayArea} society in 30 minutes. We fix ${db} low suction, high noise, auto-clean not working, touch panel issue, oil leakage in ${displayArea}. Trusted by 2847+ homes in ${displayArea} with 90 days warranty on ${db} motor replacement, PCB and touch panel.`;bottomText=`${db} service since 2015 in ${displayArea}. Technician will reach ${displayArea} within 30 minutes near main market. ${db} Motor repair, ${db} PCB repair, ${db} touch sensor repair, filter cleaning and duct cleaning with 90 days warranty in ${displayArea}. If you live in ${displayArea} and your ${db} chimney has low suction, high noise, oil leakage or auto-clean problem, call now.`;}
+document.title=title;document.getElementById('seoTitle').innerText=title;document.getElementById('seoDesc').content=desc;document.getElementById('seoCanonical').href=window.location.href;document.getElementById('mainH').innerText=h1;document.getElementById('trustedHeading').innerText=trustedHead;document.getElementById('trustedPara').innerText=trustedPara;document.getElementById('colService').innerText=serviceText;document.getElementById('colRepair').innerText=repairText;document.getElementById('colNoise').innerText=noiseText;document.getElementById('longContent').innerText=longText;document.getElementById('bottomPara').innerText=bottomText;document.getElementById('dynamicContent200').innerText=dynamic200;document.getElementById('headService').innerText=`${db} Service in ${displayArea} - Full Guide`;document.getElementById('headRepair').innerText=`${db} Repair in ${displayArea} - Motor PCB Fix`;document.getElementById('headAbout').innerText=`About ${db} Service in ${displayArea}`;document.getElementById('headWhy').innerText=`Why ${care} No.1 in ${displayArea}?`;document.getElementById('headNoise').innerText=`Why ${db} Chimney Makes Noise in ${displayArea}? Solution`;document.getElementById('dynamicTrust').innerText=`⭐ Serving 500+ Homes in ${displayArea} • 4.9/5 • ${care}`;document.getElementById('gmap').src=`https://maps.google.com/maps?q=${encodeURIComponent(displayArea+' Noida')}&z=14&output=embed`;document.getElementById('topBarText').innerText=isHome? "CHIMNEY CARE NOIDA - EXPERT TECHNICIAN" : `${db.toUpperCase()} CARE ${displayArea.toUpperCase()} - 30 MIN ARRIVAL`;let h="";AREAS.forEach(a=>{let s=a.replaceAll(' ','-').toLowerCase();let lb=(brand||'faber').toLowerCase();h+=`<a class="pill" style="background:#222;color:#fff" href="/${lb}-chimney-service-${s}">${a}</a>`});document.getElementById('areaPills').innerHTML=h;let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{let s=ar.replaceAll(' ','-').toLowerCase();b+=`<a class="pill" style="background:#fff;color:#000;border:1px solid #333" href="/${br.toLowerCase()}-chimney-service-${s}">${br} in ${ar}</a>`})});document.getElementById('brandAreaPills').innerHTML=b;}
+updateCare();setTimeout(()=>{let f=document.getElementById('floatCall');if(f) f.style.display='flex';},5000);
+function bookWhatsApp(){let name=document.getElementById('custName').value||'Customer';let phone=document.getElementById('custPhone').value||'Not given';let addr=document.getElementById('custAddress').value||'Not given';let service=document.getElementById('custService').value||'Deep Cleaning';let date=document.getElementById('bookDate').value||'Today';let time=document.getElementById('bookTime').value;let msg=`*New Booking - ${brand||'Chimney'} Chimney*%0AName: ${name}%0APhone: ${phone}%0AAddress: ${addr}%0AService: ${service}%0ADate: ${date} - ${time}%0AArea: ${displayArea}%0APage: ${window.location.pathname}`;window.open(`https://wa.me/918796284796?text=${msg}`,'_blank');}
+const DETAILS={noise:`${db} Chimney Noise - Bush Bearing Replacement in ${displayArea}\n\nMotor bearing wear, loose blower wheel, oil clog in housing. Fix: tighten wheel, oil shaft, replace Bush bearing, clean housing. 30 min fix in ${displayArea}.`,installation:`${db} Chimney Installation in ${displayArea} - New ${db} chimney install with ducting, height 24-30 inch, max 1 bend, sealed duct, suction test.`,deepclean:`${db} Chimney Deep Cleaning in ${displayArea} - 45 Minutes Clean\n\n${db} Filter soak 20 min in degreaser, blower foam cleaning, motor oiling, oil collector cleaning, suction test. 90 Days Warranty for ${db} in ${displayArea}.`,notworking:`${db} Chimney Not Working in ${displayArea} - 90 Days Warranty\n\nCheck power socket, PCB fuse, touch sensor, capacitor. Most ${db} cases touch panel fails due to oil. We clean sensor, test voltage, replace capacitor if motor hums but not rotates. Fixed at home in ${displayArea}.`};
+function openDetails(type){document.getElementById('detailTitle').innerText=type.toUpperCase()+' DETAILS - '+db+' '+displayArea;document.getElementById('detailContent').innerText=DETAILS[type];document.getElementById('detailsPopup').style.display='flex';}
 function closeDetails(){document.getElementById('detailsPopup').style.display='none';}
 </script>
 </body>
