@@ -20,7 +20,8 @@ body.welcome-done{overflow:auto}
 .chimney-logo-black{width:40px;height:40px;background:#000;border-radius:10px;display:flex;align-items:center;justify-content:center;border:1px solid #333}
 .card{background:#fff;border-radius:20px;padding:18px;margin:14px 12px;box-shadow:0 8px 24px rgba(0,0,0,.05);border:1px solid #f0f0f0;min-height:80px}
 .service{border-radius:18px;padding:14px;text-align:center;border:1px solid #f0f0f0;background:linear-gradient(180deg,#fff,#fbfbfb);min-height:115px}
-.pill{display:inline-block;border-radius:100px;padding:5px 9px;font-size:8px;font-weight:800;text-decoration:none;margin:2px}
+.pill{display:inline-block;border-radius:100px;padding:6px 10px;font-size:8px;font-weight:800;text-decoration:none;margin:3px;background:#222;color:#fff}
+.pill-light{display:inline-block;border-radius:100px;padding:6px 10px;font-size:8px;font-weight:800;text-decoration:none;margin:3px;background:#fff;color:#000;border:1px solid #333}
 .btn-black{background:#000;color:#fff;border-radius:14px;padding:13px;width:100%;font-weight:800;border:0;cursor:pointer}
 #callPopup{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:99999}
 #detailsPopup{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:flex-end;justify-content:center;z-index:100000}
@@ -32,7 +33,6 @@ body.welcome-done{overflow:auto}
 #welcomeIcon{width:86px;height:86px;background:#111;border-radius:20px;display:flex;align-items:center;justify-content:center;border:2px solid #16a34a;box-shadow:0 0 30px rgba(22,163,74,.4)}
 #welcomeType{font-size:26px;font-weight:900;margin-top:20px;text-align:center;line-height:34px;min-height:70px;max-width:92%;display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
 .long-column{font-size:11px;line-height:20px;color:#333;white-space:pre-line}
-@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 @keyframes fallDown{0%{transform:translateY(-140px) rotate(-12deg) scale(0.5);opacity:0;filter:blur(10px)}60%{transform:translateY(10px) rotate(2deg) scale(1.1);opacity:1;filter:blur(0)}100%{transform:translateY(0) rotate(0) scale(1);opacity:1}}
 .fall-word{display:inline-block;opacity:0;animation:fallDown 0.75s cubic-bezier(0.34,1.56,0.64,1) forwards;margin:0 3px}
 @keyframes slideUpOut{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-60px);opacity:0}}
@@ -162,28 +162,27 @@ All Brands Supported. Not affiliated with brand authorized centers.
 const BRANDS=["Siemens","Hafele","Kaff","Glen","Elica","Bosch","Faber","Hindware","Sunflame"];
 const AREAS=["Jaypee Greens","Lotus Blvd Sec 100","Supernova Sec 94","Wish Town","Klassic Sec 134","Panache Sec 110","Kosmos Sec 134","Daffodil Sec 137","Lotus Zing Sec 168","Knightsbridge Sec 124","Paras Tierea","Aman Sec 151","Aamantran Sec 119","Pavilion Sec 128","Espacia Sec 100","Kensington Park","Imperial Court","Kalypso Court","Krescent Homes","Jaypee Greens Sec 128"];
 
-// GOOGLE FIX - 3 LINES UNIQUE PER AREA - DUPLICATE KHATAM
 const uniqueLines = {
-  'jaypee-greens':'Jaypee Greens Greater Noida me 300+ flats me service kar chuke hain. Yahan ki luxury villas me heavy oil cleaning common hai. Tower 1-40 tak hamari team 30 min me pahunchti hai.',
-  'lotus-blvd-sec-100':'Lotus Blvd Sec 100 ke Tower 1-15 me hamari special team active hai. Yahan duct length zyada hone se suction issue common hai. Duct sealing expert team available hai.',
-  'supernova-sec-94':'Supernova Sec 94 ke high-rise kitchens ke liye expert duct cleaning karte hain. 80th floor tak service ka experience hai. 45 min me deep cleaning service dete hain.',
-  'wish-town':'Wish Town Jaypee ke villas me heavy-duty motor repair me expert hain. Yahan large kitchens me 90cm chimney zyada hai. Original Faber/Hafele parts available hain.',
-  'klassic-sec-134':'Klassic Sec 134 me 150+ chimney cleaning ka record hai. Yahan 2BHK me noise issue zyada aata hai. Same day bush bearing replacement karte hain.',
-  'panache-sec-110':'Panache Sec 110 ke premium flats me Faber/Hafele specialist team hai. Yahan auto-clean not working ki complaint zyada hai. RO water se cleaning karte hain.',
-  'kosmos-sec-134':'Kosmos Sec 134 me PCB aur touch sensor repair same day karte hain. Yahan voltage fluctuation se PCB fail hota hai. 90 days warranty on spare parts dete hain.',
-  'daffodil-sec-137':'Daffodil Sec 137 me auto-clean issue 45 min me fix karte hain. Yahan oil collector full hona common problem hai. Hard water avoid karne ki salah dete hain.',
-  'lotus-zing-sec-168':'Lotus Zing Sec 168 me deep cleaning with 90 days warranty on motor. Yahan new society me installation zyada hoti hai. 10 years experienced technician hai.',
-  'knightsbridge-sec-124':'Knightsbridge Sec 124 me noise issue specialist hain. Yahan bearing wear 2 saal me hota hai. High-temp oil se bearing replacement karte hain.',
-  'paras-tierea':'Paras Tierea Sec 137 me installation + service combo offer available hai. Yahan 3BHK me duct bend issue common hai. Aluminum tape sealing karte hain.',
-  'aman-sec-151':'Aman Sec 151 Noida Extension ki fastest service hai. Yahan 30 min arrival ka record hai. New flats me warranty check karke service dete hain.',
-  'aamantran-sec-119':'Aamantran Sec 119 me motor replacement original parts ke sath karte hain. Yahan capacitor weak hona common hai. Same day motor available hai.',
-  'pavilion-sec-128':'Pavilion Sec 128 me trained technicians all brands ke liye available hain. Yahan touch panel oil se fail hota hai. IPA se cleaning karte hain.',
-  'espacia-sec-100':'Espacia Sec 100 me same-day booking, motor PCB touch fix karte hain. Yahan low suction ki problem zyada hai. Filter soak 20 min me karte hain.',
-  'kensington-park':'Kensington Park Jaypee Greens me society approval ke sath service karte hain. Yahan luxury chimneys ka expert care karte hain. 4.9/5 rating hai.',
-  'imperial-court':'Imperial Court Jaypee Greens me luxury chimney care expert hain. Yahan high-end Elica/Siemens models zyada hain. Premium service dete hain.',
-  'kalypso-court':'Kalypso Court me Jaypee Greens ki dedicated team hai. Yahan 200+ homes me service kar chuke hain. 4.9 rating with 30 min arrival.',
-  'krescent-homes':'Krescent Homes Sec 129 me affordable repair karte hain, no advance lete. Yahan budget-friendly service chahiye hoti hai. GST bill dete hain.',
-  'jaypee-greens-sec-128':'Jaypee Greens Sec 128 me 24/7 WhatsApp support aur urgent service dete hain. Yahan Wish Town ke paas fastest arrival hai. Urgent - 30 Min available.'
+  'jaypee-greens':'We have serviced 300+ flats in Jaypee Greens Greater Noida. Heavy oil cleaning is common in luxury villas here. Our team reaches Tower 1-40 within 30 minutes.',
+  'lotus-blvd-sec-100':'Our special team is active in Tower 1-15 of Lotus Blvd Sec 100. Suction issues are common here due to longer duct length. Duct sealing expert team is available.',
+  'supernova-sec-94':'We provide expert duct cleaning for high-rise kitchens in Supernova Sec 94. We have experience servicing up to the 80th floor. Deep cleaning service in 45 minutes.',
+  'wish-town':'We are experts in heavy-duty motor repair in villas of Wish Town Jaypee. 90cm chimneys are more common in large kitchens here. Original Faber and Hafele parts available.',
+  'klassic-sec-134':'We have a record of 150+ chimney cleanings in Klassic Sec 134. Noise issues are more common in 2BHK units here. Same-day bush bearing replacement.',
+  'panache-sec-110':'Our Faber and Hafele specialist team is available for premium flats in Panache Sec 110. Auto-clean not working complaints are more common here. We clean using RO water.',
+  'kosmos-sec-134':'We provide same-day PCB and touch sensor repair in Kosmos Sec 134. PCB failure is common here due to voltage fluctuation. 90 days warranty on spare parts.',
+  'daffodil-sec-137':'We fix auto-clean issues in 45 minutes in Daffodil Sec 137. Full oil collector is a common problem here. We advise avoiding hard water.',
+  'lotus-zing-sec-168':'We offer deep cleaning with 90 days warranty on motor in Lotus Zing Sec 168. New society installations are more common here. 10 years experienced technician.',
+  'knightsbridge-sec-124':'We are noise issue specialists in Knightsbridge Sec 124. Bearing wear occurs in 2 years here. We replace bearings using high-temperature oil.',
+  'paras-tierea':'Installation plus service combo offer is available in Paras Tierea Sec 137. Duct bend issues are common in 3BHK units here. We do aluminum tape sealing.',
+  'aman-sec-151':'This is the fastest service in Aman Sec 151 Noida Extension. We have a 30-minute arrival record here. We service new flats after checking warranty.',
+  'aamantran-sec-119':'We replace motors with original parts in Aamantran Sec 119. Weak capacitors are common here. Same-day motor availability.',
+  'pavilion-sec-128':'Our trained technicians for all brands are available in Pavilion Sec 128. Touch panels fail due to oil here. We clean with IPA solution.',
+  'espacia-sec-100':'We provide same-day booking, motor PCB touch fix in Espacia Sec 100. Low suction problem is more common here. Filter soaking for 20 minutes.',
+  'kensington-park':'We provide service with society approval in Kensington Park Jaypee Greens. We provide expert care for luxury chimneys here. Rated 4.9 out of 5.',
+  'imperial-court':'We are luxury chimney care experts in Imperial Court Jaypee Greens. High-end Elica and Siemens models are more common here. Premium service provided.',
+  'kalypso-court':'Our dedicated team for Jaypee Greens is available in Kalypso Court. We have serviced 200+ homes here. 4.9 rating with 30-minute arrival.',
+  'krescent-homes':'We provide affordable repair in Krescent Homes Sec 129, no advance payment. Budget-friendly service is required here. GST bill provided.',
+  'jaypee-greens-sec-128':'We provide 24/7 WhatsApp support and urgent service in Jaypee Greens Sec 128. Fastest arrival near Wish Town. Urgent 30-minute service available.'
 };
 
 function getP(){
@@ -201,12 +200,14 @@ function getP(){
 }
 let {brand,area,isHome,path,areaSlug}=getP();
 let db=brand||"Faber";
+
 function fallWords(container,text){
   let el=document.getElementById(container); el.innerHTML="";
   text.split(' ').forEach((w,i)=>{
     let s=document.createElement('span'); s.className="fall-word"; s.style.animationDelay=`${i*0.05}s`; s.innerText=w+" "; el.appendChild(s);
   });
 }
+
 (function(){
   let el=document.getElementById('welcomeType');
   let brandName=isHome? "Chimney" : db;
@@ -226,10 +227,10 @@ function fallWords(container,text){
       ws.style.display='none';
       document.body.classList.add('welcome-done');
       let unique = uniqueLines[areaSlug] || '';
-      let para1 = `${db} CARE (Independent Service Provider for ${db}) provides service since 2015 in ${area}. Technician reaches ${area} in 30 min. We offer ${db} Chimney Service in ${area}, ${db} Chimney Repair in ${area}. ${unique} We offer motor repair, PCB repair, touch repair with 90 days warranty on spare parts only.`;
+      let para1 = `${db} CARE (Independent Service Provider for ${db}) has been providing service since 2015 in ${area}. Technician reaches ${area} within 30 minutes. We offer ${db} Chimney Service in ${area}, ${db} Chimney Repair in ${area}. ${unique} We offer motor repair, PCB repair, touch repair with 90 days warranty on spare parts only.`;
       let para2 = `${db} service since 2015 in ${area}. Technician will reach ${area} within 30 minutes near main market. ${db} Chimney Deep Cleaning in ${area}, ${db} Chimney Mechanic in ${area}, ${db} Chimney Installation in ${area}. If you live in ${area} and your chimney has low suction, high noise, oil leakage or auto-clean problem, call now. ${unique} 90 days warranty only on spare parts, not on service visit charges.`;
       if(isHome){
-        para1 = `Chimney CARE (Independent) provides service since 2015 in Noida. Technician reaches Noida in 30 min. We offer motor repair, PCB repair, touch repair with 90 days warranty on spare parts only (Motor, PCB, Touch) - Not on service visit charges. All brands - Faber, Elica, Hindware, Bosch, Kaff, Glen, Siemens.`;
+        para1 = `Chimney CARE (Independent Service Provider) has been providing service since 2015 in Noida. Technician reaches Noida within 30 minutes. We offer motor repair, PCB repair, touch repair with 90 days warranty on spare parts only (Motor, PCB, Touch) - Not on service visit charges. All brands - Faber, Elica, Hindware, Bosch, Kaff, Glen, Siemens.`;
         para2 = `Chimney service since 2015 in Noida. Technician will reach within 30 minutes. Motor repair, PCB repair, touch sensor repair, filter cleaning and duct cleaning with 90 days warranty on spare parts only. If you live in Noida and your chimney has low suction, high noise, oil leakage or auto-clean problem, call now. All brands supported.`;
       }
       fallWords("dynamicContent200", para1);
@@ -237,6 +238,7 @@ function fallWords(container,text){
     },500);
   }, totalTime);
 })();
+
 const titles = isHome? [
   `<span class="brand-green">Chimney</span> CARE in Noida`,
   `<span class="brand-green">Deep</span> Cleaning in 45 Minutes Service`,
@@ -244,14 +246,16 @@ const titles = isHome? [
   `<span class="brand-green">90 Days</span> Warranty on Spare Parts Only`,
   `<span class="brand-green">Professional</span> Technician - 10 Years Expert`
 ] : [
-  `<span class="brand-green">${db}</span> Chimney CARE in ${area}`,
-  `<span class="brand-green">Deep</span> Cleaning in 45 Minutes`,
-  `<span class="brand-green">Noise</span> Fix - Bush Bearing`,
-  `<span class="brand-green">90 Days</span> Warranty on Spare Parts`,
-  `<span class="brand-green">Professional</span> Technician - 10 Years`
+  `<span class="brand-green">${db}</span> Chimney Service in ${area}`,
+  `<span class="brand-green">${db}</span> Deep Cleaning in ${area} - 45 Min`,
+  `<span class="brand-green">${db}</span> Noise Fix in ${area}`,
+  `<span class="brand-green">90 Days</span> Warranty in ${area} - Spare Parts`,
+  `<span class="brand-green">${db}</span> Technician in ${area} - 10 Years`
 ];
-let cur=0; let mainH=document.getElementById('mainH'); mainH.innerHTML=titles[0];
+let cur=0; let mainH=document.getElementById('mainH');
+if(!isHome){ mainH.innerHTML = `${db} Chimney Service in ${area}`; } else { mainH.innerHTML = titles[0]; }
 setInterval(()=>{ mainH.classList.remove('slide-in'); mainH.classList.add('slide-out'); setTimeout(()=>{ cur=(cur+1)%titles.length; mainH.innerHTML=titles[cur]; mainH.classList.remove('slide-out'); mainH.classList.add('slide-in'); },500); },4200);
+
 function updateCare(){
  let care,title,desc,canonical;
  let unique = uniqueLines[areaSlug] || '';
@@ -271,8 +275,9 @@ function updateCare(){
  let independentBadge = document.getElementById('independentBadge');
  if(independentBadge){ independentBadge.innerText = isHome? `Independent Service Provider for All Brands - Since 2015` : `Independent Service Provider for ${db} - Not Authorized by ${db}`; }
  if(!isHome){ document.getElementById('pseoSection').style.display='none'; }
- let h="";AREAS.forEach(a=>{ let s=a.replaceAll(' ','-').toLowerCase(); let lb=(brand||'faber').toLowerCase(); h+=`<a class="pill" style="background:#222;color:#fff" href="/${lb}-chimney-service-${s}">${a}</a>` }); document.getElementById('areaPills').innerHTML=h;
- let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{ let s=ar.replaceAll(' ','-').toLowerCase(); b+=`<a class="pill" style="background:#fff;color:#000;border:1px solid #333" href="/${br.toLowerCase()}-chimney-service-${s}">${br} in ${ar}</a>` })}); let el2=document.getElementById('brandAreaPills'); if(el2) el2.innerHTML=b;
+ let h="";AREAS.forEach(a=>{ let s=a.replaceAll(' ','-').toLowerCase(); let lb=(brand||'faber').toLowerCase(); h+=`<a class="pill" href="/${lb}-chimney-service-${s}"> ${a} </a> ` }); document.getElementById('areaPills').innerHTML=h;
+ let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{ let s=ar.replaceAll(' ','-').toLowerCase(); b+=`<a class="pill-light" href="/${br.toLowerCase()}-chimney-service-${s}"> ${br} in ${ar} </a> ` })}); let el2=document.getElementById('brandAreaPills'); if(el2) el2.innerHTML=b;
+
  document.getElementById('colService').innerText=`Chimney Service in ${area||'Noida'} - Complete Guide\n\n${unique}\n\nIf you live in ${area||'Noida'}, your chimney faces heavy oil and dust. Duct length 10-15 feet with bends reduces suction if not sealed. Our service starts with filter, blower, motor amp, PCB voltage, duct airflow check. We dismantle baffle filters, soak in degreaser 20 min, scrub, wash, dry, refit. Blower cleaned with foam to protect winding. Motor shaft oiled.\n\nWhy every 4 months? Cooking 3 times daily with tadka blocks filter. After 120 days suction drops 60%. Regular service prevents motor overload.\n\nProcess: WhatsApp booking, confirmation, arrival in 30 min, diagnosis, estimate, service, warranty card. 90 Days Warranty is ONLY on Spare Parts (Motor, PCB, Touch Panel) - Not on Service Visit Charges. No advance. GST bill available.`;
  document.getElementById('colRepair').innerText=`Chimney Repair in ${area||'Noida'} - Motor PCB Touch Fix\n\n${db} Chimney Repair in ${area||'Noida'} - ${unique}\n\nChimney repair needed when motor burns, PCB fails, touch not responding, capacitor weak, blower broken. In ${area||'Noida'} voltage fluctuation damages PCB. Oil on touch causes no response. Our van carries original motors, PCBs, capacitors, touch panels for all models, 90% repairs first visit.\n\nMotor repair: If motor hums but not rotates, capacitor weak. If no hum, winding burnt. Bearing noise? Replace bearing set including Bush bearing.\n\nPCB repair: PCB controls speed, light, auto-clean. If burn marks, relay stuck, no output, we repair track or replace PCB. 90 Days Warranty on Spare Parts Only.\n\nTouch panel: Fails due to oil layer. Clean with IPA, test sensitivity, replace if cracked.`;
  document.getElementById('colNoise').innerText=`Why Chimney Makes Noise? Why Not Working? Solution\n\n1) Why Noise in ${area||'Noida'}? Motor bearing wear after 2-3 years, loose blower wheel, grease in housing touching blower, duct loose, filter vibrating. Solution: Tighten wheel screw with thread lock, oil bearing high-temp oil, clean housing degreaser, clamp duct, refit filter lock. If bearing worn replace Bush bearing set. Our tech fixes noise 30 min in ${area}.\n\n2) Not Working Reasons: Power socket no supply, plug fuse blown, PCB fuse blown, touch dead, capacitor weak, motor burnt, wiring loose. Solution: Check socket tester, replace fuse, check PCB fuse, clean touch sensor, test capacitor, check winding.\n\n3) Low Suction Fix: Filter jam, duct bend, blower grease. Fix: Clean baffle filter, replace carbon filter 6 months, clean blower, straighten duct, seal leaks aluminum tape, keep height 24-30 inch.\n\n4) Oil Leakage Fix: Collector full or filter overfull. Clean collector weekly, deep clean 4 months, check level.\n\n5) Auto-Clean Not Working: Needs water and heating. Check container, heating element, relay. If element open replace. Use RO water not hard water.\n\nNote: 90 Days Warranty is ONLY on Spare Parts (Motor, PCB, Touch) - Not on Service Visit Charges in ${area}.`;
@@ -284,17 +289,17 @@ function updateCare(){
  if(brandInTitle) brandInTitle.innerText = isHome? 'Kitchen Chimney' : `${db} Chimney`;
  if(mainSeoPara){
    if(isHome){
-     mainSeoPara.innerText = `Kya aapki kitchen chimney sahi se kaam nahi kar rahi hai ya zyada aawaz kar rahi hai? Expert Care (Independent Service Provider) aapko de raha hai Noida me sabse tez aur bharosemand chimney repair service. Hum ek independent service provider hain aur hamare trained technicians har brand ki chimney ko theek karne me expert hain.
+     mainSeoPara.innerText = `Is your kitchen chimney not working properly or making too much noise? Expert Care (Independent Service Provider) offers you the fastest and most reliable chimney repair service in Noida. We are an independent service provider and our trained technicians are experts in repairing all brands of chimneys.
 
-Hum pure Noida me sirf 30 minutes ke andar aapke ghar pahunch kar service provide karte hain. Hamari har service ke sath aapko milti hai 90 din ki warranty - Ye warranty sirf Spare Parts (Motor, PCB, Touch Panel) par hai, Service Visit Charge par nahi - taaki aap befikr reh sakein.
+We reach your home within just 30 minutes anywhere in Noida and provide service. With every service you get 90 days warranty. This warranty is only on Spare Parts (Motor, PCB, Touch Panel), not on Service Visit Charges, so you can be worry-free. ${unique}
 
-Hum Noida ke 20 premium areas me service dete hain: Jaypee Greens, Lotus Blvd Sec 100, Supernova Sec 94, Wish Town, Klassic, Panache, Kosmos, Daffodil, Lotus Zing, Knightsbridge, Paras Tierea, Aman, Pavilion, Espacia, Kensington Park, Imperial Court, Kalypso Court, Krescent Homes, Jaypee Greens Sec 128. Aaj hi booking karein!`;
+We provide service in 20 premium areas of Noida: Jaypee Greens, Lotus Blvd Sec 100, Supernova Sec 94, Wish Town, Klassic, Panache, Kosmos, Daffodil, Lotus Zing, Knightsbridge, Paras Tierea, Aman, Pavilion, Espacia, Kensington Park, Imperial Court, Kalypso Court, Krescent Homes, Jaypee Greens Sec 128. Book today!`;
    } else {
-     mainSeoPara.innerText = `Kya aapki ${db} kitchen chimney ${area} me sahi se kaam nahi kar rahi hai ya zyada aawaz kar rahi hai? Expert Care (Independent Service Provider for ${db}) aapko de raha hai ${area} me sabse tez aur bharosemand chimney repair service. Hum ek independent service provider hain aur hamare trained technicians aapki ${db} chimney ko theek karne me expert hain.
+     mainSeoPara.innerText = `Is your ${db} kitchen chimney in ${area} not working properly or making loud noise? Expert Care (Independent Service Provider for ${db}) offers you the fastest and most reliable chimney repair service in ${area}. We are an independent service provider and our trained technicians are experts in repairing your ${db} chimney.
 
-Hum ${db} Chimney Service in ${area} dete hain - sirf 30 minutes ke andar ${area} me aapke ghar pahunch kar service provide karte hain. Hamari services hain: 1) ${db} Chimney Service in ${area}, 2) ${db} Chimney Repair in ${area}, 3) ${db} Chimney Deep Cleaning in ${area}, 4) ${db} Chimney Mechanic in ${area}, 5) ${db} Chimney Installation in ${area}. Har service ke sath 90 din ki warranty (Sirf Spare Parts par) milti hai.
+We provide ${db} Chimney Service in ${area} - we reach your home in ${area} within just 30 minutes and provide service. Our services are: 1) ${db} Chimney Service in ${area}, 2) ${db} Chimney Repair in ${area}, 3) ${db} Chimney Deep Cleaning in ${area}, 4) ${db} Chimney Mechanic in ${area}, 5) ${db} Chimney Installation in ${area}. Every service comes with 90 days warranty (Only on Spare Parts).
 
-${unique} Hum pure Noida me service dete hain, par ${area} is area me hamari special team hai. Aaj hi apni deep cleaning ya repair booking ke liye call ya WhatsApp karein - ${area} me aaj hi available! Independent Service Provider for ${db}.`;
+${unique} We provide service all over Noida, but we have a special team for ${area} which reaches every society in ${area} within 30 minutes. Call or WhatsApp today to book your deep cleaning or repair - Available in ${area} today! Independent Service Provider for ${db}.`;
    }
  }
 }
@@ -304,7 +309,6 @@ const box=document.getElementById('pseo-links');
 if(box){areas2.forEach(a=>{let b=document.createElement('a');b.href="#";b.textContent=`Chimney Repair in ${a}`;b.style="font-size:10px;background:#fff;border:1px solid #ddd;padding:6px 10px;border-radius:20px;text-decoration:none;color:#000;font-weight:700";b.onclick=(e)=>{e.preventDefault();document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})};box.appendChild(b)});}
 setTimeout(()=>{ let f=document.getElementById('floatCall'); if(f) f.style.display='flex'; },10000);
 
-// GOOGLE FIX - URGENT MODE FIX
 document.addEventListener('DOMContentLoaded', ()=>{
   let bookTime = document.getElementById('bookTime');
   if(bookTime){
@@ -314,7 +318,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         let addr = document.getElementById('custAddress');
         if(addr){
           addr.focus();
-          addr.placeholder = "⚡ URGENT - 30 MIN - Jaldi apna Full Address likho - Tower, Flat No., Society - "+area;
+          addr.placeholder = "⚡ URGENT - 30 MIN - Write Your Full Address Quickly - Tower, Flat No., Society - "+area;
           addr.style.border = "2px solid #ef4444";
         }
       }
