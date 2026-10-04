@@ -30,7 +30,7 @@ body.welcome-done{overflow:auto}
 .shake{animation:shakeBtn 2.8s infinite}
 @keyframes shakeBtn{0%,88%,100%{transform:translateX(0)}90%{transform:translateX(-4px)}92%{transform:translateX(4px)}94%{transform:translateX(-4px)}96%{transform:translateX(4px)}}
 #welcomeScreen{position:fixed;inset:0;background:#000;z-index:9999999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
-#welcomeIcon{width:86px;height:86px;background:#111;border-radius:20px;display:flex;align-items:center;justify-content:center;border:2px solid #16a34a;box-shadow:0 0 30px rgba(22,163,74,.4)}
+#welcomeIcon{width:80px;height:80px;background:linear-gradient(135deg,#111,#1f1f1f);border-radius:24px;display:flex;align-items:center;justify-content:center;border:1px solid #2a2a2a;box-shadow:0 10px 30px rgba(0,0,0,.6)}
 #welcomeType{font-size:26px;font-weight:900;margin-top:20px;text-align:center;line-height:34px;min-height:70px;max-width:92%;display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
 .long-column{font-size:11px;line-height:20px;color:#333;white-space:pre-line}
 @keyframes fallDown{0%{transform:translateY(-140px) rotate(-12deg) scale(0.5);opacity:0;filter:blur(10px)}60%{transform:translateY(10px) rotate(2deg) scale(1.1);opacity:1;filter:blur(0)}100%{transform:translateY(0) rotate(0) scale(1);opacity:1}}
@@ -46,8 +46,14 @@ body.welcome-done{overflow:auto}
 </head>
 <body>
 <div id="welcomeScreen" aria-hidden="true">
-  <div id="welcomeIcon"><svg width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M8 3H10V8H14V12H18V20H6V8H8V3ZM8 8H6V20H8V18H10V20H12V18H14V20H16V12H12V8H8Z"/></svg></div>
-  <div style="font-size:11px;letter-spacing:2px;opacity:.7;margin-top:10px;font-weight:800">✔ VERIFIED • SINCE 2015 • CHIMNEY CARE</div>
+  <div id="welcomeIcon">
+    <!-- MAST PROFESSIONAL ICON - Shield with Check -->
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L4 5V11C4 16.55 7.84 21.74 12 23C16.16 21.74 20 16.55 20 11V5L12 2Z" fill="white" stroke="#16a34a" stroke-width="1.2"/>
+      <path d="M9 12L11 14L15 10" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div style="font-size:11px;letter-spacing:2.5px;opacity:.8;margin-top:14px;font-weight:800;color:#16a34a">✔ VERIFIED • SINCE 2015 • CHIMNEY CARE</div>
   <div id="welcomeType"></div>
 </div>
 
@@ -162,7 +168,6 @@ All Brands Supported. Not affiliated with brand authorized centers.
 const BRANDS=["Siemens","Hafele","Kaff","Glen","Elica","Bosch","Faber","Hindware","Sunflame"];
 const AREAS=["Jaypee Greens","Lotus Blvd Sec 100","Supernova Sec 94","Wish Town","Klassic Sec 134","Panache Sec 110","Kosmos Sec 134","Daffodil Sec 137","Lotus Zing Sec 168","Knightsbridge Sec 124","Paras Tierea","Aman Sec 151","Aamantran Sec 119","Pavilion Sec 128","Espacia Sec 100","Kensington Park","Imperial Court","Kalypso Court","Krescent Homes","Jaypee Greens Sec 128"];
 
-// FIXED: Unique English Templates for each Area - Google will see different content
 const uniqueLines = {
   'jaypee-greens':'Servicing 300+ villas in Jaypee Greens Greater Noida. Heavy oil deposits are common in large island kitchens here. Our technician reaches all villas and towers in Jaypee Greens within 30 minutes with original parts for all 9 brands.',
   'lotus-blvd-sec-100':'Specialist team for Tower 1 to 15 in Lotus Blvd Sec 100. Most complaints here are low suction due to 20+ feet long duct line. Our team is expert in duct sealing and high-rise cleaning in Lotus Blvd.',
@@ -197,7 +202,6 @@ function getP(){
   let finalBrand=brandParam||brandFromPath||null;
   let finalArea=areaParam||areaFromPath||"Noida";
   let isHome=!finalBrand && (!path || path==='' || path==='index' || path==='index.html');
-  // More accurate slug detection
   let areaSlugDetected = areaFromPath.toLowerCase().replaceAll(' ','-');
   AREAS.forEach(a=>{
     let s=a.toLowerCase().replaceAll(' ','-');
@@ -234,7 +238,6 @@ function fallWords(container,text){
       ws.style.display='none';
       document.body.classList.add('welcome-done');
       let unique = uniqueLines[areaSlug] || `Specialized team for ${area} with 30 minute arrival and genuine spare parts.`;
-      // UPDATED: Pure English Template - Different for each page
       let para1 = `Is your ${db} kitchen chimney in ${area} making loud noise or not sucking smoke? ${db} CARE (Independent Service Provider for ${db}) has been serving ${area} since 2015. Our technician reaches ${area} within 30 minutes. We provide expert ${db} Chimney Service in ${area} and ${db} Chimney Repair in ${area}. ${unique} We offer motor repair, PCB repair, touch repair with 90 days warranty on spare parts only.`;
       let para2 = `${db} Chimney Service in ${area} - Since 2015. Our expert will reach your flat in ${area} near main market within 30 minutes. We provide ${db} Chimney Deep Cleaning in ${area}, ${db} Chimney Mechanic in ${area}, and ${db} Chimney Installation in ${area}. If you live in ${area} and face low suction, high noise, oil leakage or auto-clean failure, call us now. ${unique} 90 days warranty only on spare parts (Motor, PCB, Touch), not on service visit charges. Independent Service Provider for ${db} - Not authorized by ${db}.`;
       if(isHome){
