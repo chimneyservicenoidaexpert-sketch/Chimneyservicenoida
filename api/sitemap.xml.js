@@ -1,19 +1,21 @@
-module.exports = (req, res) => {
-  const brands = ["faber","elica","bosch","hindware","kaff","glen","siemens","hafele","sunflame"];
-  const areas = ["jaypee-greens","lotus-blvd-sec-100","supernova-sec-94","wish-town","klassic-sec-134","panache-sec-110","noida","greater-noida","sector-150-noida","sector-100-noida","ajnara-le-garden","cherry-county","gaur-city-1","gaur-city-2","golf-course","crossing-republik","indrapuram","vaishali","sector-62-noida","sector-18-noida"];
+export default function handler(req, res) {
+  res.setHeader('Content-Type', 'text/xml');
+  
+  const brands = ["faber","elica","hindware","glen","kaff","bosch","sunflame","prestige","haier"];
+  const areas = ["noida","sector-18-noida","sector-62-noida","indrapuram","vaishali","crossing-republik","golf-course-noida","greater-noida","jaypee-greens","wish-town","supernova-sec-94","ajnara-le-garden","cherry-county","gaur-city","golf-city","kingsbury","nipuna","palm-olympia","supertech-ecovillage","tech-zone-4"];
   const base = "https://chimneyservicenoida.vercel.app";
-  
-  let urls = [];
-  urls.push(`<url><loc>${base}/</loc></url>`);
-  
+
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += `  <url><loc>${base}/</loc></url>\n`;
+
   brands.forEach(b => {
     areas.forEach(a => {
-      urls.push(`<url><loc>${base}/${b}-chimney-service-${a}</loc></url>`);
+      xml += `  <url><loc>${base}/${b}-chimney-service-${a}</loc></url>\n`;
     });
   });
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join("")}</urlset>`;
-  
-  res.setHeader('Content-Type', 'text/xml');
-  res.send(xml);
-};
+  xml += '</urlset>';
+
+  res.status(200).send(xml);
+}
