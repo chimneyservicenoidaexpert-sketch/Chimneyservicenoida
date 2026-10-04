@@ -4,13 +4,14 @@ module.exports = (req, res) => {
 
   const domain = "https://chimneyservicenoida.vercel.app";
   
-  const brands = ["faber", "elica", "hindware", "bosch", "kaff", "glen", "siemens", "sunflame", "hafele"];
+  const brands = ["faber", "elica", "hindware", "bosch", "kaff", "glen", "siemens", "sunflame", "hafele", "prestige"];
   
   const areas = [
-    "noida", "jaypee-greens", "sector-150", "greater-noida", "noida-extension",
-    "sector-50", "sector-62", "sector-18", "sector-137", "sector-76",
-    "indirapuram", "vaishali", "vasundhara", "crossings-republik", "kaushambi",
-    "gaur-city-1", "gaur-city-2", "tech-zone-4", "sector-135", "sector-52"
+    "jaypee-greens", "lotus-blvd-sec-100", "supernova-sec-94", "wish-town", 
+    "klassic-sec-134", "panache-sec-110", "kosmos-sec-134", "daffodil-sec-137", 
+    "lotus-zing-sec-168", "knightsbridge-sec-124", "paras-tierea", "aman-sec-151", 
+    "aamantran-sec-119", "pavilion-sec-128", "espacia-sec-100", "kensington-park", 
+    "imperial-court", "kalypso-court", "krescent-homes", "jaypee-greens-sec-128"
   ];
 
   let urls = `<url><loc>${domain}/</loc></url>`;
