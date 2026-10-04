@@ -14,42 +14,35 @@ module.exports = (req, res) => {
   let html = fs.readFileSync(path.join(process.cwd(),'index.html'),'utf8');
 
   if(slug && slug !== 'index.html'){
-    // Word Slideshow - NO PHOTO, only design box
-    const wordSlider = `
-    <div style="width:92%;margin:14px auto;background:linear-gradient(135deg,#111,#222);border:1.5px solid #16a34a;border-radius:16px;padding:14px 16px;min-height:70px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-      <div id="txt0" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;">${foundBrand} Chimney Service in ${foundArea}, Noida</div>
-      <div id="txt1" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;display:none;"><span style="color:#16a34a;">30 Min Arrival</span> in ${foundArea}</div>
-      <div id="txt2" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;display:none;">Expert ${foundBrand} Repair in ${foundArea}</div>
-      <div id="txt3" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;display:none;">Deep Cleaning Service<br>${foundArea}, Noida</div>
-      <div id="txt4" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;display:none;">90 Days Warranty on ${foundBrand}</div>
-      <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;">
-        <span class="tdot" style="width:6px;height:6px;background:#16a34a;border-radius:50%;"></span><span class="tdot" style="width:6px;height:6px;background:rgba(255,255,255,.3);border-radius:50%;"></span><span class="tdot" style="width:6px;height:6px;background:rgba(255,255,255,.3);border-radius:50%;"></span><span class="tdot" style="width:6px;height:6px;background:rgba(255,255,255,.3);border-radius:50%;"></span><span class="tdot" style="width:6px;height:6px;background:rgba(255,255,255,.3);border-radius:50%;"></span>
-      </div>
+    const faberGreen = foundBrandSlug==='faber' ? `<span style="color:#16a34a;">${foundBrand}</span>` : foundBrand;
+    
+    const heroSlider = `
+    <div id="heroSlider" style="margin:18px 0 10px;min-height:85px;position:relative;">
+      <div class="heroSlide" style="font-size:29px;font-weight:900;line-height:34px;color:#fff;position:absolute;width:100%;top:0;left:0;transition:opacity .5s;">${faberGreen} Chimney Service in ${foundArea}, Noida</div>
+      <div class="heroSlide" style="font-size:29px;font-weight:900;line-height:34px;color:#fff;position:absolute;width:100%;top:0;left:0;opacity:0;transition:opacity .5s;">Expert ${faberGreen} Repair in ${foundArea}</div>
+      <div class="heroSlide" style="font-size:29px;font-weight:900;line-height:34px;color:#fff;position:absolute;width:100%;top:0;left:0;opacity:0;transition:opacity .5s;">${faberGreen} Deep Cleaning in ${foundArea}</div>
+      <div class="heroSlide" style="font-size:29px;font-weight:900;line-height:34px;color:#fff;position:absolute;width:100%;top:0;left:0;opacity:0;transition:opacity .5s;">90 Days Warranty on ${faberGreen} Service</div>
+      <div class="heroSlide" style="font-size:29px;font-weight:900;line-height:34px;color:#fff;position:absolute;width:100%;top:0;left:0;opacity:0;transition:opacity .5s;">30 Min Arrival in ${foundArea}, Noida</div>
     </div>
+    <div style="display:flex;gap:6px;margin:8px 0 16px;"><span class="hdot" style="width:22px;height:4px;background:#16a34a;border-radius:10px;"></span><span class="hdot" style="width:8px;height:4px;background:rgba(255,255,255,.3);border-radius:10px;"></span><span class="hdot" style="width:8px;height:4px;background:rgba(255,255,255,.3);border-radius:10px;"></span><span class="hdot" style="width:8px;height:4px;background:rgba(255,255,255,.3);border-radius:10px;"></span><span class="hdot" style="width:8px;height:4px;background:rgba(255,255,255,.3);border-radius:10px;"></span></div>
     <script>
-      let ti=0;
+      let hi=0;
       setInterval(()=>{
-        let t=document.getElementsByClassName("txtSlide");
-        let d=document.getElementsByClassName("tdot");
-        for(let i=0;i<t.length;i++) t[i].style.display="none";
-        for(let i=0;i<d.length;i++) d[i].style.background="rgba(255,255,255,.3)";
-        ti=(ti+1)%t.length;
-        t[ti].style.display="block";
-        d[ti].style.background="#16a34a";
-      },2000);
+        let h=document.getElementsByClassName("heroSlide");
+        let d=document.getElementsByClassName("hdot");
+        for(let i=0;i<h.length;i++){h[i].style.opacity="0";}
+        for(let i=0;i<d.length;i++){d[i].style.background="rgba(255,255,255,.3)";d[i].style.width="8px";}
+        hi=(hi+1)%h.length;
+        h[hi].style.opacity="1";
+        d[hi].style.background="#16a34a"; d[hi].style.width="22px";
+      },2500);
     </script>
-    <style>#mainH .green{color:#16a34a!important}</style>
     `;
 
-    // Inject slideshow before H1
-    html = html.replace(/<h1 id="mainH"/, wordSlider + '<h1 id="mainH"');
-
-    // Faber ko green - sab jagah strong replace
-    if(foundBrandSlug==='faber'){
-      html = html.replace(/Faber Chimney Service/g, '<span style="color:#16a34a !important;">Faber</span> Chimney Service');
-      html = html.replace(/>Faber Chimney/g, '><span class="green">Faber</span> Chimney');
-      html = html.replace(/Is your Faber/g, 'Is your <span style="color:#16a34a;">Faber</span>');
-    }
+    // Purane H1 ko hatake naya slideshow H1 banao + black box wala purana slider hatao
+    html = html.replace(/<div id="slideBox"[\s\S]*?<\/script>/g, '');
+    html = html.replace(/<div style="width:92%;margin:14px[\s\S]*?<\/script>/g, '');
+    html = html.replace(/<h1 id="mainH"[^>]*>.*?<\/h1>/s, heroSlider + '<h1 id="mainH" style="display:none;">'+foundBrand+' Chimney Service in '+foundArea+'</h1>');
   }
 
   res.setHeader('Content-Type','text/html');
