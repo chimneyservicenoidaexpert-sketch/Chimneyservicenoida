@@ -4,7 +4,7 @@ module.exports = (req, res) => {
 
   const domain = "https://chimneyservicenoida.vercel.app";
   
-  const brands = ["faber", "elica", "hindware", "bosch", "kaff", "glen", "siemens", "sunflame", "hafele", "prestige"];
+  const brands = ["faber", "elica", "hindware", "bosch", "kaff", "glen", "siemens", "sunflame", "hafele"];
   
   const areas = [
     "jaypee-greens", "lotus-blvd-sec-100", "supernova-sec-94", "wish-town", 
