@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
+
 Sitemap: https://chimneyservicenoida.vercel.app/api/sitemap.xml
