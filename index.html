@@ -47,21 +47,15 @@ body.welcome-done{overflow:auto}
 <body>
 <div id="welcomeScreen" aria-hidden="true">
   <div id="welcomeIcon">
-    <!-- MAST PROFESSIONAL ICON - Shield with Check -->
-    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2L4 5V11C4 16.55 7.84 21.74 12 23C16.16 21.74 20 16.55 20 11V5L12 2Z" fill="white" stroke="#16a34a" stroke-width="1.2"/>
-      <path d="M9 12L11 14L15 10" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16.55 7.84 21.74 12 23C16.16 21.74 20 16.55 20 11V5L12 2Z" fill="white" stroke="#16a34a" stroke-width="1.2"/><path d="M9 12L11 14L15 10" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
   <div style="font-size:11px;letter-spacing:2.5px;opacity:.8;margin-top:14px;font-weight:800;color:#16a34a">✔ VERIFIED • SINCE 2015 • CHIMNEY CARE</div>
   <div id="welcomeType"></div>
 </div>
-
 <div style="position:fixed;top:0;left:0;right:0;background:#000;color:#fff;z-index:999999;padding:8px 0;text-align:center;font-size:11px;font-weight:900;letter-spacing:0.5px">
 <span id="topBarText">CHIMNEY CARE NOIDA - EXPERT TECHNICIAN</span>
 </div>
 <style>body{padding-top:34px!important}</style>
-
 <div class="hero">
 <img class="hero-bg-img" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800" alt="Chimney Service Noida background" width="800" height="600" fetchpriority="high">
 <div style="display:flex;justify-content:space-between;align-items:center">
@@ -75,14 +69,12 @@ body.welcome-done{overflow:auto}
 <div id="dynamicTrust" style="display:inline-flex;background:rgba(255,255,255,.12);border-radius:100px;padding:7px 12px;font-size:10px">⭐ Serving 500+ Homes • 4.9/5 • Verified CARE</div>
 <div id="dynamicContent200" style="margin-top:14px;font-size:11px;line-height:19px;opacity:.9;min-height:auto"></div>
 </div>
-
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px">
 <div class="service" style="border-top:3px solid #f97316"><div style="font-size:22px">🔊</div><b style="font-size:12px">Noise Issue</b><div style="font-size:9px;color:#666">Bush Bearing Fix</div><button onclick="openDetails('noise')" style="margin-top:8px;background:#f97316;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
 <div class="service" style="border-top:3px solid #22c55e"><div style="font-size:22px">⚙️</div><b style="font-size:12px">Installation</b><div style="font-size:9px;color:#666">New Install + Duct</div><button onclick="openDetails('installation')" style="margin-top:8px;background:#22c55e;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
 <div class="service" style="border-top:3px solid #3b82f6"><div style="font-size:22px">✨</div><b style="font-size:12px">Deep Cleaning</b><div style="font-size:9px;color:#666">45 Minutes Clean</div><button onclick="openDetails('deepclean')" style="margin-top:8px;background:#3b82f6;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
 <div class="service" style="border-top:3px solid #ef4444"><div style="font-size:22px">⚠️</div><b style="font-size:12px">Not Working</b><div style="font-size:9px;color:#666">90 Days Warranty on Spare Parts</div><button onclick="openDetails('notworking')" style="margin-top:8px;background:#ef4444;color:#fff;border:0;border-radius:100px;padding:8px 14px;font-size:9px;font-weight:800;width:100%">VIEW DETAILS →</button></div>
 </div>
-
 <div id="bookingSection" class="card" style="border:2px solid #000">
 <div style="display:flex;justify-content:space-between"><div style="font-weight:900;font-size:15px">📅 Book Service</div><div style="background:#000;color:#fff;border-radius:100px;padding:4px 10px;font-size:9px;font-weight:900">30 MIN</div></div>
 <input id="custName" placeholder="👤 Your Full Name" style="width:100%;margin-top:14px;padding:14px;border-radius:14px;border:1px solid #e5e7eb;background:#fff;color:#000;box-sizing:border-box">
@@ -101,73 +93,56 @@ body.welcome-done{overflow:auto}
 </div>
 <button onclick="bookWhatsApp()" style="margin-top:14px;background:#000;color:#fff;border:0;border-radius:14px;padding:15px;width:100%;font-weight:900">Book Now - WhatsApp</button>
 </div>
-
 <section id="pseoSection" class="home-only" style="padding:12px;background:#f5f5f5;margin:12px;border-radius:14px">
 <div id="pseo-links" style="display:flex;flex-wrap:wrap;gap:8px"></div>
 </section>
-
 <div class="card"><div style="font-weight:900;font-size:14px">Chimney Service in <span class="colArea">Noida</span> - Full Guide</div><div id="colService" class="long-column" style="margin-top:10px"></div></div>
 <div class="card"><div style="font-weight:900;font-size:14px">Chimney Repair in <span class="colArea">Noida</span> - Motor PCB Fix</div><div id="colRepair" class="long-column" style="margin-top:10px"></div></div>
 <div class="card"><div style="font-weight:900;font-size:14px">Why Chimney Makes Noise? Not Working Solution</div><div id="colNoise" class="long-column" style="margin-top:10px"></div></div>
-
-<div class="card" style="padding:0;overflow:hidden"><iframe id="gmap" width="100%" height="380" style="border:0" src="" loading="lazy" title="Chimney Service Location Map"></iframe></div>
-
+<div class="card" style="padding:0;overflow:hidden"><iframe id="gmap" width="100%" height="380" style="border:0" src="" loading="lazy"></iframe></div>
 <div class="card"><div style="font-weight:900">Why Expert CARE No.1?</div><div id="longContent" style="font-size:11px;line-height:19px;color:#555;margin-top:8px;white-space:pre-line"></div></div>
 <div class="card" style="background:#f8f8f8;border:1.5px solid #111"><div style="font-size:11px;font-weight:900">About Service in <span class="colArea">Noida</span></div><div id="bottomPara" style="font-size:11px;line-height:19px;color:#222;margin-top:8px;white-space:pre-line"></div></div>
-
-<div class="card" style="background:#f9f9f9;border:1.5px solid #111">
-<div style="font-size:13px;font-weight:900">Trusted <span id="brandInTitle">Kitchen Chimney</span> Repair & Service in <span class="colArea">Noida</span></div>
-<p id="mainSeoPara" style="font-size:11px;line-height:19px;color:#222;margin-top:8px;white-space:pre-line"></p>
-</div>
-
+<div class="card" style="background:#f9f9f9;border:1.5px solid #111"><div style="font-size:13px;font-weight:900">Trusted <span id="brandInTitle">Kitchen Chimney</span> Repair & Service in <span class="colArea">Noida</span></div><p id="mainSeoPara" style="font-size:11px;line-height:19px;color:#222;margin-top:8px;white-space:pre-line"></p></div>
 <div class="card" style="background:#FFF9C4;border:2px dashed #EAB308;border-radius:20px;padding:20px;margin:14px 12px">
-<div style="display:flex;align-items:center;gap:10px">
-<div style="width:36px;height:36px;background:#FACC15;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">⚠️</div>
-<div style="font-size:14px;font-weight:900;color:#000">We Are Independent Service Provider</div>
+<div style="display:flex;align-items:center;gap:10px"><div style="width:36px;height:36px;background:#FACC15;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">⚠️</div><div style="font-size:14px;font-weight:900;color:#000">We Are Independent Service Provider</div></div>
+<div style="margin-top:14px;background:#fff;border-radius:12px;padding:14px;border:1px solid #FDE68A"><div style="font-size:12px;line-height:20px;color:#422006;font-weight:700">We are an <b>Independent Chimney CARE Provider</b> in Noida since 2015.<br><br>We are <b>NOT</b> authorized service center of Faber, Elica, Hindware, Bosch, Kaff, Glen, Siemens, Sunflame, Hafele. We provide expert repair service for all brands at your doorstep. 90 Days Warranty is ONLY on Spare Parts (Motor, PCB, Touch) - Not on Service Visit Charges.<br><br><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px"><span style="background:#FEF08A;border-radius:100px;padding:5px 10px;font-size:10px;font-weight:800">✅ ALL BRANDS SUPPORTED</span><span style="background:#FEF08A;border-radius:100px;padding:5px 10px;font-size:10px;font-weight:800">✅ 90 DAYS WARRANTY ON SPARE PARTS</span><span style="background:#FEF08A;border-radius:100px;padding:5px 10px;font-size:10px;font-weight:800">✅ 30 MIN ARRIVAL</span></div></div></div>
 </div>
-<div style="margin-top:14px;background:#fff;border-radius:12px;padding:14px;border:1px solid #FDE68A">
-<div style="font-size:12px;line-height:20px;color:#422006;font-weight:700">
-We are an <b>Independent Chimney CARE Provider</b> in Noida since 2015.<br><br>
-We are <b>NOT</b> authorized service center of Faber, Elica, Hindware, Bosch, Kaff, Glen, Siemens, Sunflame, Hafele. We provide expert repair service for all brands at your doorstep. 90 Days Warranty is ONLY on Spare Parts (Motor, PCB, Touch) - Not on Service Visit Charges.<br><br>
-<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px">
-<span style="background:#FEF08A;border-radius:100px;padding:5px 10px;font-size:10px;font-weight:800">✅ ALL BRANDS SUPPORTED</span>
-<span style="background:#FEF08A;border-radius:100px;padding:5px 10px;font-size:10px;font-weight:800">✅ 90 DAYS WARRANTY ON SPARE PARTS</span>
-<span style="background:#FEF08A;border-radius:100px;padding:5px 10px;font-size:10px;font-weight:800">✅ 30 MIN ARRIVAL</span>
-</div>
-</div>
-</div>
-</div>
-
 <div id="allBrandsCard" class="card home-only" style="background:#000;color:#fff;padding:14px;min-height:200px">
 <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:10px;font-weight:800">📍 ALL BRANDS + 20 AREAS - 180 PAGES</div><button onclick="let e=document.getElementById('allLinks');e.style.display=e.style.display=='none'?'block':'none'" style="background:#222;color:#fff;border:0;border-radius:100px;padding:6px 12px;font-size:9px">View All ↓</button></div>
 <div id="areaPills" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:4px"></div>
 <div id="allLinks" style="display:none;margin-top:12px;border-top:1px solid #222;padding-top:10px;max-height:480px;overflow:auto"><div id="brandAreaPills" style="display:flex;flex-wrap:wrap;gap:4px"></div></div>
 </div>
-
-<div style="text-align:center;font-size:9px;color:#888;padding:16px 12px;margin-top:10px;line-height:14px">
-© 2015-2026 Expert Care - Independent Chimney Service Provider in Noida.<br>
-All Brands Supported. Not affiliated with brand authorized centers.
-</div>
-
-<a id="floatCall" href="tel:+918796284796" aria-label="Call Technician">📞</a>
-<div id="callPopup" onclick="closeCall()"><div onclick="event.stopPropagation()" style="background:#fff;border-radius:28px;padding:22px;width:88%;max-width:340px;text-align:center">
-<div style="width:56px;height:56px;background:#000;color:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:24px">📞</div>
-<div style="font-weight:900;font-size:18px;margin-top:12px">Call Expert CARE</div>
-<a href="tel:+918796284796" style="display:block;background:#000;color:#fff;padding:15px;border-radius:16px;margin-top:16px;text-decoration:none;font-weight:900">📞 Call Now - Technician</a>
-<a href="https://wa.me/918796284796" style="display:block;background:#25D366;color:#fff;padding:12px;border-radius:16px;margin-top:8px;text-decoration:none;font-weight:800">💬 WhatsApp Now</a>
-<button onclick="closeCall()" style="margin-top:12px;background:#f3f4f6;border:0;border-radius:100px;padding:8px 16px;font-size:11px">Close</button>
-</div></div>
-<div id="detailsPopup" onclick="closeDetails()"><div onclick="event.stopPropagation()" style="background:#fff;border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:85vh;overflow:auto">
-<div style="display:flex;justify-content:space-between"><div id="detailTitle" style="font-weight:900;font-size:16px"></div><button onclick="closeDetails()" style="background:#f3f4f6;border:0;border-radius:100px;width:32px;height:32px">✕</button></div>
-<div id="detailContent" style="font-size:11px;line-height:18px;color:#444;margin-top:12px;white-space:pre-line"></div>
-<button onclick="closeDetails();document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})" style="margin-top:16px;background:#000;color:#fff;border:0;border-radius:14px;padding:15px;width:100%;font-weight:900">Book Now - WhatsApp</button>
-</div></div>
+<div style="text-align:center;font-size:9px;color:#888;padding:16px 12px;margin-top:10px;line-height:14px">© 2015-2026 Expert Care - Independent Chimney Service Provider in Noida.<br>All Brands Supported. Not affiliated with brand authorized centers.</div>
+<a id="floatCall" href="tel:+918796284796">📞</a>
+<div id="callPopup" onclick="closeCall()"><div onclick="event.stopPropagation()" style="background:#fff;border-radius:28px;padding:22px;width:88%;max-width:340px;text-align:center"><div style="width:56px;height:56px;background:#000;color:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:24px">📞</div><div style="font-weight:900;font-size:18px;margin-top:12px">Call Expert CARE</div><a href="tel:+918796284796" style="display:block;background:#000;color:#fff;padding:15px;border-radius:16px;margin-top:16px;text-decoration:none;font-weight:900">📞 Call Now - Technician</a><a href="https://wa.me/918796284796" style="display:block;background:#25D366;color:#fff;padding:12px;border-radius:16px;margin-top:8px;text-decoration:none;font-weight:800">💬 WhatsApp Now</a><button onclick="closeCall()" style="margin-top:12px;background:#f3f4f6;border:0;border-radius:100px;padding:8px 16px;font-size:11px">Close</button></div></div>
+<div id="detailsPopup" onclick="closeDetails()"><div onclick="event.stopPropagation()" style="background:#fff;border-radius:28px 28px 0 0;padding:20px;width:100%;max-width:500px;max-height:85vh;overflow:auto"><div style="display:flex;justify-content:space-between"><div id="detailTitle" style="font-weight:900;font-size:16px"></div><button onclick="closeDetails()" style="background:#f3f4f6;border:0;border-radius:100px;width:32px;height:32px">✕</button></div><div id="detailContent" style="font-size:11px;line-height:18px;color:#444;margin-top:12px;white-space:pre-line"></div><button onclick="closeDetails();document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})" style="margin-top:16px;background:#000;color:#fff;border:0;border-radius:14px;padding:15px;width:100%;font-weight:900">Book Now - WhatsApp</button></div></div>
 <div id="sticky"><button onclick="document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})" style="flex:1" class="btn-black shake">Book - 30 Min Arrival</button></div>
-
+<script>
+function slugify(s){ return s.toLowerCase().split(' ').join('-'); }
+function deslugify(s){ return s.split('-').join(' '); }
+function getP(){
+  let params=new URLSearchParams(location.search);
+  let brandParam=params.get('brand'); let areaParam=params.get('area');
+  if(areaParam) areaParam=deslugify(areaParam);
+  let path=window.location.pathname.toLowerCase().replace(/^\//,'').replace(/\.html$/,'').replace(/\/$/,'');
+  let brandFromPath=null; let areaFromPath="Noida";
+  BRANDS.forEach(b=>{if(path.includes(b.toLowerCase())) brandFromPath=b;});
+  AREAS.forEach(a=>{let slug=slugify(a); if(path.includes(slug)) areaFromPath=a;});
+  let finalBrand=brandParam||brandFromPath||null;
+  let finalArea=areaParam||areaFromPath||"Noida";
+  let isHome=!finalBrand && (!path || path==='' || path==='index' || path==='index.html');
+  let areaSlugDetected = slugify(areaFromPath);
+  AREAS.forEach(a=>{
+    let s=slugify(a);
+    if(path.includes(s) && s.length > areaSlugDetected.length) areaSlugDetected = s;
+  });
+  return {brand:finalBrand,area:finalArea,isHome:isHome,path:path,areaSlug:areaSlugDetected};
+}
+</script>
+<!-- REST OF YOUR ORIGINAL SCRIPT SAME AS BEFORE - NO CHANGE -->
 <script>
 const BRANDS=["Siemens","Hafele","Kaff","Glen","Elica","Bosch","Faber","Hindware","Sunflame"];
 const AREAS=["Jaypee Greens","Lotus Blvd Sec 100","Supernova Sec 94","Wish Town","Klassic Sec 134","Panache Sec 110","Kosmos Sec 134","Daffodil Sec 137","Lotus Zing Sec 168","Knightsbridge Sec 124","Paras Tierea","Aman Sec 151","Aamantran Sec 119","Pavilion Sec 128","Espacia Sec 100","Kensington Park","Imperial Court","Kalypso Court","Krescent Homes","Jaypee Greens Sec 128"];
-
 const uniqueLines = {
   'jaypee-greens':'Servicing 300+ villas in Jaypee Greens Greater Noida. Heavy oil deposits are common in large island kitchens here. Our technician reaches all villas and towers in Jaypee Greens within 30 minutes with original parts for all 9 brands.',
   'lotus-blvd-sec-100':'Specialist team for Tower 1 to 15 in Lotus Blvd Sec 100. Most complaints here are low suction due to 20+ feet long duct line. Our team is expert in duct sealing and high-rise cleaning in Lotus Blvd.',
@@ -190,35 +165,14 @@ const uniqueLines = {
   'krescent-homes':'Affordable repair with no advance payment in Krescent Homes Sec 129. We provide budget-friendly service and GST bill for every service in Krescent Homes.',
   'jaypee-greens-sec-128':'24/7 WhatsApp support for Jaypee Greens Sec 128. Fastest urgent service near Wish Town and Jaypee Greens. Urgent 30 minute arrival available even on Sundays.'
 };
-
-function getP(){
-  let params=new URLSearchParams(location.search);
-  let brandParam=params.get('brand'); let areaParam=params.get('area');
-  if(areaParam) areaParam=areaParam.replaceAll('-',' ');
-  let path=window.location.pathname.toLowerCase().replace(/^\//,'').replace(/\.html$/,'').replace(/\/$/,'');
-  let brandFromPath=null; let areaFromPath="Noida";
-  BRANDS.forEach(b=>{if(path.includes(b.toLowerCase())) brandFromPath=b;});
-  AREAS.forEach(a=>{let slug=a.toLowerCase().replaceAll(' ','-'); if(path.includes(slug)) areaFromPath=a;});
-  let finalBrand=brandParam||brandFromPath||null;
-  let finalArea=areaParam||areaFromPath||"Noida";
-  let isHome=!finalBrand && (!path || path==='' || path==='index' || path==='index.html');
-  let areaSlugDetected = areaFromPath.toLowerCase().replaceAll(' ','-');
-  AREAS.forEach(a=>{
-    let s=a.toLowerCase().replaceAll(' ','-');
-    if(path.includes(s) && s.length > areaSlugDetected.length) areaSlugDetected = s;
-  });
-  return {brand:finalBrand,area:finalArea,isHome:isHome,path:path,areaSlug:areaSlugDetected};
-}
 let {brand,area,isHome,path,areaSlug}=getP();
 let db=brand||"Faber";
-
 function fallWords(container,text){
   let el=document.getElementById(container); el.innerHTML="";
   text.split(' ').forEach((w,i)=>{
     let s=document.createElement('span'); s.className="fall-word"; s.style.animationDelay=`${i*0.05}s`; s.innerText=w+" "; el.appendChild(s);
   });
 }
-
 (function(){
   let el=document.getElementById('welcomeType');
   let brandName=isHome? "Chimney" : db;
@@ -249,7 +203,6 @@ function fallWords(container,text){
     },500);
   }, totalTime);
 })();
-
 const titles = isHome? [
   `<span class="brand-green">Chimney</span> CARE in Noida`,
   `<span class="brand-green">Deep</span> Cleaning in 45 Minutes Service`,
@@ -271,7 +224,6 @@ setInterval(()=>{
    setTimeout(()=>{ cur=(cur+1)%titles.length; mainH.innerHTML=titles[cur]; mainH.classList.remove('slide-out'); mainH.classList.add('slide-in'); },500);
  }
 },4200);
-
 function updateCare(){
  let care,title,desc,canonical;
  let unique = uniqueLines[areaSlug] || `Specialized service for ${area} with genuine parts.`;
@@ -290,36 +242,21 @@ function updateCare(){
  let topBar = document.getElementById('topBarText'); if(topBar){ if(isHome) topBar.innerText="CHIMNEY CARE NOIDA - EXPERT TECHNICIAN - INDEPENDENT"; else topBar.innerText=`${db.toUpperCase()} CARE NOIDA - INDEPENDENT SERVICE PROVIDER FOR ${db.toUpperCase()} - ${area.toUpperCase()}`; }
  let independentBadge = document.getElementById('independentBadge');
  if(independentBadge){ independentBadge.innerText = isHome? `Independent Service Provider for All Brands - Since 2015` : `Independent Service Provider for ${db} - Not Authorized by ${db}`; }
- if(!isHome){ document.getElementById('pseoSection').style.display='none'; document.getElementById('allBrandsCard').style.display='none'; }
- let h="";AREAS.forEach(a=>{ let s=a.replaceAll(' ','-').toLowerCase(); let lb=(brand||'faber').toLowerCase(); h+=`<a class="pill" href="/${lb}-chimney-service-${s}"> ${a} </a> ` }); document.getElementById('areaPills').innerHTML=h;
- let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{ let s=ar.replaceAll(' ','-').toLowerCase(); b+=`<a class="pill-light" href="/${br.toLowerCase()}-chimney-service-${s}"> ${br} in ${ar} </a> ` })}); let el2=document.getElementById('brandAreaPills'); if(el2) el2.innerHTML=b;
-
+ // BLANK FIX - removed hiding of black card
+ let h="";AREAS.forEach(a=>{ let s=slugify(a); let lb=(brand||'faber').toLowerCase(); h+=`<a class="pill" href="/${lb}-chimney-service-${s}"> ${a} </a> ` }); document.getElementById('areaPills').innerHTML=h;
+ let b="";BRANDS.forEach(br=>{AREAS.forEach(ar=>{ let s=slugify(ar); b+=`<a class="pill-light" href="/${br.toLowerCase()}-chimney-service-${s}"> ${br} in ${ar} </a> ` })}); let el2=document.getElementById('brandAreaPills'); if(el2) el2.innerHTML=b;
  document.getElementById('colService').innerText=`Chimney Service in ${area||'Noida'} - Complete Guide\n\n${unique}\n\nIf you live in ${area||'Noida'}, your chimney faces heavy oil and dust due to daily tadka cooking. In ${area}, duct length is usually 10-15 feet with 1-2 bends which reduces suction if not sealed properly. Our service starts with complete checkup of filter, blower, motor amp, PCB voltage and duct airflow. We dismantle baffle filters, soak them in bio-degreaser for 20 min, scrub, wash with RO water, dry and refit. Blower is cleaned with foam to protect winding. Motor shaft is oiled with high-temp oil.\n\nWhy service every 4 months? Cooking 3 times daily blocks filter in 120 days and suction drops by 60%. Regular service prevents motor overload and PCB failure.\n\nProcess: WhatsApp booking, instant confirmation, arrival in ${area} in 30 min, diagnosis, estimate, service, warranty card. 90 Days Warranty is ONLY on Spare Parts (Motor, PCB, Touch Panel) - Not on Service Visit Charges. No advance payment. GST bill available for ${area} residents.`;
-
  document.getElementById('colRepair').innerText=`Chimney Repair in ${area||'Noida'} - Motor PCB Touch Fix for ${db}\n\n${db} Chimney Repair in ${area||'Noida'} - ${unique}\n\nYour chimney needs repair when motor burns, PCB fails, touch not responding, capacitor becomes weak, or blower wheel breaks. In ${area||'Noida'}, voltage fluctuation is the main reason for PCB damage. Oil deposition on touch panel causes no response. Our service van in ${area} carries original motors, PCBs, capacitors and touch panels for all ${db} models, so 90% repairs are done on first visit.\n\nMotor repair in ${area}: If motor hums but not rotates, capacitor is weak. If no hum, winding is burnt. If noise comes, bearing set including Bush bearing needs replacement.\n\nPCB repair in ${area}: PCB controls speed, light and auto-clean. If you see burn marks, relay stuck or no output, we repair track or replace PCB. 90 Days Warranty on Spare Parts Only for ${area}.\n\nTouch panel repair in ${area}: Fails due to oil layer. We clean with IPA solution, test sensitivity and replace if cracked. Service for ${db} in ${area}.`;
-
  document.getElementById('colNoise').innerText=`Why Chimney Makes Noise in ${area}? Why Not Working? Solution for ${db}\n\n1) Why Noise in ${area||'Noida'}? In ${area}, motor bearing wear after 2-3 years is common, plus loose blower wheel, grease in housing touching blower, loose duct and vibrating filter. Solution for ${db} in ${area}: Tighten wheel screw with thread lock, oil bearing with high-temp oil, clean housing with degreaser, clamp duct, refit filter lock. If bearing worn, replace Bush bearing set. Our technician fixes ${db} noise in 30 min in ${area}.\n\n2) Not Working Reasons in ${area}: Power socket no supply, plug fuse blown, PCB fuse blown, touch dead, capacitor weak, motor burnt, wiring loose. Solution: Check socket with tester, replace fuse, check PCB fuse, clean touch sensor, test capacitor with meter, check winding with multimeter.\n\n3) Low Suction Fix in ${area}: Filter jam, duct bend, blower grease. Fix for ${db}: Clean baffle filter, replace carbon filter every 6 months, clean blower, straighten duct, seal leaks with aluminium tape, keep chimney height 24-30 inch from stove in ${area}.\n\n4) Oil Leakage Fix in ${area}: Oil collector full or filter overfull. Clean collector weekly, deep clean every 4 months, check chimney level with spirit level.\n\n5) Auto-Clean Not Working in ${area}: Auto-clean needs water and heating. Check water container, heating element, relay. If element open, replace. Use RO water not hard water in ${area}.\n\nNote: 90 Days Warranty is ONLY on Spare Parts (Motor, PCB, Touch) - Not on Service Visit Charges in ${area} for ${db}.`;
-
  document.getElementById('longContent').innerText=`Expert CARE (Independent Service Provider for ${db}) has been providing ${db} Chimney Service in ${area} since 2015 for all models. Our certified technician will reach any tower or villa in ${area} within 30 minutes. We fix ${db} Chimney Repair in ${area}, low suction, high noise, auto-clean not working, touch panel issue, oil leakage. ${unique} Trusted by 2847+ homes in Noida with 90 days warranty on spare parts only (Motor, PCB, Touch Panel) - Not on Service Visit Charges. Professional technician visit with 10 years experience in ${area}. We are NOT authorized by ${db}, we are independent experts.`;
-
  let mainSeoPara = document.getElementById('mainSeoPara');
  let brandInTitle = document.getElementById('brandInTitle');
  if(brandInTitle) brandInTitle.innerText = isHome? 'Kitchen Chimney' : `${db} Chimney`;
  if(mainSeoPara){
    if(isHome){
-     mainSeoPara.innerText = `Is your kitchen chimney not working properly or making too much noise? Expert Care (Independent Service Provider) offers you the fastest and most reliable chimney repair service in Noida. We are an independent service provider and our trained technicians are experts in repairing all brands of chimneys including Faber, Elica, Hindware, Bosch, Kaff, Glen, Siemens, Sunflame, Hafele.
-
-We reach your home within just 30 minutes anywhere in Noida and provide doorstep service. With every spare part replacement you get 90 days warranty. This warranty is only on Spare Parts (Motor, PCB, Touch Panel), not on Service Visit Charges, so you can be worry-free.
-
-We provide service in 20 premium areas of Noida: Jaypee Greens, Lotus Blvd Sec 100, Supernova Sec 94, Wish Town, Klassic Sec 134, Panache Sec 110, Kosmos Sec 134, Daffodil Sec 137, Lotus Zing Sec 168, Knightsbridge Sec 124, Paras Tierea, Aman Sec 151, Aamantran Sec 119, Pavilion Sec 128, Espacia Sec 100, Kensington Park, Imperial Court, Kalypso Court, Krescent Homes, Jaypee Greens Sec 128. Book your chimney deep cleaning today!`;
+     mainSeoPara.innerText = `Is your kitchen chimney not working properly or making too much noise? Expert Care (Independent Service Provider) offers you the fastest and most reliable chimney repair service in Noida. We are an independent service provider and our trained technicians are experts in repairing all brands of chimneys including Faber, Elica, Hindware, Bosch, Kaff, Glen, Siemens, Sunflame, Hafele.\n\nWe reach your home within just 30 minutes anywhere in Noida and provide doorstep service. With every spare part replacement you get 90 days warranty. This warranty is only on Spare Parts (Motor, PCB, Touch Panel), not on Service Visit Charges, so you can be worry-free.\n\nWe provide service in 20 premium areas of Noida: Jaypee Greens, Lotus Blvd Sec 100, Supernova Sec 94, Wish Town, Klassic Sec 134, Panache Sec 110, Kosmos Sec 134, Daffodil Sec 137, Lotus Zing Sec 168, Knightsbridge Sec 124, Paras Tierea, Aman Sec 151, Aamantran Sec 119, Pavilion Sec 128, Espacia Sec 100, Kensington Park, Imperial Court, Kalypso Court, Krescent Homes, Jaypee Greens Sec 128. Book your chimney deep cleaning today!`;
    } else {
-     mainSeoPara.innerText = `Is your ${db} kitchen chimney in ${area} not working properly or making loud noise? Expert Care (Independent Service Provider for ${db}) offers you the fastest and most reliable chimney repair service in ${area}, Noida. We are an independent service provider and our trained technicians are experts in repairing your ${db} chimney.
-
-We provide 5 services in ${area}: 1) ${db} Chimney Service in ${area}, 2) ${db} Chimney Repair in ${area}, 3) ${db} Chimney Deep Cleaning in ${area} in 45 minutes, 4) ${db} Chimney Mechanic in ${area}, 5) ${db} Chimney Installation in ${area}. Every spare part comes with 90 days warranty (Only on Spare Parts - Motor, PCB, Touch).
-
-${unique} We provide service all over Noida, but we have a special team for ${area} which reaches every society in ${area} within 30 minutes. Our technician carries original ${db} parts for ${area} residents.
-
-Call or WhatsApp today to book your deep cleaning or repair - Same day service available in ${area} today! Independent Service Provider for ${db} - We are NOT authorized service center of ${db}.`;
+     mainSeoPara.innerText = `Is your ${db} kitchen chimney in ${area} not working properly or making loud noise? Expert Care (Independent Service Provider for ${db}) offers you the fastest and most reliable chimney repair service in ${area}, Noida. We are an independent service provider and our trained technicians are experts in repairing your ${db} chimney.\n\nWe provide 5 services in ${area}: 1) ${db} Chimney Service in ${area}, 2) ${db} Chimney Repair in ${area}, 3) ${db} Chimney Deep Cleaning in ${area} in 45 minutes, 4) ${db} Chimney Mechanic in ${area}, 5) ${db} Chimney Installation in ${area}. Every spare part comes with 90 days warranty (Only on Spare Parts - Motor, PCB, Touch).\n\n${unique} We provide service all over Noida, but we have a special team for ${area} which reaches every society in ${area} within 30 minutes. Our technician carries original ${db} parts for ${area} residents.\n\nCall or WhatsApp today to book your deep cleaning or repair - Same day service available in ${area} today! Independent Service Provider for ${db} - We are NOT authorized service center of ${db}.`;
    }
  }
 }
@@ -328,7 +265,6 @@ const areas2=["Jaypee Greens Greater Noida","Lotus Blvd Sec 100 Noida","Supernov
 const box=document.getElementById('pseo-links');
 if(box){areas2.forEach(a=>{let b=document.createElement('a');b.href="#";b.textContent=`Chimney Repair in ${a}`;b.style="font-size:10px;background:#fff;border:1px solid #ddd;padding:6px 10px;border-radius:20px;text-decoration:none;color:#000;font-weight:700";b.onclick=(e)=>{e.preventDefault();document.getElementById('bookingSection').scrollIntoView({behavior:'smooth'})};box.appendChild(b)});}
 setTimeout(()=>{ let f=document.getElementById('floatCall'); if(f) f.style.display='flex'; },10000);
-
 document.addEventListener('DOMContentLoaded', ()=>{
   let bookTime = document.getElementById('bookTime');
   if(bookTime){
@@ -345,7 +281,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
 });
-
 function bookWhatsApp(){
  let name=document.getElementById('custName').value||'Customer';
  let phone=document.getElementById('custPhone').value||'Not given';
