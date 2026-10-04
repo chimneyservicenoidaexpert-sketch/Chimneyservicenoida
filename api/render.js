@@ -14,47 +14,42 @@ module.exports = (req, res) => {
   let html = fs.readFileSync(path.join(process.cwd(),'index.html'),'utf8');
 
   if(slug && slug !== 'index.html'){
-    // TITLE
-    html = html.replace(/<title[^>]*>.*?<\/title>/, `<title>${foundBrand} Chimney Service in ${foundArea}, Noida | 30 Min Arrival</title>`);
-    
-    // H1 - Sirf Faber word green
-    if(foundBrandSlug==='faber'){
-      html = html.replace(/<h1 id="mainH"[^>]*>.*?<\/h1>/s, `<h1 id="mainH" style="font-size:28px;font-weight:900;line-height:33px;margin:18px 0 4px;color:#fff"><span style="color:#16a34a;">Faber</span> Chimney Service in ${foundArea}, Noida</h1>`);
-    } else {
-      html = html.replace(/<h1 id="mainH"[^>]*>.*?<\/h1>/s, `<h1 id="mainH" style="font-size:28px;font-weight:900;line-height:33px;margin:18px 0 4px;color:#fff">${foundBrand} Chimney Service in ${foundArea}, Noida</h1>`);
-    }
-
-    // SLIDESHOW WITH BLUR + TEXT - 5 slides
-    const slides = `
-    <div id="slideBox" style="position:relative;width:92%;height:185px;border-radius:20px;overflow:hidden;margin:14px auto;">
-      <div class="mySlides" style="width:100%;height:185px;position:relative;">
-        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600" style="width:100%;height:185px;object-fit:cover;filter:blur(1.5px) brightness(0.55);">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:22px;text-shadow:0 2px 10px rgba(0,0,0,.9);width:90%;">${foundBrand} Chimney Service<br>in ${foundArea}, Noida</div>
-      </div>
-      <div class="mySlides" style="width:100%;height:185px;position:relative;display:none;">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600" style="width:100%;height:185px;object-fit:cover;filter:blur(1.5px) brightness(0.55);">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:22px;text-shadow:0 2px 10px rgba(0,0,0,.9);width:90%;">Expert ${foundBrand} Repair<br>in ${foundArea}</div>
-      </div>
-      <div class="mySlides" style="width:100%;height:185px;position:relative;display:none;">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" style="width:100%;height:185px;object-fit:cover;filter:blur(1.5px) brightness(0.55);">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:22px;text-shadow:0 2px 10px rgba(0,0,0,.9);width:90%;">Deep Cleaning Service<br>${foundArea}, Noida</div>
-      </div>
-      <div class="mySlides" style="width:100%;height:185px;position:relative;display:none;">
-        <img src="https://images.unsplash.com/photo-1629237680348-4f9376c5c1e2?w=600" style="width:100%;height:185px;object-fit:cover;filter:blur(1.5px) brightness(0.55);">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:22px;text-shadow:0 2px 10px rgba(0,0,0,.9);width:90%;">90 Days Warranty on<br>${foundBrand} Service</div>
-      </div>
-      <div class="mySlides" style="width:100%;height:185px;position:relative;display:none;">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600" style="width:100%;height:185px;object-fit:cover;filter:blur(1.5px) brightness(0.55);">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:22px;text-shadow:0 2px 10px rgba(0,0,0,.9);width:90%;">30 Min Arrival in<br>${foundArea}</div>
-      </div>
-      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;">
-        <span class="dot" style="width:8px;height:8px;background:#fff;border-radius:50%;"></span><span class="dot" style="width:8px;height:8px;background:rgba(255,255,255,.4);border-radius:50%;"></span><span class="dot" style="width:8px;height:8px;background:rgba(255,255,255,.4);border-radius:50%;"></span><span class="dot" style="width:8px;height:8px;background:rgba(255,255,255,.4);border-radius:50%;"></span><span class="dot" style="width:8px;height:8px;background:rgba(255,255,255,.4);border-radius:50%;"></span>
+    // Word Slideshow - NO PHOTO, only design box
+    const wordSlider = `
+    <div style="width:92%;margin:14px auto;background:linear-gradient(135deg,#111,#222);border:1.5px solid #16a34a;border-radius:16px;padding:14px 16px;min-height:70px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+      <div id="txt0" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;">${foundBrand} Chimney Service in ${foundArea}, Noida</div>
+      <div id="txt1" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;display:none;"><span style="color:#16a34a;">30 Min Arrival</span> in ${foundArea}</div>
+      <div id="txt2" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;display:none;">Expert ${foundBrand} Repair in ${foundArea}</div>
+      <div id="txt3" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;display:none;">Deep Cleaning Service<br>${foundArea}, Noida</div>
+      <div id="txt4" class="txtSlide" style="color:#fff;font-weight:900;font-size:18px;text-align:center;line-height:23px;display:none;">90 Days Warranty on ${foundBrand}</div>
+      <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;">
+        <span class="tdot" style="width:6px;height:6px;background:#16a34a;border-radius:50%;"></span><span class="tdot" style="width:6px;height:6px;background:rgba(255,255,255,.3);border-radius:50%;"></span><span class="tdot" style="width:6px;height:6px;background:rgba(255,255,255,.3);border-radius:50%;"></span><span class="tdot" style="width:6px;height:6px;background:rgba(255,255,255,.3);border-radius:50%;"></span><span class="tdot" style="width:6px;height:6px;background:rgba(255,255,255,.3);border-radius:50%;"></span>
       </div>
     </div>
-    <script>let si=0;setInterval(()=>{let s=document.getElementsByClassName("mySlides"),d=document.getElementsByClassName("dot");for(let i=0;i<s.length;i++)s[i].style.display="none";for(let i=0;i<d.length;i++)d[i].style.background="rgba(255,255,255,.4)";si=(si+1)%s.length;s[si].style.display="block";d[si].style.background="#fff";},2500);</script>
+    <script>
+      let ti=0;
+      setInterval(()=>{
+        let t=document.getElementsByClassName("txtSlide");
+        let d=document.getElementsByClassName("tdot");
+        for(let i=0;i<t.length;i++) t[i].style.display="none";
+        for(let i=0;i<d.length;i++) d[i].style.background="rgba(255,255,255,.3)";
+        ti=(ti+1)%t.length;
+        t[ti].style.display="block";
+        d[ti].style.background="#16a34a";
+      },2000);
+    </script>
+    <style>#mainH .green{color:#16a34a!important}</style>
     `;
-    // H1 ke upar inject karo
-    html = html.replace(/<h1 id="mainH"/, slides + '<h1 id="mainH"');
+
+    // Inject slideshow before H1
+    html = html.replace(/<h1 id="mainH"/, wordSlider + '<h1 id="mainH"');
+
+    // Faber ko green - sab jagah strong replace
+    if(foundBrandSlug==='faber'){
+      html = html.replace(/Faber Chimney Service/g, '<span style="color:#16a34a !important;">Faber</span> Chimney Service');
+      html = html.replace(/>Faber Chimney/g, '><span class="green">Faber</span> Chimney');
+      html = html.replace(/Is your Faber/g, 'Is your <span style="color:#16a34a;">Faber</span>');
+    }
   }
 
   res.setHeader('Content-Type','text/html');
